@@ -1,0 +1,6 @@
+{
+  "name": "cartoon-short-cloud-render",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Actions Cloud Render Studio for Three.js r160 1080x1920 30fps 3D Cartoon Shorts"
+}

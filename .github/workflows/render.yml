@@ -1,0 +1,309 @@
+name: Cloud Render 3D Cartoon Short
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project folder name inside projects/ (e.g. smoke-soldier)"
+        required: true
+        default: "smoke-soldier"
+        type: string
+      mode:
+        description: "Render mode: 'stills' (mandatory contact-sheet audit) or 'full' (parallel sharded 1080x1920 30fps MP4)"
+        required: true
+        default: "stills"
+        type: choice
+        options:
+          - stills
+          - full
+      shards:
+        description: "Number of parallel cloud runners for full render (1-8)"
+        required: false
+        default: "4"
+        type: string
+      workers:
+        description: "Parallel Chromium pages per runner (recommended: 3)"
+        required: false
+        default: "3"
+        type: string
+      title:
+        description: "Output MP4 title (defaults to project name)"
+        required: false
+        default: ""
+        type: string
+      frames_override:
+        description: "Optional explicit frame spec for stills mode (e.g. '0,45,120' or '0-10')"
+        required: false
+        default: ""
+        type: string
+      subtitles:
+        description: "Burn Rollo-style bottom-third subtitles if work/words.json exists"
+        required: false
+        default: true
+        type: boolean
+
+concurrency:
+  group: render-${{ inputs.project }}-${{ inputs.mode }}
+  cancel-in-progress: false
+
+jobs:
+  # =========================================================================
+  # 1. PREFLIGHT + PLAN (applies anti-glitch gate, verifies dofAt cinf === 0)
+  # =========================================================================
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      total_frames: ${{ steps.meta.outputs.total_frames }}
+      frame_list: ${{ steps.meta.outputs.frame_list }}
+      shot_count: ${{ steps.meta.outputs.shot_count }}
+      shard_matrix: ${{ steps.meta.outputs.shard_matrix }}
+      shard_count: ${{ steps.meta.outputs.shard_count }}
+      out_title: ${{ steps.meta.outputs.out_title }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Prepare project, wire Three.js r160 & run anti-glitch gate
+        run: bash kit/tools/prepare_project.sh "projects/${{ inputs.project }}"
+
+      - name: Extract shot metadata & enforce dofAt cinf === 0 gate
+        id: meta
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          node kit/tools/extract_stills.mjs "$PROJ/web/story.js" --out "$PROJ/work/stills_meta.json"
+
+          TOTAL=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')).totalFrames)" "$PROJ/work/stills_meta.json")
+          SHOTS=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')).shotCount)" "$PROJ/work/stills_meta.json")
+          FRAMES=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')).frameList)" "$PROJ/work/stills_meta.json")
+
+          SHARDS="${{ inputs.shards }}"
+          if ! [[ "$SHARDS" =~ ^[1-8]$ ]]; then SHARDS=4; fi
+          if [ "$TOTAL" -lt "$SHARDS" ]; then SHARDS=1; fi
+
+          MATRIX=$(python3 -c "import json; print(json.dumps(list(range($SHARDS))))")
+          TITLE="${{ inputs.title }}"
+          if [ -z "$TITLE" ]; then TITLE="${{ inputs.project }}"; fi
+
+          echo "total_frames=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "shot_count=$SHOTS" >> "$GITHUB_OUTPUT"
+          echo "frame_list=$FRAMES" >> "$GITHUB_OUTPUT"
+          echo "shard_count=$SHARDS" >> "$GITHUB_OUTPUT"
+          echo "shard_matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "out_title=$TITLE" >> "$GITHUB_OUTPUT"
+
+      - name: Upload prepared metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: stills-meta-${{ inputs.project }}
+          path: projects/${{ inputs.project }}/work/stills_meta.json
+          retention-days: 1
+
+  # =========================================================================
+  # 2A. STILLS MODE — 1 still per shot -> stills_audit.jpg (mandatory gate)
+  # =========================================================================
+  render-stills:
+    needs: plan
+    if: ${{ inputs.mode == 'stills' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download stills metadata
+        uses: actions/download-artifact@v4
+        with:
+          name: stills-meta-${{ inputs.project }}
+          path: projects/${{ inputs.project }}/work
+
+      - name: Setup Playwright-core & Pillow
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright-core
+          if ! command -v google-chrome >/dev/null && ! command -v chromium-browser >/dev/null && ! command -v chromium >/dev/null; then
+            npx playwright-core install chromium --with-deps
+          fi
+          python3 -m pip install --quiet pillow
+
+      - name: Wire project & render 1 still per shot at native 1080x1920
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          mkdir -p "$PROJ/stills" "$PROJ/out"
+          bash kit/tools/prepare_project.sh "$PROJ"
+
+          SPEC="${{ inputs.frames_override }}"
+          if [ -z "$SPEC" ]; then
+            SPEC="${{ needs.plan.outputs.frame_list }}"
+          fi
+
+          node kit/tools/render_parallel.mjs "$PROJ/stills" "$SPEC" \
+            --web "$PROJ/web" \
+            --workers "${{ inputs.workers }}" \
+            --quality 0.96
+
+          python3 kit/tools/sheet.py "$PROJ/stills" "$PROJ/out/stills_audit.jpg" 6 \
+            --meta "$PROJ/work/stills_meta.json"
+
+      - name: Upload stills_audit.jpg and full-res stills
+        uses: actions/upload-artifact@v4
+        with:
+          name: stills-audit-${{ inputs.project }}
+          path: |
+            projects/${{ inputs.project }}/out/stills_audit.jpg
+            projects/${{ inputs.project }}/work/stills_meta.json
+            projects/${{ inputs.project }}/stills/
+          retention-days: 7
+
+  # =========================================================================
+  # 2B. FULL MODE — Parallel sharded 1080x1920 30 fps frame rendering
+  # =========================================================================
+  render-shard:
+    needs: plan
+    if: ${{ inputs.mode == 'full' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        shard: ${{ fromJson(needs.plan.outputs.shard_matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Playwright-core
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright-core
+          if ! command -v google-chrome >/dev/null && ! command -v chromium-browser >/dev/null && ! command -v chromium >/dev/null; then
+            npx playwright-core install chromium --with-deps
+          fi
+
+      - name: Render shard ${{ matrix.shard }}/${{ needs.plan.outputs.shard_count }}
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          mkdir -p frames_shard
+          bash kit/tools/prepare_project.sh "$PROJ"
+
+          LAST=$(( ${{ needs.plan.outputs.total_frames }} - 1 ))
+          node kit/tools/render_parallel.mjs frames_shard "0-${LAST}" \
+            --web "$PROJ/web" \
+            --workers "${{ inputs.workers }}" \
+            --shard "${{ matrix.shard }}/${{ needs.plan.outputs.shard_count }}" \
+            --quality 0.96
+
+          tar -cf "frames-shard-${{ matrix.shard }}.tar" -C frames_shard .
+          ls -lh "frames-shard-${{ matrix.shard }}.tar"
+
+      - name: Upload rendered frame shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: frames-shard-${{ matrix.shard }}
+          path: frames-shard-${{ matrix.shard }}.tar
+          retention-days: 1
+
+  # =========================================================================
+  # 3. ASSEMBLE — Merge shards, burn Rollo subtitles, mix audio, encode & QA
+  # =========================================================================
+  assemble:
+    needs: [plan, render-shard]
+    if: ${{ inputs.mode == 'full' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install FFmpeg, fonts & Python deps
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core fonts-liberation
+          python3 -m pip install --quiet numpy pillow
+
+      - name: Download and merge all frame shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: frames-shard-*
+          merge-multiple: true
+          path: shards_in
+
+      - name: Extract and verify complete frame sequence
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          mkdir -p "$PROJ/frames"
+          for tarf in shards_in/frames-shard-*.tar; do
+            tar -xf "$tarf" -C "$PROJ/frames"
+          done
+
+          TOTAL="${{ needs.plan.outputs.total_frames }}"
+          COUNT=$(find "$PROJ/frames" -maxdepth 1 -name 'f*.jpg' -size +0c | wc -l)
+          echo "Verified frames: $COUNT / $TOTAL"
+          if [ "$COUNT" -ne "$TOTAL" ]; then
+            echo "ERROR: Frame count mismatch! Expected $TOTAL, got $COUNT"
+            exit 1
+          fi
+
+      - name: Generate Rollo-style bottom-third subtitles (if words.json present)
+        if: ${{ inputs.subtitles }}
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          if [ -f "$PROJ/work/words.json" ]; then
+            python3 kit/tools/subtitles.py "$PROJ/work/words.json" "$PROJ/work/subtitles.ass"
+          else
+            echo "No work/words.json found — skipping subtitles."
+          fi
+
+      - name: Synthesize & master audio mix (-6.0 dB music / <= -6.0 dB SFX)
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          if [ -f "$PROJ/audio.py" ] && [ -f "$PROJ/voice.mp3" ]; then
+            (cd "$PROJ" && PYTHONPATH="$(pwd)/../../kit/tools" python3 audio.py)
+          elif [ -f "$PROJ/voice.mp3" ]; then
+            ffmpeg -v error -y -i "$PROJ/voice.mp3" -ar 48000 -ac 1 "$PROJ/mix_raw.wav"
+          else
+            echo "No voice.mp3 found — visual-only smoke render."
+          fi
+
+      - name: Encode final 1080x1920 30 fps MP4 & run QA
+        run: |
+          set -euo pipefail
+          PROJ="projects/${{ inputs.project }}"
+          (cd "$PROJ" && bash "../../kit/tools/finish.sh" "${{ needs.plan.outputs.out_title }}" frames out)
+
+      - name: Upload finished MP4, QA sheet & QA report
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-video-${{ inputs.project }}
+          path: |
+            projects/${{ inputs.project }}/out/*.mp4
+            projects/${{ inputs.project }}/out/qa_sheet.jpg
+            projects/${{ inputs.project }}/out/qa_report.txt
+            projects/${{ inputs.project }}/work/subtitles.ass
+          retention-days: 14

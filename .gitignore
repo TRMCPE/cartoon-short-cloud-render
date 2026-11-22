@@ -1,0 +1,14 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# Local downloaded render outputs & intermediate frames (never push heavy frames back to git)
+downloads/
+projects/*/frames/
+projects/*/stills/
+projects/*/out/
+projects/*/mix_raw.wav
+projects/*/mix.wav
+projects/*/web/lib/three.module.js
+projects/*/work/stills_meta.json
