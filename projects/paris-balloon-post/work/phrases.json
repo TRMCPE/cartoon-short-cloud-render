@@ -1,0 +1,246 @@
+{
+ "duration": 56.346063,
+ "frames30": 1690,
+ "source": "silence-align-v2 (cost 1.94)",
+ "segments": [
+  [
+   0.0,
+   1.2039
+  ],
+  [
+   1.417619,
+   2.657959
+  ],
+  [
+   2.872834,
+   3.847732
+  ],
+  [
+   4.051202,
+   4.227778
+  ],
+  [
+   4.336168,
+   4.639977
+  ],
+  [
+   5.152449,
+   7.423016
+  ],
+  [
+   7.571315,
+   9.361837
+  ],
+  [
+   9.857166,
+   14.497755
+  ],
+  [
+   15.012086,
+   16.8922
+  ],
+  [
+   16.997098,
+   17.732993
+  ],
+  [
+   17.998934,
+   19.647914
+  ],
+  [
+   20.062472,
+   21.410794
+  ],
+  [
+   21.723197,
+   23.752902
+  ],
+  [
+   24.171474,
+   26.260272
+  ],
+  [
+   26.426871,
+   27.506689
+  ],
+  [
+   28.081587,
+   29.982789
+  ],
+  [
+   30.285918,
+   31.855896
+  ],
+  [
+   32.383741,
+   34.280862
+  ],
+  [
+   34.88424,
+   35.447234
+  ],
+  [
+   35.90839,
+   38.173447
+  ],
+  [
+   38.54678,
+   39.659909
+  ],
+  [
+   39.896485,
+   41.793787
+  ],
+  [
+   42.240748,
+   45.187846
+  ],
+  [
+   45.439093,
+   47.54415
+  ],
+  [
+   48.009683,
+   50.421497
+  ],
+  [
+   50.615397,
+   52.13127
+  ],
+  [
+   52.590748,
+   53.272676
+  ],
+  [
+   53.378209,
+   56.087982
+  ]
+ ],
+ "phrases": [
+  {
+   "text": "In 1870,",
+   "s": 0.0,
+   "e": 1.204
+  },
+  {
+   "text": "Paris was surrounded,",
+   "s": 1.418,
+   "e": 2.658
+  },
+  {
+   "text": "and the only way out was up.",
+   "s": 2.873,
+   "e": 4.64
+  },
+  {
+   "text": "Enemy armies had closed every road,",
+   "s": 5.152,
+   "e": 7.423
+  },
+  {
+   "text": "rail line, and telegraph wire.",
+   "s": 7.571,
+   "e": 9.362
+  },
+  {
+   "text": "So Parisians filled giant balloons with gas and sent their mail into the sky.",
+   "s": 9.857,
+   "e": 14.498
+  },
+  {
+   "text": "Dozens of balloons lifted off,",
+   "s": 15.012,
+   "e": 16.892
+  },
+  {
+   "text": "often at night,",
+   "s": 16.997,
+   "e": 17.733
+  },
+  {
+   "text": "drifting over enemy lines.",
+   "s": 17.999,
+   "e": 19.648
+  },
+  {
+   "text": "Some carried passengers.",
+   "s": 20.062,
+   "e": 21.411
+  },
+  {
+   "text": "Some carried millions of letters.",
+   "s": 21.723,
+   "e": 23.753
+  },
+  {
+   "text": "Even a government minister escaped that way,",
+   "s": 24.171,
+   "e": 26.26
+  },
+  {
+   "text": "to raise a new army.",
+   "s": 26.427,
+   "e": 27.507
+  },
+  {
+   "text": "But the balloons couldn't fly back.",
+   "s": 28.082,
+   "e": 29.983
+  },
+  {
+   "text": "They went wherever the wind took them.",
+   "s": 30.286,
+   "e": 31.856
+  },
+  {
+   "text": "So how did Paris get replies?",
+   "s": 32.384,
+   "e": 34.281
+  },
+  {
+   "text": "Pigeons.",
+   "s": 34.884,
+   "e": 35.447
+  },
+  {
+   "text": "Each balloon carried birds out of the city.",
+   "s": 35.908,
+   "e": 38.173
+  },
+  {
+   "text": "Then, once free,",
+   "s": 38.547,
+   "e": 39.66
+  },
+  {
+   "text": "the pigeons flew home with messages.",
+   "s": 39.896,
+   "e": 41.794
+  },
+  {
+   "text": "Photographers shrank those messages onto tiny film,",
+   "s": 42.241,
+   "e": 45.188
+  },
+  {
+   "text": "so one pigeon could carry thousands.",
+   "s": 45.439,
+   "e": 47.544
+  },
+  {
+   "text": "Enemy soldiers tried to shoot the balloons down,",
+   "s": 48.01,
+   "e": 50.421
+  },
+  {
+   "text": "but many still got through.",
+   "s": 50.615,
+   "e": 52.131
+  },
+  {
+   "text": "A city with every road closed still found the sky.",
+   "s": 52.591,
+   "e": 56.088
+  }
+ ]
+}
