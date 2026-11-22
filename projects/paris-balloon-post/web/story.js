@@ -126,10 +126,10 @@ const CAMS = {
     { f: 118, pos: [8.6, 3.2, 12.4],  look: [0.0, 7.6, -1.0],   fov: 46 },
     { f: 150, pos: [9.8, 3.8, 12.6],  look: [0.0, 14.0, -1.5],  fov: 46, ease: 'easeOut' },
   ],
-  // 4. FIXED: Clear unobstructed framing of BOTH stern Pickelhaube Prussian guards IN FRONT of the striped road barricade!
+  // 4. PERFECTED: Centered front-on push-in showing BOTH stern Pickelhaube guards cleanly IN FRONT of the striped road barricade!
   closed_road: [
-    { f: 151, pos: [20.4, 3.4, 4.4],  look: [28.2, 1.85, 0.0],  fov: 44 },
-    { f: 225, pos: [22.4, 3.0, 2.8],  look: [28.2, 1.80, 0.0],  fov: 40, ease: 'easeOut' },
+    { f: 151, pos: [18.5, 3.2, 0.8],  look: [27.5, 1.75, 0.0],  fov: 45 },
+    { f: 225, pos: [20.8, 2.9, 0.2],  look: [27.5, 1.70, 0.0],  fov: 41, ease: 'easeOut' },
   ],
   // 5. FIXED: Crisp rail track -> centered FULL telegraph pole cross-arm & bright sparking cut wires!
   rail_telegraph: [
@@ -143,11 +143,11 @@ const CAMS = {
     { f: 332, pos: [10.8, 5.2, 13.6], look: [-1.8, 4.8, -0.6],  fov: 45, path: [[9.6, 4.9, 14.8]] },
     { f: 370, pos: [13.2, 5.8, 10.6], look: [-1.4, 5.2, -0.5],  fov: 44 },
   ],
-  // 7. POLISHED: Wider upward crane showing FULL rising balloon, overflowing mailbags & waving Parisians!
+  // 7. PERFECTED: Open-plaza upward crane (100% clear of surrounding Haussmann roofs!) framing FULL rising mail balloon!
   mail_sky: [
-    { f: 371, pos: [12.4, 4.2, 12.6], look: [0.0, 4.8, 0.0],    fov: 46 },
-    { f: 408, pos: [13.4, 7.6, 12.4], look: [0.0, 9.2, 0.0],    fov: 45 },
-    { f: 446, pos: [14.2, 11.8, 12.0],look: [0.0, 14.0, 0.0],   fov: 44, ease: 'easeOut' },
+    { f: 371, pos: [8.6, 3.6, 8.6],   look: [0.0, 4.6, 0.0],    fov: 48 },
+    { f: 408, pos: [9.4, 7.6, 8.4],   look: [0.0, 9.2, 0.0],    fov: 48 },
+    { f: 446, pos: [10.2, 12.0, 8.0], look: [0.0, 14.2, 0.0],   fov: 47, ease: 'easeOut' },
   ],
   // 8. POLISHED: Indigo moonlit Paris with FULL glowing moon + 7 staggered glowing striped balloons rising together!
   night_fleet: [
@@ -155,10 +155,10 @@ const CAMS = {
     { f: 491, pos: [15.0, 16.5, 20.5], look: [-4.5, 19.0, -7.5], fov: 47, path: [[16.8, 14.0, 23.0]] },
     { f: 536, pos: [12.0, 21.5, 16.0], look: [-5.0, 23.0, -8.0], fov: 46 },
   ],
-  // 9. FIXED: Open sightline from Prussian campfire trench — BOTH shocked Pickelhaube guards + campfire + overhead gliding night balloons & moon!
+  // 9. PERFECTED: Open sightline from Prussian campfire trench — BOTH shocked guards flanking fire + overhead gliding night balloons!
   over_lines: [
-    { f: 537, pos: [39.8, 2.4, 15.2], look: [31.6, 3.6, 7.2],   fov: 50 },
-    { f: 598, pos: [38.2, 2.5, 13.8], look: [30.8, 5.0, 5.8],   fov: 48 },
+    { f: 537, pos: [41.2, 2.7, 16.0], look: [31.8, 3.2, 7.8],   fov: 50 },
+    { f: 598, pos: [39.4, 2.8, 14.5], look: [31.2, 4.4, 6.8],   fov: 49 },
   ],
   // 10. POLISHED: Aerial side-track beside drifting balloon gondola with cute Aeronaut & waving Parisian passenger!
   passengers: [
@@ -214,23 +214,23 @@ const CAMS = {
     { f: 1207, pos: [120.2, 5.2, 7.6],  look: [118.6, 5.4, 0.6],  fov: 43 },
     { f: 1262, pos: [117.4, 8.6, 6.8],  look: [115.6, 8.8, -0.2], fov: 42, ease: 'easeOut' },
   ],
-  // 20. FIXED: Wider studio framing showing FULL "DÉPÊCHES DE PARIS • 1870" board + optical cone + brass camera + bespectacled Photographer!
+  // 20. PERFECTED: Wider studio framing showing FULL unclipped "DÉPÊCHES DE PARIS • 1870" board + optical cone + brass camera + Photographer!
   microfilm_shrink: [
-    { f: 1263, pos: [-120.0, 5.4, 12.6], look: [-120.2, 3.85, -1.5], fov: 45 },
-    { f: 1312, pos: [-120.1, 5.1, 11.2], look: [-120.2, 3.85, -1.5], fov: 43 },
-    { f: 1360, pos: [-120.2, 4.9, 10.0], look: [-120.2, 3.85, -1.5], fov: 41 },
+    { f: 1263, pos: [-120.5, 5.4, 13.8], look: [-120.7, 3.85, -1.5], fov: 46 },
+    { f: 1312, pos: [-120.6, 5.1, 12.4], look: [-120.7, 3.85, -1.5], fov: 44 },
+    { f: 1360, pos: [-120.7, 4.9, 11.2], look: [-120.7, 3.85, -1.5], fov: 42 },
   ],
-  // 21. FIXED: Clean dark studio showcase — glowing amber Microfilm + elevated red quill tube + proud perched Pigeon + fan of tiny letters!
+  // 21. PERFECTED: Clean dark studio showcase — glowing amber Microfilm + red quill tube + perched Pigeon + FULL centered fan of tiny letters!
   carry_thousands: [
-    { f: 1361, pos: [-120.5, 4.3, 9.6], look: [-120.0, 3.35, 2.0], fov: 42 },
-    { f: 1398, pos: [-119.9, 4.2, 8.9], look: [-120.0, 3.35, 2.0], fov: 40, path: [[-120.2, 4.25, 9.25]] },
-    { f: 1435, pos: [-119.3, 4.1, 8.4], look: [-120.0, 3.35, 2.0], fov: 39 },
+    { f: 1361, pos: [-120.5, 4.3, 9.8], look: [-120.0, 3.45, 2.0], fov: 43 },
+    { f: 1398, pos: [-119.9, 4.2, 9.1], look: [-120.0, 3.45, 2.0], fov: 41, path: [[-120.2, 4.25, 9.45]] },
+    { f: 1435, pos: [-119.3, 4.1, 8.6], look: [-120.0, 3.45, 2.0], fov: 40 },
   ],
-  // 22. FIXED: Open sightline from Prussian battery (ZERO wall blocking!) — 3 firing Pickelhaube soldiers + Krupp gun + bright muzzle flash + climbing balloon!
+  // 22. PERFECTED: Wide open Prussian battery sightline — ALL 3 firing Pickelhaube soldiers + Krupp gun + bright muzzle flash + climbing balloon cleanly above y=76%!
   enemy_shoot: [
-    { f: 1436, pos: [40.2, 2.6, 15.6],  look: [31.8, 3.5, 7.8],   fov: 48 },
-    { f: 1475, pos: [39.2, 2.7, 14.4],  look: [31.2, 4.0, 7.2],   fov: 47 },
-    { f: 1515, pos: [38.2, 3.0, 13.2],  look: [30.6, 4.8, 6.6],   fov: 46 },
+    { f: 1436, pos: [42.0, 2.8, 16.6],  look: [32.0, 2.8, 8.2],   fov: 50 },
+    { f: 1475, pos: [40.8, 2.9, 15.6],  look: [31.5, 3.1, 7.8],   fov: 49 },
+    { f: 1515, pos: [39.6, 3.1, 14.4],  look: [31.0, 3.7, 7.4],   fov: 48 },
   ],
   // 23. POLISHED: Slightly wider soaring aerial glide so the full hero balloon & triumphant waving Aeronaut never clip top!
   got_through: [
@@ -481,9 +481,9 @@ export const actorsAt = (f, T) => {
       break;
     }
     case 'closed_road': {
-      // FIXED: Standing cleanly IN FRONT of the red-and-white road barricade so BOTH stern Pickelhaube guards are 100% visible!
-      out.push(C(T, 'prussian', { ...id(11), seed: 11, L: 'hip', R: 'point', expr: 'stern', facing: -1 }, [27.3, 0, -1.10], { tint, ground: 0, s: 1.04 }));
-      out.push(C(T, 'prussian', { ...id(12), seed: 12, L: 'hold', R: 'hip', expr: 'determined', facing: -1 }, [27.4, 0, 1.15], { tint, ground: 0, s: 1.04 }));
+      // PERFECTED: Both stern Pickelhaube guards standing side-by-side cleanly IN FRONT of the striped road barricade!
+      out.push(C(T, 'prussian', { ...id(11), seed: 11, L: 'hip', R: 'point', expr: 'stern', facing: -1 }, [26.4, 0, -0.78], { tint, ground: 0, s: 1.04 }));
+      out.push(C(T, 'prussian', { ...id(12), seed: 12, L: 'hold', R: 'hip', expr: 'determined', facing: -1 }, [26.4, 0, 0.78], { tint, ground: 0, s: 1.04 }));
       break;
     }
     case 'fill_balloons': {
@@ -501,9 +501,9 @@ export const actorsAt = (f, T) => {
       break;
     }
     case 'over_lines': {
-      // FIXED: Shocked Pickelhaube guards standing cleanly beside glowing campfire looking UP at night balloons overhead!
-      out.push(C(T, 'prussian', { ...id(11), seed: 11, L: 'pointUp', R: 'hang', expr: 'shock', facing: -1 }, [32.3, 0, 8.6], { tint: '#ffe4b8', ground: 0, s: 1.06 }));
-      out.push(C(T, 'prussian', { ...id(12), seed: 12, L: 'hang', R: 'pointUp', expr: 'shock', facing: 1 },  [34.3, 0, 10.0], { tint: '#ffe4b8', ground: 0, s: 1.06 }));
+      // PERFECTED: Both shocked Pickelhaube guards cleanly flanking the glowing campfire looking UP at night balloons overhead!
+      out.push(C(T, 'prussian', { ...id(11), seed: 11, L: 'pointUp', R: 'hang', expr: 'shock', facing: -1 }, [32.3, 0, 7.6], { tint: '#ffe4b8', ground: 0, s: 1.04 }));
+      out.push(C(T, 'prussian', { ...id(12), seed: 12, L: 'hang', R: 'pointUp', expr: 'shock', facing: 1 },  [33.8, 0, 10.6], { tint: '#ffe4b8', ground: 0, s: 1.04 }));
       break;
     }
     case 'passengers': {
@@ -658,13 +658,13 @@ export const fxAt = (f, T) => {
     }
   }
 
-  // FIXED S21: Hero Perched Carrier Pigeon on right wooden perch + Magical Fan of Miniature Envelopes blossoming cleanly above!
+  // PERFECTED S21: Hero Perched Carrier Pigeon on right wooden perch + FULL centered Fan of Miniature Envelopes blossoming cleanly in upper studio sky!
   if (S.id === 'carry_thousands') {
     // Perch top is at (-118.85, 2.88, 2.0) -> plant pigeon toes flush on perch!
     out.push(FX('studioPigeon', (p) => T.fxPigeon(p, 0, true, true), [-118.85, 2.88 - 0.69 * 0.92, 2.0], 0.92, { flip: true, order: 6 }));
     const fanK = M.back(ramp(f, 1368, 1388), 1.4);
     const ph = q((t * 1.6) % 6.28, 1);
-    out.push(FX('minifan_' + q(fanK, 2), (p) => T.fxMiniLetterFan(p, fanK), [-120.0, 3.65, 1.5], 1.72, { order: 4 }));
+    out.push(FX('minifan_' + q(fanK, 2), (p) => T.fxMiniLetterFan(p, fanK), [-120.0, 2.60, 1.5], 1.62, { order: 4 }));
     out.push(FX('mspk_' + ph, (p) => T.fxSparkle(p, ph), [-121.1, 3.05, 2.1], 0.85, { order: 7 }));
   }
 
