@@ -46,6 +46,10 @@ def find_bin(name: str) -> str:
 GIT = find_bin("git")
 GH = find_bin("gh")
 
+# Ensure child processes (like `gh` invoking `git` or git invoking `gh` credential helper) find both on PATH
+_extra_paths = [str(Path(GIT).parent), str(Path(GH).parent)]
+os.environ["PATH"] = os.pathsep.join(_extra_paths) + os.pathsep + os.environ.get("PATH", "")
+
 
 def run(cmd, cwd=ROOT, check=True, capture=False):
     if capture:
