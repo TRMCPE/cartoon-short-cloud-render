@@ -128,11 +128,11 @@ const CAMS = {
     { f: 495, pos: [15.6, 2.4, 8.8],  look: [22.8, 2.7, 2.2],  fov: 42 },
     { f: 574, pos: [16.0, 5.8, 9.2],  look: [23.8, 5.4, 2.2],  fov: 40 },
   ],
-  // 9. FIXED: Clean ON-DECK angle (zero railing/davit occlusion!) showing Sailor + Captain sealing the gleaming 3D Biscuit Tin on crate!
+  // 9. POLISHED: Wider ON-DECK framing showing full Sailor + full Captain + front-facing "BISCUIT TIN MAIL" tin!
   seal_tin: [
-    { f: 575, pos: [24.8, 6.2, 8.6],  look: [26.4, 5.4, 3.6],  fov: 38 },
-    { f: 630, pos: [24.5, 6.0, 7.4],  look: [26.4, 5.35, 3.6], fov: 35 },
-    { f: 676, pos: [24.3, 5.9, 6.7],  look: [26.4, 5.35, 3.6], fov: 33 },
+    { f: 575, pos: [26.4, 6.2, 10.6], look: [26.4, 5.4, 3.6],  fov: 42 },
+    { f: 630, pos: [26.0, 6.0, 9.4],  look: [26.4, 5.35, 3.6], fov: 39 },
+    { f: 676, pos: [25.6, 5.9, 8.6],  look: [26.4, 5.35, 3.6], fov: 37 },
   ],
   // 10. Whip-follow camera tracking the biscuit tin soaring off the ship railing into the sea!
   throw_sea: [
@@ -165,16 +165,16 @@ const CAMS = {
     { f: 921, pos: [8.4, 3.2, -3.2],  look: [14.2, 2.7, 0.0],  fov: 40 },
     { f: 948, pos: [9.1, 3.1, -2.8],  look: [14.2, 2.7, 0.0],  fov: 36, ease: 'easeOut' },
   ],
-  // 16. FIXED: Heroic sunlit low-angle orbit on TOP of open cliff plateau (y = 4.62) — ZERO occlusion!
+  // 16. POLISHED: Triumphant Mailman + Biscuit Tin held clearly BESIDE him (zero face occlusion!)
   tin_and_swimmer: [
-    { f: 949,  pos: [3.2, 6.0, 4.4],  look: [-2.4, 5.7, 1.6],  fov: 39 },
-    { f: 995,  pos: [3.8, 6.1, 1.8],  look: [-2.4, 5.7, 1.6],  fov: 37, path: [[3.7, 6.05, 3.1]] },
-    { f: 1036, pos: [3.2, 6.2, -0.8], look: [-2.4, 5.7, 1.6],  fov: 36 },
+    { f: 949,  pos: [4.2, 6.0, 3.2],  look: [-2.4, 5.75, 1.35], fov: 40 },
+    { f: 995,  pos: [4.4, 6.05, 1.3], look: [-2.4, 5.75, 1.35], fov: 38, path: [[4.5, 6.02, 2.3]] },
+    { f: 1036, pos: [4.0, 6.1, -0.5], look: [-2.4, 5.75, 1.35], fov: 37 },
   ],
-  // 17. FIXED: Golden-to-sunset dolly on TOP of cliff plateau framing waiting mailman + red mailbox + flipping 3D calendar!
+  // 17. POLISHED: Side-by-side comic framing — red mailbox (left), flipping calendar (center), bored waiting mailman (right)!
   took_months: [
-    { f: 1037, pos: [4.6, 6.2, 2.6],  look: [-2.2, 5.75, 0.8], fov: 42 },
-    { f: 1112, pos: [3.4, 6.1, 2.0],  look: [-2.2, 5.75, 0.8], fov: 38 },
+    { f: 1037, pos: [5.4, 6.2, 2.2],  look: [-2.4, 5.75, 1.15], fov: 44 },
+    { f: 1112, pos: [4.3, 6.1, 1.6],  look: [-2.4, 5.75, 1.15], fov: 40 },
   ],
   // 18. Overhead crane-push over 3D Vintage Pacific World Map with golden glowing mail routes!
   world_noticed: [
@@ -198,11 +198,11 @@ const CAMS = {
     { f: 1352, pos: [-119.8, 10.6, 4.0], look: [-119.9, 2.15, 0.8], fov: 40, ease: 'easeOut' },
     { f: 1388, pos: [-119.8, 10.1, 3.4], look: [-119.9, 2.15, 0.8], fov: 39 },
   ],
-  // 22. Triumphant sunset-gold crane pullback from the famous Niuafo'ou "TIN CAN ISLAND" Post Office!
+  // 22. POLISHED: Triumphant sunset-gold crane pullback with 100% unobstructed "TIN CAN ISLAND" Post Office sign!
   famous_po: [
-    { f: 1389, pos: [2.2, 7.2, 1.8],    look: [-6.4, 6.4, -1.8],  fov: 38 },
-    { f: 1455, pos: [6.8, 8.6, 5.6],    look: [-9.0, 7.1, -1.8],  fov: 42, path: [[4.5, 7.8, 3.6]] },
-    { f: 1508, pos: [13.5, 11.2, 10.8], look: [-13.5, 8.5, -1.8], fov: 45 },
+    { f: 1389, pos: [2.6, 7.2, -0.6],   look: [-6.4, 6.4, -1.8],  fov: 39 },
+    { f: 1455, pos: [7.6, 8.6, 2.6],    look: [-9.0, 7.1, -1.8],  fov: 43, path: [[5.2, 7.9, 1.0]] },
+    { f: 1508, pos: [14.0, 11.4, 7.4],  look: [-13.5, 8.5, -1.8], fov: 46 },
   ],
 };
 
@@ -272,9 +272,9 @@ export const worldAt = (f) => {
       W.bucketY = lerp(1.5, 5.5, k); W.chop = 1.1; break;
     }
     case 'seal_tin': {
-      // Sits cleanly on wooden deck crate at world (26.4, 5.42, 3.8) — facing camera!
+      // Sits cleanly on wooden deck crate at world (26.4, 5.42, 3.8) — label rotated cleanly toward +Z camera!
       const closeK = M.easeIn(ramp(f, 642, 656));
-      W.tin = { x: 26.4, y: 5.46, z: 3.8, s: 1.05, ry: -0.5 + Math.sin(t) * 0.25, lidOpen: 1 - closeK };
+      W.tin = { x: 26.4, y: 5.46, z: 3.8, s: 0.96, ry: -Math.PI * 0.5, lidOpen: 1 - closeK };
       break;
     }
     case 'throw_sea': {
@@ -311,9 +311,9 @@ export const worldAt = (f) => {
     case 'no_boat':
       W.ship = false; W.chop = 1.6; break;
     case 'tin_and_swimmer':
-      // Held heroically right beside smiling mailman on top of open cliff edge (y = 4.62)!
+      // Held heroically RIGHT BESIDE the smiling mailman (same x = -2.4, offset along z -> zero face occlusion!)
       W.ship = false; W.chop = 0.9;
-      W.tin = { x: -1.75, y: 6.18 + Math.sin(t * 2.8) * 0.05, z: 1.95, s: 0.92, ry: -0.4 + t * 0.7 };
+      W.tin = { x: -2.35, y: 6.18 + Math.sin(t * 2.8) * 0.05, z: 0.65, s: 0.72, ry: 0.0 + Math.sin(t * 1.4) * 0.25 };
       break;
     case 'took_months': {
       W.ship = false; W.chop = 0.8; W.showCalendar = true;
@@ -442,13 +442,13 @@ export const actorsAt = (f, T) => {
       break;
     }
     case 'tin_and_swimmer': {
-      // Standing heroically on open cliff top (y = 4.60)!
-      out.push(C(T, 'mailman', { ...id(3), seed: 3, L: 'hip', R: 'up', expr: 'laugh', facing: 1 }, [-2.55, 4.60, 1.65], { tint, ground: 4.60, s: 1.08 }));
+      // Standing heroically on open cliff top (y = 4.60), beside the gleaming biscuit tin!
+      out.push(C(T, 'mailman', { ...id(3), seed: 3, L: 'up', R: 'hip', expr: 'laugh', facing: 1 }, [-2.45, 4.60, 1.75], { tint, ground: 4.60, s: 1.06 }));
       break;
     }
     case 'took_months': {
-      // Waiting patiently beside red mailbox & flipping calendar on open cliff top!
-      out.push(C(T, 'mailman', { ...id(3), seed: 3, L: 'hip', R: 'hang', expr: 'bored', facing: 1, look: 0.3 }, [-2.85, 4.60, 1.55], { tint, ground: 4.60, s: 1.04 }));
+      // Waiting patiently on the right side beside the flipping calendar (center) & red mailbox (left)!
+      out.push(C(T, 'mailman', { ...id(3), seed: 3, L: 'hip', R: 'hang', expr: 'bored', facing: -1, look: -0.4 }, [-2.40, 4.60, 2.35], { tint, ground: 4.60, s: 1.02 }));
       break;
     }
     case 'collectors': {
@@ -505,11 +505,7 @@ export const fxAt = (f, T) => {
     out.push(FX('tinspl_' + t, (p) => { p.g.translate(0, 320); p.g.scale(0.75, 0.75); T.fxSplash(p, t); }, [18.6, 0.0, 0.5], 2.6));
   }
 
-  // Waterline spray in fight_waves (aligned cleanly ON water surface!)
-  if (S.id === 'fight_waves') {
-    const t = q(((f - 731) % 24) / 24, 2);
-    out.push(FX('wspl_' + t, (p) => { p.g.translate(0, 360); p.g.scale(0.72, 0.72); T.fxSplash(p, t); }, [16.8, -0.05, 1.0], 1.4));
-  }
+  // Clean 3D animated swells in fight_waves (removed flat floating splash card)
 
   if (S.id === 'no_dock') {
     const pop = M.back(ramp(f, 895, 904), 1.9);
@@ -522,7 +518,7 @@ export const fxAt = (f, T) => {
 
   if (S.id === 'tin_and_swimmer') {
     const ph = q((f * 0.06) % 6.28, 1);
-    out.push(FX('spk_' + ph, (p) => T.fxSparkle(p, ph), [-1.75, 5.45, 1.95], 1.1));
+    out.push(FX('spk_' + ph, (p) => T.fxSparkle(p, ph), [-2.35, 5.55, 0.65], 0.95));
   }
   if (S.id === 'tin_can_island' && f >= 1344) {
     const t = q(clamp((f - 1344) / 24), 2);

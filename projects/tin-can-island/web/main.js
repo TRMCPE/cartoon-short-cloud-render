@@ -231,7 +231,7 @@ const palmCoords = [
   [-19.5, 7.8, 8.5, 6.6, 0.15, 0.9], [-18.2, 8.2, -9.2, 6.4, 0.14, 4.6],
   [-6.8, 4.5, -10.8, 5.8, 0.22, 5.2], [-15.8, 8.8, 0.5, 6.2, 0.15, 1.9],
   [-10.2, 4.5, 12.2, 6.4, 0.18, 2.7], [-22.0, 9.6, 13.5, 6.8, 0.14, 3.1],
-  [-21.5, 9.6, -14.2, 7.0, 0.13, 0.2], [-5.2, 4.4, 5.6, 5.6, 0.24, 0.5],
+  [-21.5, 9.6, -14.2, 7.0, 0.13, 0.2], [-5.5, 4.4, 7.6, 5.6, 0.24, 0.5],
 ];
 for (const pc of palmCoords) palmTree(...pc);
 
@@ -273,8 +273,8 @@ for (let i = 0; i < 9; i++) {
 }
 finaleProps.visible = false;
 
-// Wooden Shore Mailbox + Flip Calendar on top of cliff edge (y = 4.62, completely clear of cliffBase!)
-const shoreMailG = new THREE.Group(); shoreMailG.position.set(-2.4, 4.60, 0.0); island.add(shoreMailG);
+// Wooden Shore Mailbox + Flip Calendar lined up cleanly side-by-side at x = -2.4 (zero overlap!)
+const shoreMailG = new THREE.Group(); shoreMailG.position.set(-2.4, 4.60, -0.15); island.add(shoreMailG);
 add(box(0.16, 1.4, 0.16), M.wood, 0, 0.7, 0, shoreMailG);
 const mbBox = add(new THREE.CylinderGeometry(0.28, 0.28, 0.85, 12, 1, false, 0, Math.PI), M.red, 0, 1.55, 0, shoreMailG);
 mbBox.rotation.z = Math.PI / 2;
@@ -283,7 +283,7 @@ add(box(0.85, 0.28, 0.56), M.red, 0, 1.42, 0, shoreMailG);
 add(box(0.06, 0.48, 0.06), M.goldRoute, 0.2, 1.65, 0.32, shoreMailG);
 add(box(0.22, 0.16, 0.06), M.goldRoute, 0.3, 1.84, 0.32, shoreMailG);
 
-const calG = new THREE.Group(); calG.position.set(-1.6, 4.60, 1.15); island.add(calG);
+const calG = new THREE.Group(); calG.position.set(-2.4, 4.60, 1.05); island.add(calG);
 add(box(0.12, 1.65, 0.12), M.wood, 0, 0.82, 0, calG);
 add(box(0.12, 1.35, 1.1), M.woodDark, 0, 1.82, 0, calG);
 const calFace = add(new THREE.PlaneGeometry(1.02, 1.26), calMats[0], 0.08, 1.82, 0, calG, { cast: false });
