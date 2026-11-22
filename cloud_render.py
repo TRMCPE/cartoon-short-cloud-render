@@ -133,12 +133,23 @@ def dispatch_and_wait(inputs: dict, artifact_name: str, download_dir: Path):
     url = run([GH, "run", "view", str(run_id), "--json", "url", "--jq", ".url"], capture=True).stdout.strip()
     print(f"Live URL: {url}")
 
-    # Watch until completion
-    watch = run([GH, "run", "watch", str(run_id), "--exit-status"], check=False)
-    if watch.returncode != 0:
-        print(f"\nCloud render #{run_id} FAILED! Fetching failure logs...", file=sys.stderr)
-        run([GH, "run", "view", str(run_id), "--log-failed"], check=False)
-        sys.exit(watch.returncode)
+    # Watch until completion (resilient to brief local Wi-Fi/TCP hiccups)
+    while True:
+        watch = run([GH, "run", "watch", str(run_id), "--exit-status"], check=False)
+        info_res = run([GH, "run", "view", str(run_id), "--json", "status,conclusion"], check=False, capture=True)
+        if info_res.returncode == 0 and info_res.stdout.strip():
+            info = json.loads(info_res.stdout)
+            if info.get("status") == "completed":
+                if info.get("conclusion") == "success":
+                    break
+                print(f"\nCloud render #{run_id} FAILED ({info.get('conclusion')})! Fetching failure logs...", file=sys.stderr)
+                run([GH, "run", "view", str(run_id), "--log-failed"], check=False)
+                sys.exit(1)
+            print(f"\nTransient network hiccup while watching #{run_id} (status={info.get('status')}); reattaching...")
+            time.sleep(3)
+            continue
+        print(f"\nNetwork check retry for #{run_id}...")
+        time.sleep(5)
 
     if download_dir.exists():
         shutil.rmtree(download_dir)
