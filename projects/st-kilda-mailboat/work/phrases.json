@@ -1,0 +1,112 @@
+{
+ "duration": 46.99425,
+ "frames30": 1410,
+ "source": "faster-whisper-base.en",
+ "phrases": [
+  {
+   "text": "In the North Atlantic,",
+   "s": 0.0,
+   "e": 0.7
+  },
+  {
+   "text": "there's a remote island group called St.",
+   "s": 1.3,
+   "e": 3.26
+  },
+  {
+   "text": "Kilda.",
+   "s": 3.32,
+   "e": 3.68
+  },
+  {
+   "text": "It sits more than 100 miles from mainland Scotland.",
+   "s": 4.36,
+   "e": 6.9
+  },
+  {
+   "text": "For up to nine months of the year,",
+   "s": 7.74,
+   "e": 9.22
+  },
+  {
+   "text": "nobody could reach it.",
+   "s": 9.52,
+   "e": 10.72
+  },
+  {
+   "text": "So when the islanders needed food or medicine,",
+   "s": 11.26,
+   "e": 13.3
+  },
+  {
+   "text": "they had only one way to call for help.",
+   "s": 13.8,
+   "e": 15.6
+  },
+  {
+   "text": "No radio,",
+   "s": 16.24,
+   "e": 16.62
+  },
+  {
+   "text": "no telephone,",
+   "s": 17.14,
+   "e": 17.68
+  },
+  {
+   "text": "no ship in sight.",
+   "s": 18.3,
+   "e": 19.3
+  },
+  {
+   "text": "They carved a tiny wooden boat with a hollow inside.",
+   "s": 20.12,
+   "e": 22.78
+  },
+  {
+   "text": "They sealed a message in it and tied it to a float made from a sheep splatter.",
+   "s": 23.62,
+   "e": 27.36
+  },
+  {
+   "text": "Then they threw it into the sea and hoped.",
+   "s": 27.88,
+   "e": 30.42
+  },
+  {
+   "text": "Nobody knew where it would land.",
+   "s": 31.22,
+   "e": 32.62
+  },
+  {
+   "text": "The ocean carried it for weeks,",
+   "s": 33.36,
+   "e": 34.8
+  },
+  {
+   "text": "sometimes months.",
+   "s": 35.48,
+   "e": 36.0
+  },
+  {
+   "text": "Some of those little boats reached the Scottish mainland.",
+   "s": 36.8,
+   "e": 38.76
+  },
+  {
+   "text": "Others drifted all the way to Norway.",
+   "s": 39.8,
+   "e": 41.08
+  },
+  {
+   "text": "Then all they could do was wait.",
+   "s": 42.06,
+   "e": 43.94
+  },
+  {
+   "text": "Their only post office was the sea.",
+   "s": 44.5,
+   "e": 46.6
+  }
+ ]
+}
