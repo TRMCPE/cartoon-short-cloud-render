@@ -34,7 +34,7 @@ def escape_ass(text: str) -> str:
     return text.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
 
 
-def chunk_words(words, min_w=2, max_w=4, max_chars=22):
+def chunk_words(words, min_w=2, max_w=4, max_chars=18):
     chunks = []
     cur = []
     for idx, w in enumerate(words):
