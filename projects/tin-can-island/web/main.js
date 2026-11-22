@@ -158,8 +158,8 @@ const innerSea = new THREE.Mesh(new THREE.PlaneGeometry(280, 280, 76, 76), water
 innerSea.rotation.x = -Math.PI / 2; innerSea.position.set(10, 0, 0);
 innerSea.userData.nd = waterNd; innerSea.receiveShadow = false; scene.add(innerSea);
 
-const farSea = new THREE.Mesh(new THREE.RingGeometry(135, 1300, 48), waterMat);
-farSea.rotation.x = -Math.PI / 2; farSea.position.set(10, -0.05, 0);
+const farSea = new THREE.Mesh(new THREE.RingGeometry(120, 1400, 48), new THREE.MeshBasicMaterial({ color: '#1a6c9e', fog: true }));
+farSea.rotation.x = -Math.PI / 2; farSea.position.set(10, -0.03, 0);
 farSea.userData.nd = waterNd; farSea.receiveShadow = false; scene.add(farSea);
 
 // ---------- WORLD 1: NIUAFO'OU VOLCANIC ISLAND ----------
@@ -273,8 +273,8 @@ for (let i = 0; i < 9; i++) {
 }
 finaleProps.visible = false;
 
-// Wooden Shore Mailbox + Flip Calendar (Shot 17 "Letters sometimes took months")
-const shoreMailG = new THREE.Group(); shoreMailG.position.set(-2.6, 2.15, -1.6); island.add(shoreMailG);
+// Wooden Shore Mailbox + Flip Calendar on top of cliff edge (y = 4.62, completely clear of cliffBase!)
+const shoreMailG = new THREE.Group(); shoreMailG.position.set(-2.4, 4.60, 0.0); island.add(shoreMailG);
 add(box(0.16, 1.4, 0.16), M.wood, 0, 0.7, 0, shoreMailG);
 const mbBox = add(new THREE.CylinderGeometry(0.28, 0.28, 0.85, 12, 1, false, 0, Math.PI), M.red, 0, 1.55, 0, shoreMailG);
 mbBox.rotation.z = Math.PI / 2;
@@ -283,7 +283,7 @@ add(box(0.85, 0.28, 0.56), M.red, 0, 1.42, 0, shoreMailG);
 add(box(0.06, 0.48, 0.06), M.goldRoute, 0.2, 1.65, 0.32, shoreMailG);
 add(box(0.22, 0.16, 0.06), M.goldRoute, 0.3, 1.84, 0.32, shoreMailG);
 
-const calG = new THREE.Group(); calG.position.set(-1.3, 2.15, -1.8); island.add(calG);
+const calG = new THREE.Group(); calG.position.set(-1.6, 4.60, 1.15); island.add(calG);
 add(box(0.12, 1.65, 0.12), M.wood, 0, 0.82, 0, calG);
 add(box(0.12, 1.35, 1.1), M.woodDark, 0, 1.82, 0, calG);
 const calFace = add(new THREE.PlaneGeometry(1.02, 1.26), calMats[0], 0.08, 1.82, 0, calG, { cast: false });
@@ -326,6 +326,9 @@ add(new THREE.CylinderGeometry(0.16, 0.24, 11.5, 10), M.wood, 0, 9.8, 6.2, shipG
 add(new THREE.CylinderGeometry(0.09, 0.09, 4.6, 8), M.wood, 0, 12.2, 6.2, shipG).rotation.z = Math.PI / 2;
 const pennant = add(new THREE.ConeGeometry(0.55, 2.2, 3), M.red, 0, 15.2, 5.1, shipG);
 pennant.rotation.x = -Math.PI / 2;
+// Wooden deck crate for sealing the biscuit tin in Shot 9 (clear of railing/davit)
+add(tbox(1.1, 0.72, 1.1, 1.2), M.wood, -1.6, 4.70, 3.8, shipG);
+
 // Cargo davit arm extending over the port side (-x) for bucket hauling (Shot 8)
 add(new THREE.CylinderGeometry(0.11, 0.13, 3.8, 8), M.iron, -3.4, 6.1, 2.2, shipG);
 const davitArm = add(new THREE.CylinderGeometry(0.09, 0.11, 2.4, 8), M.iron, -4.3, 7.6, 2.2, shipG);
