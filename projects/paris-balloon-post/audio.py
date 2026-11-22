@@ -277,9 +277,9 @@ place(sfx, pigeon_coo(), F(1205), 0.75)          # homing pigeons swooping home
 place(sfx, shutter_click(), F(1295), 0.88)       # 1870 brass bellows camera shutter!
 place(sfx, chime_sparkle(), F(1372), 0.82)       # tiny microfilm -> thousands of letters burst!
 place(sfx, paper_flutter(0.9), F(1375), 0.72)    # miniature envelopes fanning out
-place(sfx, rifle_shot(False), F(1461), 0.90)     # Prussian rifle volley 1
-place(sfx, rifle_shot(False), F(1485), 0.90)     # Prussian rifle volley 2
-place(sfx, rifle_shot(True), F(1503), 0.95)      # Prussian Krupp anti-balloon gun 3
+place(sfx, rifle_shot(False), F(1454), 0.90)     # Prussian rifle volley 1
+place(sfx, rifle_shot(False), F(1473), 0.90)     # Prussian rifle volley 2
+place(sfx, rifle_shot(True), F(1497), 0.95)      # Prussian Krupp anti-balloon gun 3
 place(sfx, whoosh(0.7), F(1522), 0.70)           # soaring safely above gunsmoke
 place(sfx, wing_flutter(1.1), F(1600), 0.55)     # pigeons circling triumphantly home
 place(sfx, chime_sparkle(), F(1635), 0.80)       # golden dawn Paris sky finale!

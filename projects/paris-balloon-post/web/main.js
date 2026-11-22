@@ -120,7 +120,8 @@ const sky = new THREE.Mesh(new THREE.SphereGeometry(1400, 32, 16), new THREE.Sha
 sky.userData.sky = true; scene.add(sky);
 
 const nightSkyG = new THREE.Group(); scene.add(nightSkyG);
-const moonMesh = add(new THREE.SphereGeometry(14, 20, 16), new THREE.MeshBasicMaterial({ color: '#fff6cf', fog: false }), -95, 115, -180, nightSkyG, { cast: false, receive: false, ndSkip: true });
+// Bright luminous full moon positioned prominently in the northern-western night sky visible in S08 & S09!
+const moonMesh = add(new THREE.SphereGeometry(16, 20, 16), new THREE.MeshBasicMaterial({ color: '#fff6cf', fog: false }), -55, 88, -190, nightSkyG, { cast: false, receive: false, ndSkip: true });
 const starRng = P.rng(701);
 for (let i = 0; i < 65; i++) {
   const th = starRng() * Math.PI * 2, ph = 0.16 + starRng() * 0.72, R = 360;
@@ -337,7 +338,7 @@ for (const [lx, lz] of [[-6.5, 6.2], [6.8, 6.2], [6.8, -6.5], [-6.5, -7.8]]) {
 }
 
 // 3. Classic Parisian Postal Pillar Mailbox (for Shot 16 "So how did Paris get replies?")
-const postBoxG = new THREE.Group(); postBoxG.position.set(4.0, 0, 2.2); parisG.add(postBoxG);
+const postBoxG = new THREE.Group(); postBoxG.position.set(4.1, 0, 2.2); parisG.add(postBoxG);
 add(new THREE.CylinderGeometry(0.44, 0.50, 1.85, 14), M.blue, 0, 0.92, 0, postBoxG);
 add(new THREE.CylinderGeometry(0.54, 0.44, 0.35, 14), M.gold, 0, 1.98, 0, postBoxG);
 add(box(0.52, 0.14, 0.12), M.iron, 0, 1.48, 0.45, postBoxG);
@@ -405,21 +406,22 @@ add(new THREE.TubeGeometry(intactWire, 14, 0.045, 6, false), M.iron, 0, 0, 0, te
 
 // ---- ENCIRCLING PRUSSIAN SIEGE TRENCHES, TENTS, CANNONS & CAMPFIRES ----
 const siegeRingG = new THREE.Group(); parisG.add(siegeRingG);
-// Perimeter ring of tents, sandbags & cannons encircling Paris (radius ~38m)
-for (let i = 0; i < 14; i++) {
-  const a = (i / 14) * Math.PI * 2 + 0.15;
-  const rx_ = Math.cos(a) * 39 - 4, rz_ = Math.sin(a) * 39;
+// Tight dramatic siege encirclement ring around Paris walls (radius ~31-35m) clearly readable in aerial S02!
+for (let i = 0; i < 16; i++) {
+  const a = (i / 16) * Math.PI * 2 + 0.12;
+  const radRing = (i % 2 === 0) ? 31.5 : 35.5;
+  const rx_ = Math.cos(a) * radRing - 2, rz_ = Math.sin(a) * radRing;
   const g = new THREE.Group(); g.position.set(rx_, 0, rz_); g.rotation.y = -a + Math.PI; siegeRingG.add(g);
-  // Pointed Prussian canvas bell tent
-  add(new THREE.ConeGeometry(2.3, 3.8, 8), M.tent, 0, 1.9, -2.5, g);
-  add(new THREE.CylinderGeometry(0.06, 0.06, 1.4, 6), M.wood, 0, 4.3, -2.5, g);
-  add(box(0.08, 0.55, 0.95), M.iron, 0, 4.7, -2.0, g);
-  // Sandbag parapet + dark iron siege cannon aimed right at Paris!
-  add(box(4.6, 1.1, 1.2), M.sandbag, 0, 0.55, 1.8, g);
-  const brl = add(new THREE.CylinderGeometry(0.24, 0.34, 2.8, 10), M.iron, 0, 1.25, 2.6, g);
-  brl.rotation.x = Math.PI / 2 - 0.18;
-  for (const wx of [-0.68, 0.68]) {
-    const wh = add(new THREE.CylinderGeometry(0.65, 0.65, 0.16, 12), M.woodDark, wx, 0.65, 2.2, g);
+  // Pointed Prussian canvas bell tent with black-white-red pennant
+  add(new THREE.ConeGeometry(2.6, 4.4, 8), M.tent, 0, 2.2, -2.4, g);
+  add(new THREE.CylinderGeometry(0.07, 0.07, 1.5, 6), M.wood, 0, 4.9, -2.4, g);
+  add(box(0.08, 0.65, 1.15), M.red, 0, 5.3, -1.8, g);
+  // Sandbag parapet + bold iron siege cannon aimed right at Paris!
+  add(box(5.2, 1.25, 1.35), M.sandbag, 0, 0.62, 1.6, g);
+  const brl = add(new THREE.CylinderGeometry(0.28, 0.40, 3.2, 10), M.iron, 0, 1.45, 2.5, g);
+  brl.rotation.x = Math.PI / 2 - 0.20;
+  for (const wx of [-0.74, 0.74]) {
+    const wh = add(new THREE.CylinderGeometry(0.72, 0.72, 0.18, 12), M.woodDark, wx, 0.72, 2.1, g);
     wh.rotation.z = Math.PI / 2;
   }
 }
@@ -433,11 +435,11 @@ for (let row = 0; row < 2; row++) {
   }
 }
 // Famous 1870 Krupp "Ballonkanone" (swivel anti-balloon gun angled steeply toward the sky!)
-add(new THREE.CylinderGeometry(0.30, 0.45, 1.2, 10), M.woodDark, -0.5, 0.6, 0, heroTrenchG);
-const antiAirBarrel = add(new THREE.CylinderGeometry(0.14, 0.22, 3.2, 12), M.iron, -1.2, 2.2, 0, heroTrenchG);
-antiAirBarrel.rotation.z = 0.85;
-// Glowing Campfire for Night Shot 9 ("drifting over enemy lines")
-const campFireG = new THREE.Group(); campFireG.position.set(0.6, 0.1, 1.4); heroTrenchG.add(campFireG);
+add(new THREE.CylinderGeometry(0.30, 0.45, 1.2, 10), M.woodDark, -0.8, 0.6, 0, heroTrenchG);
+const antiAirBarrel = add(new THREE.CylinderGeometry(0.16, 0.24, 3.3, 12), M.iron, -1.5, 2.25, 0, heroTrenchG);
+antiAirBarrel.rotation.z = 0.82;
+// Glowing Campfire centered cleanly for Night Shot 9 ("drifting over enemy lines")
+const campFireG = new THREE.Group(); campFireG.position.set(0.3, 0.1, 0.6); heroTrenchG.add(campFireG);
 for (let i = 0; i < 4; i++) {
   const lg = add(new THREE.CylinderGeometry(0.11, 0.12, 1.2, 6), M.woodDark, 0, 0.15, 0, campFireG);
   lg.rotation.set(0.4, i * 0.8, 1.15);
@@ -494,48 +496,49 @@ add(new THREE.CylinderGeometry(0.06, 0.06, 4.0, 8), M.iron, 0, 10.2, -0.5, studi
 add(new THREE.ConeGeometry(1.4, 0.75, 16), M.brass, 0, 8.1, -0.5, studioG);
 add(new THREE.SphereGeometry(0.38, 12, 10), M.lampGlow, 0, 7.75, -0.5, studioG, { cast: false });
 
-// Giant Printed Dispatch Board ("DÉPÊCHES DE PARIS • 1870") on wooden easel on left of bench
-const boardG = new THREE.Group(); boardG.position.set(-4.3, 2.0, -1.6); boardG.rotation.y = 0.32; studioG.add(boardG);
-add(box(4.6, 3.55, 0.24), M.woodDark, 0, 2.45, 0, boardG);
-add(new THREE.PlaneGeometry(4.42, 3.36), M.dispatchBoard, 0, 2.45, 0.14, boardG, { cast: false });
-for (const lx of [-1.6, 1.6]) add(box(0.22, 1.1, 0.22), M.wood, lx, 0.55, 0, boardG);
+// Giant Printed Dispatch Board ("DÉPÊCHES DE PARIS • 1870") tightly positioned on left for vertical 9:16 S20!
+const boardG = new THREE.Group(); boardG.position.set(-2.65, 2.0, -1.8); boardG.rotation.y = 0.42; studioG.add(boardG);
+add(box(3.45, 2.85, 0.22), M.woodDark, 0, 2.25, 0, boardG);
+add(new THREE.PlaneGeometry(3.28, 2.68), M.dispatchBoard, 0, 2.25, 0.13, boardG, { cast: false });
+for (const lx of [-1.2, 1.2]) add(box(0.20, 0.95, 0.20), M.wood, lx, 0.48, 0, boardG);
 
-// Iconic 1870 Brass & Mahogany Bellows Camera on tripod facing the dispatch board!
-const camRigG = new THREE.Group(); camRigG.position.set(1.2, 2.0, -1.4); camRigG.rotation.y = -0.22; studioG.add(camRigG);
+// Iconic 1870 Brass & Mahogany Bellows Camera on tripod centered cleanly for S20!
+const camRigG = new THREE.Group(); camRigG.position.set(1.15, 2.0, -1.5); camRigG.rotation.y = -0.18; studioG.add(camRigG);
 // Wooden tripod legs
-for (const [lx, lz, rx_, rz_] of [[-0.7, 0.6, 0.32, 0.35], [0.7, 0.6, 0.32, -0.35], [0, -0.75, -0.38, 0]]) {
-  const leg = add(new THREE.CylinderGeometry(0.07, 0.05, 2.2, 8), M.wood, lx, 1.0, lz, camRigG);
+for (const [lx, lz, rx_, rz_] of [[-0.62, 0.55, 0.30, 0.32], [0.62, 0.55, 0.30, -0.32], [0, -0.68, -0.35, 0]]) {
+  const leg = add(new THREE.CylinderGeometry(0.065, 0.048, 2.0, 8), M.wood, lx, 0.92, lz, camRigG);
   leg.rotation.set(rx_, 0, rz_);
 }
 // Mahogany rear plate box + accordion leather bellows + brass front lens pointing left (-X)
-add(box(1.15, 1.65, 1.65), M.woodDark, 0.85, 2.45, 0, camRigG);
+add(box(0.95, 1.38, 1.38), M.woodDark, 0.68, 2.25, 0, camRigG);
 for (let i = 0; i < 6; i++) {
-  const s = 1.48 - i * 0.11;
-  add(box(0.26, s, s), M.bellows, 0.15 - i * 0.23, 2.45, 0, camRigG);
+  const s = 1.24 - i * 0.09;
+  add(box(0.22, s, s), M.bellows, 0.12 - i * 0.19, 2.25, 0, camRigG);
 }
-add(box(0.32, 1.05, 1.05), M.woodDark, -1.25, 2.45, 0, camRigG);
-const lens = add(new THREE.CylinderGeometry(0.36, 0.42, 0.68, 18), M.brass, -1.65, 2.45, 0, camRigG);
+add(box(0.28, 0.88, 0.88), M.woodDark, -1.04, 2.25, 0, camRigG);
+const lens = add(new THREE.CylinderGeometry(0.30, 0.36, 0.58, 18), M.brass, -1.38, 2.25, 0, camRigG);
 lens.rotation.z = Math.PI / 2;
-add(new THREE.CylinderGeometry(0.28, 0.28, 0.08, 16), new THREE.MeshBasicMaterial({ color: '#8ad8ff', fog: false }), -2.0, 2.45, 0, camRigG, { cast: false });
+add(new THREE.CylinderGeometry(0.24, 0.24, 0.08, 16), new THREE.MeshBasicMaterial({ color: '#8ad8ff', fog: false }), -1.68, 2.25, 0, camRigG, { cast: false });
 
-// Glowing Golden Optical Projection Cone (shrinking giant dispatches -> tiny lens!)
-const beamCone = add(new THREE.ConeGeometry(1.95, 3.8, 20, 1, true), M.beamGlow, -1.55, 4.45, -1.5, studioG, { cast: false, receive: false, ndSkip: true });
+// Glowing Golden Optical Projection Cone (shrinking giant dispatches -> tiny brass lens!)
+const beamCone = add(new THREE.ConeGeometry(1.42, 2.45, 20, 1, true), M.beamGlow, -1.05, 4.25, -1.65, studioG, { cast: false, receive: false, ndSkip: true });
 beamCone.rotation.z = -Math.PI / 2;
 
-// Hero Microfilm Display Stand + Brass Quill Tube + Wooden Pigeon Perch (foreground for Shot 21!)
-const microStageG = new THREE.Group(); microStageG.position.set(0.2, 2.0, 2.2); studioG.add(microStageG);
+// Hero Microfilm Display Stand + Elevated Brass Quill Tube + Wooden Pigeon Perch (tightly composed for S21!)
+const microStageG = new THREE.Group(); microStageG.position.set(0.0, 2.0, 2.0); studioG.add(microStageG);
 // Glowing amber Microfilm Strip held upright in brass clamp on left
-add(box(0.35, 0.18, 0.35), M.brass, -1.25, 0.09, 0, microStageG);
-add(new THREE.CylinderGeometry(0.05, 0.05, 0.65, 8), M.brass, -1.25, 0.42, 0, microStageG);
-const filmCard = add(box(2.05, 1.32, 0.05), M.microfilm, -1.25, 1.22, 0, microStageG);
-filmCard.rotation.y = 0.18;
-// Miniature red-and-gold quill message tube resting on table right in center
-const quillTube = new THREE.Group(); quillTube.position.set(0.15, 0.20, 0.55); quillTube.rotation.y = -0.35; microStageG.add(quillTube);
-const qtBody = add(new THREE.CylinderGeometry(0.16, 0.16, 0.92, 14), M.red, 0, 0, 0, quillTube); qtBody.rotation.z = Math.PI / 2;
-const qtBand = add(new THREE.CylinderGeometry(0.175, 0.175, 0.24, 14), M.gold, 0, 0, 0, quillTube); qtBand.rotation.z = Math.PI / 2;
-const qtScroll = add(new THREE.CylinderGeometry(0.11, 0.11, 0.32, 12), M.white, 0.54, 0, 0, quillTube); qtScroll.rotation.z = Math.PI / 2;
-// Wooden perch block for the Hero Carrier Pigeon on the right
-add(new THREE.CylinderGeometry(0.55, 0.68, 0.52, 14), M.wood, 1.45, 0.26, 0, microStageG);
+add(box(0.36, 0.20, 0.36), M.brass, -1.10, 0.10, 0, microStageG);
+add(new THREE.CylinderGeometry(0.055, 0.055, 0.88, 8), M.brass, -1.10, 0.52, 0, microStageG);
+const filmCard = add(box(1.62, 1.04, 0.05), M.microfilm, -1.10, 1.38, 0, microStageG);
+filmCard.rotation.y = 0.22;
+// Miniature red-and-gold quill message tube elevated on brass cradle in center (well above y=76%!)
+add(box(0.32, 0.52, 0.32), M.brass, 0.0, 0.26, 0.35, microStageG);
+const quillTube = new THREE.Group(); quillTube.position.set(0.0, 0.64, 0.35); quillTube.rotation.y = -0.22; microStageG.add(quillTube);
+const qtBody = add(new THREE.CylinderGeometry(0.15, 0.15, 0.86, 14), M.red, 0, 0, 0, quillTube); qtBody.rotation.z = Math.PI / 2;
+const qtBand = add(new THREE.CylinderGeometry(0.168, 0.168, 0.22, 14), M.gold, 0, 0, 0, quillTube); qtBand.rotation.z = Math.PI / 2;
+const qtScroll = add(new THREE.CylinderGeometry(0.105, 0.105, 0.30, 12), M.white, 0.50, 0, 0, quillTube); qtScroll.rotation.z = Math.PI / 2;
+// Elevated wooden perch block on the right so Hero Carrier Pigeon stands proudly beside the microfilm!
+add(new THREE.CylinderGeometry(0.46, 0.56, 0.88, 14), M.wood, 1.15, 0.44, 0, microStageG);
 
 // =========================================================================
 // HERO & FLEET 3D GAS BALLOONS
