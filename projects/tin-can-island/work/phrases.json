@@ -1,0 +1,219 @@
+{
+ "duration": 50.285688,
+ "frames30": 1509,
+ "source": "silence-align (cost 1.35)",
+ "segments": [
+  [
+   0.0,
+   1.699592
+  ],
+  [
+   1.915692,
+   3.467937
+  ],
+  [
+   4.131882,
+   6.905964
+  ],
+  [
+   7.104603,
+   9.356009
+  ],
+  [
+   9.846599,
+   11.282585
+  ],
+  [
+   11.569048,
+   13.322993
+  ],
+  [
+   13.599093,
+   16.055918
+  ],
+  [
+   16.606893,
+   18.944989
+  ],
+  [
+   19.279751,
+   22.458005
+  ],
+  [
+   22.667528,
+   23.894104
+  ],
+  [
+   24.491247,
+   25.987914
+  ],
+  [
+   26.128526,
+   27.313855
+  ],
+  [
+   27.487324,
+   28.028776
+  ],
+  [
+   28.153379,
+   29.453016
+  ],
+  [
+   29.955782,
+   30.571043
+  ],
+  [
+   30.764989,
+   31.363696
+  ],
+  [
+   31.724853,
+   34.109501
+  ],
+  [
+   34.724943,
+   36.619342
+  ],
+  [
+   37.201406,
+   38.617687
+  ],
+  [
+   38.971088,
+   39.495601
+  ],
+  [
+   39.64229,
+   42.447891
+  ],
+  [
+   42.886304,
+   44.183243
+  ],
+  [
+   44.621338,
+   45.858163
+  ],
+  [
+   46.396712,
+   47.933628
+  ],
+  [
+   48.059955,
+   50.068889
+  ]
+ ],
+ "phrases": [
+  {
+   "text": "On one island in the Pacific,",
+   "s": 0.0,
+   "e": 1.7
+  },
+  {
+   "text": "the mailman had to swim.",
+   "s": 1.916,
+   "e": 3.468
+  },
+  {
+   "text": "Niuafo'ou is a volcano with no harbor,",
+   "s": 4.132,
+   "e": 6.906
+  },
+  {
+   "text": "and the surf is too rough for ships to land.",
+   "s": 7.105,
+   "e": 9.356
+  },
+  {
+   "text": "So when a steamship appeared,",
+   "s": 9.847,
+   "e": 11.283
+  },
+  {
+   "text": "the strongest swimmers paddled out,",
+   "s": 11.569,
+   "e": 13.323
+  },
+  {
+   "text": "holding the island's letters up on long poles.",
+   "s": 13.599,
+   "e": 16.056
+  },
+  {
+   "text": "The crew lifted the letters aboard in buckets.",
+   "s": 16.607,
+   "e": 18.945
+  },
+  {
+   "text": "Then they sealed the island's new mail inside a biscuit tin,",
+   "s": 19.28,
+   "e": 22.458
+  },
+  {
+   "text": "and threw it into the sea.",
+   "s": 22.668,
+   "e": 23.894
+  },
+  {
+   "text": "The swimmers fought the waves,",
+   "s": 24.491,
+   "e": 25.988
+  },
+  {
+   "text": "grabbed the floating tin,",
+   "s": 26.129,
+   "e": 27.314
+  },
+  {
+   "text": "and pushed it all the way back to shore.",
+   "s": 27.487,
+   "e": 29.453
+  },
+  {
+   "text": "No dock.",
+   "s": 29.956,
+   "e": 30.571
+  },
+  {
+   "text": "No boat.",
+   "s": 30.765,
+   "e": 31.364
+  },
+  {
+   "text": "Just a tin can and a very good swimmer.",
+   "s": 31.725,
+   "e": 34.11
+  },
+  {
+   "text": "Letters sometimes took months.",
+   "s": 34.725,
+   "e": 36.619
+  },
+  {
+   "text": "Then the world noticed.",
+   "s": 37.201,
+   "e": 38.618
+  },
+  {
+   "text": "Collectors everywhere wanted a letter stamped on that tiny island.",
+   "s": 38.971,
+   "e": 42.448
+  },
+  {
+   "text": "Soon it had a new name:",
+   "s": 42.886,
+   "e": 44.183
+  },
+  {
+   "text": "Tin Can Island.",
+   "s": 44.621,
+   "e": 45.858
+  },
+  {
+   "text": "An island with no harbor became famous for its post office.",
+   "s": 46.397,
+   "e": 50.069
+  }
+ ]
+}
