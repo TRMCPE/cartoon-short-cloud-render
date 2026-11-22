@@ -337,15 +337,15 @@ export const fxQuestion = (p, phase = 0) => {
 export const fxRain = (p, phase = 0) => {
   const g = p.g;
   g.save();
-  g.strokeStyle = "rgba(218,238,255,0.68)";
-  g.lineWidth = 5;
+  g.strokeStyle = "rgba(225,242,255,0.48)";
+  g.lineWidth = 3.2;
   g.lineCap = "round";
-  for (let i = 0; i < 24; i++) {
-    const rx = ((i * 73 + phase * 180) % 580) + 10;
-    const ry = ((i * 119 + phase * 420) % 880) + 40;
+  for (let i = 0; i < 22; i++) {
+    const rx = ((i * 79 + phase * 180) % 580) + 10;
+    const ry = ((i * 127 + phase * 420) % 880) + 40;
     g.beginPath();
     g.moveTo(rx, ry);
-    g.lineTo(rx - 28, ry + 78);
+    g.lineTo(rx - 22, ry + 62);
     g.stroke();
   }
   g.restore();

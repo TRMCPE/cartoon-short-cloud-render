@@ -258,7 +258,7 @@ add(tbox(0.55, 0.85, 4.6, 1.4), M.stone, -6.5, 5.04, 1.8, kilda);
 add(tbox(0.55, 0.85, 3.8, 1.4), M.stone, -6.8, 5.04, -9.2, kilda);
 
 // Weathered Wooden Village Post Sign ("ST KILDA • NORTH ATLANTIC") facing +X
-const vSignG = new THREE.Group(); vSignG.position.set(-5.0, 4.62, -3.5); kilda.add(vSignG);
+const vSignG = new THREE.Group(); vSignG.position.set(-6.0, 4.62, -2.6); kilda.add(vSignG);
 add(box(0.18, 2.3, 0.18), M.woodDark, 0, 1.15, -1.0, vSignG);
 add(box(0.18, 2.3, 0.18), M.woodDark, 0, 1.15, 1.0, vSignG);
 add(box(0.16, 1.05, 2.65), M.woodDark, 0, 2.15, 0, vSignG);
@@ -306,14 +306,19 @@ add(box(4.7, 0.45, 12.6), M.waxRed, 0, 0.15, 0, shipG);
 const sBow = add(new THREE.ConeGeometry(2.35, 4.4, 4), M.hullDark, 0, 1.1, 8.4, shipG);
 sBow.rotation.x = Math.PI / 2; sBow.rotation.y = Math.PI / 4;
 add(box(2.6, 1.4, 3.2), M.wood, 0, 3.0, -3.2, shipG);
-// Two wooden masts + billowing cream sails
+// Two wooden masts + crisp billowing cream square-and-fore sails (clearly readable from broadside & 3/4!)
 for (const mz of [-2.4, 3.0]) {
   add(new THREE.CylinderGeometry(0.14, 0.20, 10.5, 8), M.wood, 0, 7.2, mz, shipG);
-  add(new THREE.CylinderGeometry(0.08, 0.08, 4.4, 8), M.wood, 0, 9.6, mz, shipG).rotation.z = Math.PI / 2;
-  add(new THREE.CylinderGeometry(0.08, 0.08, 5.0, 8), M.wood, 0, 6.2, mz, shipG).rotation.z = Math.PI / 2;
-  const sail = add(box(4.4, 3.2, 0.18), M.sail, 0, 7.8, mz + 0.2, shipG);
-  sail.rotation.y = 0.28;
+  add(new THREE.CylinderGeometry(0.08, 0.08, 4.6, 8), M.wood, 0, 9.8, mz, shipG).rotation.x = Math.PI / 2;
+  add(new THREE.CylinderGeometry(0.08, 0.08, 5.2, 8), M.wood, 0, 6.0, mz, shipG).rotation.x = Math.PI / 2;
+  // Fore-and-aft schooner gaff sail (runs along Z so it faces broadside camera cleanly!)
+  const sail = add(box(0.22, 3.8, 4.2), M.sail, 0.25, 7.9, mz - 1.8, shipG);
+  sail.rotation.y = 0.22;
 }
+// Front jib triangular sail on bowsprit
+add(new THREE.CylinderGeometry(0.1, 0.14, 4.2, 7), M.wood, 0, 2.8, 10.6, shipG).rotation.x = Math.PI / 2.3;
+const jib = add(new THREE.ConeGeometry(2.2, 4.8, 3), M.sail, 0, 5.4, 7.6, shipG);
+jib.scale.set(0.15, 1.0, 1.0);
 shipG.visible = false;
 
 // =========================================================================
@@ -352,21 +357,21 @@ lidLabel.rotation.x = -Math.PI / 2;
 // Bold crimson wax seal button on lid corner
 add(new THREE.CylinderGeometry(0.11, 0.11, 0.05, 16), M.waxRed, 0.35, 0.06, 0.14, boatLidG);
 
-// Tethered Hemp Cord + Buoyant Cream Inflated Sheep's Bladder Float!
+// Tethered Hemp Cord + Buoyant Cream Inflated Sheep's Bladder Float (tight harmonious proportions!)
 const floatG = new THREE.Group(); mailboatG.add(floatG);
 const cordCurve = new THREE.QuadraticBezierCurve3(
-  new THREE.Vector3(1.06, 0.30, 0),
-  new THREE.Vector3(1.38, 0.72, 0.06),
-  new THREE.Vector3(1.56, 1.18, 0),
+  new THREE.Vector3(0.95, 0.30, 0),
+  new THREE.Vector3(1.12, 0.62, 0.04),
+  new THREE.Vector3(1.18, 0.96, 0),
 );
 const cordMesh = add(new THREE.TubeGeometry(cordCurve, 18, 0.032, 8, false), M.rope, 0, 0, 0, floatG);
 // Knot collar tying off the neck of the bladder
-const floatBallG = new THREE.Group(); floatBallG.position.set(1.62, 1.56, 0); floatG.add(floatBallG);
-add(new THREE.TorusGeometry(0.11, 0.036, 8, 16), M.rope, -0.05, -0.34, 0, floatBallG).rotation.x = Math.PI / 2;
-add(new THREE.ConeGeometry(0.16, 0.24, 12), M.bladder, -0.04, -0.26, 0, floatBallG).rotation.z = Math.PI;
+const floatBallG = new THREE.Group(); floatBallG.position.set(1.22, 1.28, 0); floatG.add(floatBallG);
+add(new THREE.TorusGeometry(0.095, 0.032, 8, 16), M.rope, -0.04, -0.28, 0, floatBallG).rotation.x = Math.PI / 2;
+add(new THREE.ConeGeometry(0.14, 0.20, 12), M.bladder, -0.03, -0.21, 0, floatBallG).rotation.z = Math.PI;
 // Plump oval inflated cream-parchment sheep's bladder float
-const bladderSphere = add(new THREE.SphereGeometry(0.46, 22, 18), M.bladder, 0, 0.05, 0, floatBallG);
-bladderSphere.scale.set(0.95, 1.16, 0.92);
+const bladderSphere = add(new THREE.SphereGeometry(0.37, 22, 18), M.bladder, 0, 0.04, 0, floatBallG);
+bladderSphere.scale.set(0.95, 1.15, 0.92);
 mailboatG.visible = false;
 
 // =========================================================================
@@ -440,28 +445,28 @@ mapStageG.visible = false;
 // STAGE 4: SCOTTISH MAINLAND COAST & LIGHTHOUSE — isolated at (240, 0, 0)
 // =========================================================================
 const scotStageG = new THREE.Group(); scotStageG.position.set(240, 0, 0); scene.add(scotStageG);
-// Gentle sandy-pebble beach & green Highland hills rising west (-X)
-const scotBeach = add(new THREE.CylinderGeometry(16.0, 20.5, 2.4, 20), M.sand, -14.5, -0.35, 0, scotStageG);
+// Clean flat sandy shoreline shelf (top at y = 0.56 so nothing sinks!) + green Highland hills behind
+const scotBeach = add(new THREE.CylinderGeometry(14.5, 17.5, 1.4, 22), M.sand, -12.5, -0.14, 0, scotStageG);
 scotBeach.scale.set(1.05, 1, 1.25);
-const scotHill1 = add(new THREE.SphereGeometry(14.0, 14, 10), M.grass, -17.0, 2.2, -3.5, scotStageG);
-scotHill1.scale.set(1.1, 0.65, 1.35);
-const scotHill2 = add(new THREE.SphereGeometry(11.0, 12, 10), M.grass, -15.5, 1.8, 8.5, scotStageG);
-scotHill2.scale.set(1.0, 0.58, 1.2);
-// Rocky headland & iconic Scottish white lighthouse!
-add(new THREE.CylinderGeometry(4.2, 5.4, 3.6, 12), M.cliff, -8.5, 1.8, -5.5, scotStageG);
-const lhG = new THREE.Group(); lhG.position.set(-8.5, 3.5, -5.5); scotStageG.add(lhG);
-add(new THREE.CylinderGeometry(1.15, 1.65, 8.2, 16), M.lighthouse, 0, 4.1, 0, lhG);
-add(new THREE.CylinderGeometry(1.42, 1.32, 0.35, 16), M.iron, 0, 8.25, 0, lhG);
-add(new THREE.CylinderGeometry(1.05, 1.05, 1.45, 14), M.warmGlow, 0, 9.15, 0, lhG, { cast: false });
-add(new THREE.ConeGeometry(1.28, 1.15, 14), M.waxRed, 0, 10.42, 0, lhG);
+const scotHill1 = add(new THREE.SphereGeometry(14.0, 14, 10), M.grass, -20.0, 2.2, -4.5, scotStageG);
+scotHill1.scale.set(1.05, 0.68, 1.35);
+const scotHill2 = add(new THREE.SphereGeometry(11.0, 12, 10), M.grass, -17.5, 1.8, 8.5, scotStageG);
+scotHill2.scale.set(1.0, 0.62, 1.2);
+// Rocky headland & iconic Scottish white-and-red lighthouse prominent in background!
+add(new THREE.CylinderGeometry(3.8, 5.0, 2.6, 12), M.cliff, -8.2, 1.3, -2.4, scotStageG);
+const lhG = new THREE.Group(); lhG.position.set(-8.2, 2.55, -2.4); scotStageG.add(lhG);
+add(new THREE.CylinderGeometry(1.1, 1.55, 7.6, 16), M.lighthouse, 0, 3.8, 0, lhG);
+add(new THREE.CylinderGeometry(1.36, 1.26, 0.35, 16), M.iron, 0, 7.65, 0, lhG);
+add(new THREE.CylinderGeometry(1.0, 1.0, 1.4, 14), M.warmGlow, 0, 8.52, 0, lhG, { cast: false });
+add(new THREE.ConeGeometry(1.24, 1.1, 14), M.waxRed, 0, 9.75, 0, lhG);
 // White keeper's cottage beside lighthouse
-add(box(3.4, 2.0, 2.6), M.white, -2.5, 1.0, 1.2, lhG);
-const lhRoof = add(new THREE.CylinderGeometry(1.85, 1.85, 3.7, 3), M.slate, -2.5, 2.55, 1.2, lhG);
+add(box(3.2, 1.9, 2.4), M.white, -2.4, 0.95, 1.3, lhG);
+const lhRoof = add(new THREE.CylinderGeometry(1.75, 1.75, 3.5, 3), M.slate, -2.4, 2.45, 1.3, lhG);
 lhRoof.rotation.z = Math.PI / 2; lhRoof.scale.set(1, 1, 0.72);
 // Beach pebbles / coastal rocks
-for (const [rx_, rz_, rs] of [[0.6, -2.8, 1.1], [1.2, 3.2, 1.3], [-1.8, 4.2, 1.6], [-2.4, -3.5, 1.4]]) {
-  const r = add(new THREE.DodecahedronGeometry(rs, 0), M.cliffDark, rx_, 0.35, rz_, scotStageG);
-  r.scale.set(1.2, 0.55, 1.0);
+for (const [rx_, rz_, rs] of [[0.6, -3.2, 1.0], [1.2, 3.8, 1.1], [-2.8, 3.6, 1.3], [-3.4, -4.2, 1.3]]) {
+  const r = add(new THREE.DodecahedronGeometry(rs, 0), M.cliffDark, rx_, 0.6, rz_, scotStageG);
+  r.scale.set(1.2, 0.52, 1.0);
 }
 scotStageG.visible = false;
 
@@ -472,17 +477,17 @@ const norwStageG = new THREE.Group(); norwStageG.position.set(360, 0, 0); scene.
 // Rocky fjord shoreline shelf
 const norwBase = add(new THREE.CylinderGeometry(15.0, 19.5, 2.8, 18), M.snowRock, -13.5, -0.2, 0, norwStageG);
 norwBase.scale.set(1.05, 1, 1.3);
-// Steep dramatic snow-capped Norwegian fjord peaks behind!
-const fPeak1 = add(new THREE.ConeGeometry(14.0, 26.0, 8), M.snowRock, -24.0, 13.0, -7.5, norwStageG);
+// Steep dramatic snow-capped Norwegian fjord peaks rising proudly behind the red boathouse!
+const fPeak1 = add(new THREE.ConeGeometry(13.5, 28.0, 8), M.snowRock, -21.0, 14.0, -3.0, norwStageG);
 fPeak1.scale.set(1.0, 1, 1.25);
-const fPeak2 = add(new THREE.ConeGeometry(12.0, 22.0, 8), M.snowRock, -22.5, 11.0, 9.5, norwStageG);
-// Wooden fjord pier deck right at water's edge (top y = 1.15)
-add(tbox(4.8, 0.32, 6.2, 1.6), M.wood, -1.6, 1.0, 0, norwStageG);
-for (const [px, pz] of [[-3.5, -2.6], [0.4, -2.6], [-3.5, 2.6], [0.4, 2.6]]) {
+const fPeak2 = add(new THREE.ConeGeometry(12.0, 24.0, 8), M.snowRock, -19.5, 12.0, 7.5, norwStageG);
+// Wooden fjord pier deck right at water's edge (top y = 1.16)
+add(tbox(5.4, 0.32, 6.8, 1.6), M.wood, -1.3, 1.0, 0.2, norwStageG);
+for (const [px, pz] of [[-3.5, -2.8], [1.0, -2.8], [-3.5, 3.2], [1.0, 3.2]]) {
   add(new THREE.CylinderGeometry(0.16, 0.16, 1.8, 8), M.woodDark, px, 0.15, pz, norwStageG);
 }
 // Iconic Red Norwegian Rorbuer Wooden Boathouse on the fjord shore!
-const rorbG = new THREE.Group(); rorbG.position.set(-6.4, 1.2, -3.8); norwStageG.add(rorbG);
+const rorbG = new THREE.Group(); rorbG.position.set(-6.4, 1.2, -3.2); norwStageG.add(rorbG);
 add(tbox(4.4, 3.0, 5.4, 1.8), M.norwayRed, 0, 1.5, 0, rorbG);
 const rRoof = add(new THREE.CylinderGeometry(3.0, 3.0, 5.9, 3), M.pineSnow, 0, 3.85, 0, rorbG);
 rRoof.rotation.x = Math.PI / 2; rRoof.rotation.y = Math.PI; rRoof.scale.set(1.05, 1, 0.72);
@@ -493,7 +498,7 @@ for (const wz of [-1.65, 1.65]) {
   add(box(0.16, 1.0, 1.0), M.white, 2.22, 1.72, wz, rorbG, { cast: false });
   add(box(0.19, 0.76, 0.76), M.warmGlow, 2.25, 1.72, wz, rorbG, { cast: false });
 }
-// Snow-dusted Nordic evergreen pine trees!
+// Snow-dusted Nordic evergreen pine trees flanking the boathouse!
 const buildPine = (x, y, z, s = 1) => {
   const g = new THREE.Group(); g.position.set(x, y, z); g.scale.setScalar(s); norwStageG.add(g);
   add(new THREE.CylinderGeometry(0.16, 0.24, 1.6, 7), M.woodDark, 0, 0.8, 0, g);
@@ -502,11 +507,11 @@ const buildPine = (x, y, z, s = 1) => {
     add(new THREE.ConeGeometry(0.95 - i * 0.22, 0.9, 7), M.pineSnow, 0, 2.55 + i * 1.25, 0, g);
   }
 };
-buildPine(-7.2, 1.2, 3.4, 1.15);
-buildPine(-10.5, 1.5, 5.8, 1.3);
-buildPine(-11.2, 1.6, -2.5, 1.25);
-buildPine(-9.6, 1.4, -8.5, 1.35);
-buildPine(-5.4, 1.2, 5.8, 0.95);
+buildPine(-6.0, 1.2, 2.6, 1.15);
+buildPine(-9.4, 1.5, 4.8, 1.3);
+buildPine(-10.5, 1.6, -2.5, 1.25);
+buildPine(-8.8, 1.4, -7.8, 1.35);
+buildPine(-4.5, 1.2, 5.2, 0.95);
 norwStageG.visible = false;
 
 // ---------- painted clouds (CPU-safe 2D canvas, no ink) ----------
@@ -664,7 +669,8 @@ function worldState(S, f) {
     waterU.shoreCenter.value.set(-24.0, 0.0); waterU.shoreRad.value = 23.0;
   }
 
-  // Calendar & cliff lantern
+  // Calendar, village sign & cliff lantern
+  vSignG.visible = S.showSign !== false;
   calG.visible = !!S.showCalendar;
   if (S.showCalendar) {
     const mIdx = Math.min(calMats.length - 1, Math.max(0, S.monthIdx || 0));
@@ -717,9 +723,9 @@ function worldState(S, f) {
     // Float state
     floatG.visible = !!S.boat.hasFloat;
     if (floatG.visible) {
-      const bob = Math.sin(t * 3.8) * 0.08;
+      const bob = Math.sin(t * 3.8) * 0.06;
       floatG.rotation.z = (S.boat.floatTilt ?? -0.18) + Math.sin(t * 3.0) * 0.08;
-      floatBallG.position.y = 1.56 + bob;
+      floatBallG.position.y = 1.28 + bob;
     }
   }
 }
