@@ -449,20 +449,20 @@ const scotStageG = new THREE.Group(); scotStageG.position.set(240, 0, 0); scene.
 // Clean flat sandy shoreline shelf (top at y = 0.56 so nothing sinks!) + green Highland hills behind
 const scotBeach = add(new THREE.CylinderGeometry(14.5, 17.5, 1.4, 22), M.sand, -12.5, -0.14, 0, scotStageG);
 scotBeach.scale.set(1.05, 1, 1.25);
-const scotHill1 = add(new THREE.SphereGeometry(14.0, 14, 10), M.grass, -20.0, 2.2, -4.5, scotStageG);
+const scotHill1 = add(new THREE.SphereGeometry(13.5, 14, 10), M.grass, -24.5, 2.0, -5.5, scotStageG);
 scotHill1.scale.set(1.05, 0.68, 1.35);
-const scotHill2 = add(new THREE.SphereGeometry(11.0, 12, 10), M.grass, -17.5, 1.8, 8.5, scotStageG);
+const scotHill2 = add(new THREE.SphereGeometry(11.0, 12, 10), M.grass, -19.5, 1.6, 8.5, scotStageG);
 scotHill2.scale.set(1.0, 0.62, 1.2);
-// Rocky headland & picturesque Scottish white-and-red lighthouse sized cleanly to fit full tower + glowing lantern in 9:16!
-add(new THREE.CylinderGeometry(3.4, 4.4, 1.8, 12), M.cliff, -7.8, 0.9, -2.0, scotStageG);
-const lhG = new THREE.Group(); lhG.position.set(-7.8, 1.75, -2.0); scotStageG.add(lhG);
-add(new THREE.CylinderGeometry(0.82, 1.18, 4.6, 16), M.lighthouse, 0, 2.3, 0, lhG);
-add(new THREE.CylinderGeometry(1.06, 0.98, 0.26, 16), M.iron, 0, 4.65, 0, lhG);
-add(new THREE.CylinderGeometry(0.76, 0.76, 1.05, 14), M.warmGlow, 0, 5.28, 0, lhG, { cast: false });
-add(new THREE.ConeGeometry(0.96, 0.85, 14), M.waxRed, 0, 6.22, 0, lhG);
+// Rocky headland & picturesque Scottish white-and-red lighthouse 100% clear of hills (full tower visible base-to-roof!)
+add(new THREE.CylinderGeometry(2.8, 3.6, 1.3, 12), M.cliff, -6.2, 0.65, -3.2, scotStageG);
+const lhG = new THREE.Group(); lhG.position.set(-6.2, 1.25, -3.2); scotStageG.add(lhG);
+add(new THREE.CylinderGeometry(0.76, 1.08, 4.4, 16), M.lighthouse, 0, 2.2, 0, lhG);
+add(new THREE.CylinderGeometry(0.98, 0.90, 0.24, 16), M.iron, 0, 4.45, 0, lhG);
+add(new THREE.CylinderGeometry(0.70, 0.70, 0.96, 14), M.warmGlow, 0, 5.04, 0, lhG, { cast: false });
+add(new THREE.ConeGeometry(0.90, 0.80, 14), M.waxRed, 0, 5.90, 0, lhG);
 // White keeper's cottage beside lighthouse
-add(box(2.6, 1.5, 2.0), M.white, -2.0, 0.75, 1.1, lhG);
-const lhRoof = add(new THREE.CylinderGeometry(1.42, 1.42, 2.9, 3), M.slate, -2.0, 1.95, 1.1, lhG);
+add(box(2.4, 1.4, 1.9), M.white, -1.9, 0.70, 1.1, lhG);
+const lhRoof = add(new THREE.CylinderGeometry(1.32, 1.32, 2.7, 3), M.slate, -1.9, 1.82, 1.1, lhG);
 lhRoof.rotation.z = Math.PI / 2; lhRoof.scale.set(1, 1, 0.72);
 // Beach pebbles / coastal rocks
 for (const [rx_, rz_, rs] of [[0.6, -3.2, 1.0], [1.2, 3.8, 1.1], [-2.8, 3.6, 1.3], [-3.4, -4.2, 1.3]]) {

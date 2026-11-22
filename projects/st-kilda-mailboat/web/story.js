@@ -207,10 +207,10 @@ const CAMS = {
     { f: 1048, pos: [31.2, 2.7, 7.0], look: [31.8, 0.96, 0.0], fov: 41, roll: 1.8 },
     { f: 1097, pos: [36.2, 2.5, 7.2], look: [36.6, 0.92, 0.0], fov: 40, roll: -1.4 },
   ],
-  // 18. POLISHED: Sunlit Scottish coast framing FULL white-and-red Lighthouse, amazed scotFinder with SOS scroll & washed-up mailboat + float cleanly ABOVE y=76%!
+  // 18. POLISHED: Sunlit Scottish coast framing FULL white-and-red Lighthouse (base to roof!), amazed scotFinder & washed-up mailboat cleanly ABOVE y=76%!
   scotland_shore: [
-    { f: 1098, pos: [250.5, 4.4, 5.6], look: [237.4, 2.55, -0.4], fov: 46 },
-    { f: 1183, pos: [248.2, 3.9, 4.2], look: [237.6, 2.45, -0.4], fov: 44, ease: 'easeOut' },
+    { f: 1098, pos: [250.5, 4.0, 6.2], look: [237.4, 2.25, -0.8], fov: 46 },
+    { f: 1183, pos: [248.2, 3.6, 4.6], look: [237.6, 2.15, -0.7], fov: 44, ease: 'easeOut' },
   ],
   // 19. POLISHED: Crisp Norwegian fjord framing snowy peaks, crimson rorbuer boathouse, pier mailboat + float & ecstatic norwayFinder cleanly ABOVE y=76%!
   norway_shore: [
@@ -222,11 +222,11 @@ const CAMS = {
     { f: 1256, pos: [7.6, 6.4, 3.8], look: [-2.6, 5.85, 0.25], fov: 43 },
     { f: 1331, pos: [6.2, 6.2, 2.4], look: [-2.6, 5.90, 0.25], fov: 40, ease: 'easeOut' },
   ],
-  // 21. POLISHED HERO FINALE: Starts close on glowing mailboat + float on shimmering golden ocean, cranes wide revealing St Kilda cliffs, cottages & rescue ship!
+  // 21. POLISHED HERO FINALE: Starts close on glowing mailboat + float on shimmering golden ocean (ABOVE y=76%), cranes wide revealing St Kilda, cottages & approaching rescue ship!
   ocean_post_office: [
-    { f: 1332, pos: [17.8, 2.3, 5.4],   look: [12.5, 1.15, 0.5],  fov: 40 },
-    { f: 1370, pos: [21.8, 4.6, 10.6],  look: [10.0, 2.2, -1.2],  fov: 44, path: [[19.8, 3.5, 8.0]] },
-    { f: 1409, pos: [27.5, 8.8, 16.8],  look: [3.5, 4.4, -3.5],   fov: 46, ease: 'easeOut' },
+    { f: 1332, pos: [17.8, 2.1, 5.2],   look: [12.5, 0.65, 0.5],  fov: 40 },
+    { f: 1370, pos: [22.2, 4.2, 10.2],  look: [11.5, 0.85, -1.5], fov: 44, path: [[20.0, 3.2, 7.6]] },
+    { f: 1409, pos: [28.0, 8.2, 16.0],  look: [5.0, 2.8, -4.5],   fov: 46, ease: 'easeOut' },
   ],
 };
 
@@ -386,8 +386,8 @@ export const worldAt = (f) => {
         s: 0.96, rx: 0.14 * Math.sin(t * 2.6), ry: 0.25 + k * 0.35, rz: 0.14 * Math.cos(t * 2.2),
         lid: 0, hasFloat: true, floatTilt: -0.22,
       };
-      // Hopeful rescue sailing schooner approaching on the golden horizon!
-      W.ship = { x: lerp(26, 20, k), z: -13.5, yaw: -1.6, roll: 0.7, s: 0.95 };
+      // Hopeful rescue sailing schooner approaching visibly across the golden bay!
+      W.ship = { x: lerp(18, 12, k), z: -7.8, yaw: -1.6, roll: 0.7, s: 0.85 };
       break;
     }
   }
