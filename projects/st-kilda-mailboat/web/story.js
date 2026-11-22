@@ -386,8 +386,8 @@ export const worldAt = (f) => {
         s: 0.96, rx: 0.14 * Math.sin(t * 2.6), ry: 0.25 + k * 0.35, rz: 0.14 * Math.cos(t * 2.2),
         lid: 0, hasFloat: true, floatTilt: -0.22,
       };
-      // Hopeful rescue sailing schooner approaching visibly across the golden bay!
-      W.ship = { x: lerp(18, 12, k), z: -7.8, yaw: -1.6, roll: 0.7, s: 0.85 };
+      // Hopeful rescue sailing schooner approaching cleanly in open golden water!
+      W.ship = { x: lerp(22, 17, k), z: -9.8, yaw: -1.65, roll: 0.7, s: 0.82 };
       break;
     }
   }
