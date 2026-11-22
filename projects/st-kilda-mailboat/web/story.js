@@ -128,11 +128,11 @@ const CAMS = {
     { f: 63,  pos: [8.6, 7.2, 3.2],   look: [-6.5, 5.75, -1.2], fov: 44 },
     { f: 129, pos: [7.2, 7.0, -0.4],  look: [-6.6, 5.80, -1.3], fov: 41, path: [[8.0, 7.1, 1.4]] },
   ],
-  // 3. POLISHED: Higher North Atlantic Chart pull framing FULL "ST KILDA", "100+ MILES" arch & "SCOTLAND"!
+  // 3. POLISHED: Higher North Atlantic Chart pull framing FULL "ST KILDA", "100+ MILES" arch & "SCOTLAND" with crisp side margins!
   hundred_miles: [
-    { f: 130, pos: [117.4, 12.6, 8.4],  look: [117.6, 2.0, 1.5], fov: 44 },
-    { f: 178, pos: [118.2, 15.2, 10.2], look: [118.2, 2.0, 1.6], fov: 45 },
-    { f: 224, pos: [118.6, 17.2, 11.6], look: [118.5, 2.0, 1.6], fov: 45, ease: 'easeOut' },
+    { f: 130, pos: [117.8, 14.8, 9.8],  look: [118.0, 2.0, 1.5], fov: 45 },
+    { f: 178, pos: [118.2, 17.6, 11.8], look: [118.2, 2.0, 1.6], fov: 46 },
+    { f: 224, pos: [118.6, 19.6, 13.0], look: [118.5, 2.0, 1.6], fov: 46, ease: 'easeOut' },
   ],
   // 4. POLISHED: Stormy 9-month cliffside calendar flipping OCT -> JUN through crisp rain streaks!
   nine_months: [
@@ -198,8 +198,8 @@ const CAMS = {
   ],
   // 16. POLISHED: High wide North Atlantic orbit showing FULL ST KILDA, SCOTLAND, NORWAY, all 4 mystery arches & all 4 "?" badges!
   nobody_knew: [
-    { f: 934, pos: [119.8, 22.8, 14.4], look: [120.2, 2.0, -0.4], fov: 49 },
-    { f: 997, pos: [120.6, 20.6, 12.8], look: [120.2, 2.0, -0.4], fov: 47, path: [[120.3, 21.8, 13.6]] },
+    { f: 934, pos: [120.4, 27.2, 17.0], look: [120.5, 2.0, -0.5], fov: 50 },
+    { f: 997, pos: [120.8, 24.8, 15.4], look: [120.5, 2.0, -0.5], fov: 48, path: [[120.7, 26.0, 16.2]] },
   ],
   // 17. POLISHED: Balanced ocean tracking framing ENTIRE wooden mailboat + hemp cord + bobbing sheep's bladder float cleanly above y=76%!
   ocean_weeks: [
@@ -207,26 +207,26 @@ const CAMS = {
     { f: 1048, pos: [31.2, 2.7, 7.0], look: [31.8, 0.96, 0.0], fov: 41, roll: 1.8 },
     { f: 1097, pos: [36.2, 2.5, 7.2], look: [36.6, 0.92, 0.0], fov: 40, roll: -1.4 },
   ],
-  // 18. POLISHED: Sunlit Scottish coast framing unburied washed-up mailboat + float, amazed scotFinder with SOS scroll & towering Scottish Lighthouse!
+  // 18. POLISHED: Sunlit Scottish coast framing FULL white-and-red Lighthouse, amazed scotFinder with SOS scroll & washed-up mailboat + float cleanly ABOVE y=76%!
   scotland_shore: [
-    { f: 1098, pos: [248.6, 4.5, 5.8], look: [237.4, 3.3, -0.6], fov: 45 },
-    { f: 1183, pos: [246.4, 4.0, 4.4], look: [237.6, 3.1, -0.5], fov: 42, ease: 'easeOut' },
+    { f: 1098, pos: [250.5, 4.4, 5.6], look: [237.4, 2.55, -0.4], fov: 46 },
+    { f: 1183, pos: [248.2, 3.9, 4.2], look: [237.6, 2.45, -0.4], fov: 44, ease: 'easeOut' },
   ],
-  // 19. POLISHED: Crisp Norwegian fjord framing snowy peaks, crimson rorbuer boathouse, snow-dusted pines, pier mailboat + float & ecstatic norwayFinder!
+  // 19. POLISHED: Crisp Norwegian fjord framing snowy peaks, crimson rorbuer boathouse, pier mailboat + float & ecstatic norwayFinder cleanly ABOVE y=76%!
   norway_shore: [
-    { f: 1184, pos: [369.0, 4.9, 6.4], look: [357.2, 3.5, -0.5], fov: 46 },
-    { f: 1255, pos: [366.8, 4.3, 4.8], look: [357.4, 3.3, -0.4], fov: 43, ease: 'easeOut' },
+    { f: 1184, pos: [369.8, 4.4, 6.2], look: [357.2, 2.55, -0.3], fov: 46 },
+    { f: 1255, pos: [367.4, 3.9, 4.6], look: [357.4, 2.45, -0.3], fov: 44, ease: 'easeOut' },
   ],
   // 20. POLISHED: Warm dusk cliffside push-in framing ALL 3 islanders + glowing brass storm lantern (zero edge crop!)
   just_wait: [
     { f: 1256, pos: [7.6, 6.4, 3.8], look: [-2.6, 5.85, 0.25], fov: 43 },
     { f: 1331, pos: [6.2, 6.2, 2.4], look: [-2.6, 5.90, 0.25], fov: 40, ease: 'easeOut' },
   ],
-  // 21. POLISHED HERO FINALE: Starts close on glowing mailboat + float on shimmering sea, cranes wide over ocean revealing St Kilda, sea stack & approaching rescue ship!
+  // 21. POLISHED HERO FINALE: Starts close on glowing mailboat + float on shimmering golden ocean, cranes wide revealing St Kilda cliffs, cottages & rescue ship!
   ocean_post_office: [
-    { f: 1332, pos: [16.2, 2.6, 5.0],   look: [10.4, 1.05, 0.0],  fov: 40 },
-    { f: 1370, pos: [20.4, 5.4, 9.6],   look: [4.2, 2.8, -1.2],   fov: 43, path: [[18.4, 4.0, 7.3]] },
-    { f: 1409, pos: [26.0, 9.6, 15.2],  look: [-3.5, 5.2, -2.5],  fov: 46, ease: 'easeOut' },
+    { f: 1332, pos: [17.8, 2.3, 5.4],   look: [12.5, 1.15, 0.5],  fov: 40 },
+    { f: 1370, pos: [21.8, 4.6, 10.6],  look: [10.0, 2.2, -1.2],  fov: 44, path: [[19.8, 3.5, 8.0]] },
+    { f: 1409, pos: [27.5, 8.8, 16.8],  look: [3.5, 4.4, -3.5],   fov: 46, ease: 'easeOut' },
   ],
 };
 
@@ -367,12 +367,12 @@ export const worldAt = (f) => {
     }
     case 'scotland_shore': {
       W.stage = 'scotland'; W.chop = 0.85;
-      W.boat = { x: 240.3, y: 0.58, z: 1.15, s: 0.78, ry: -0.35, rz: 0.08, lid: 0, hasFloat: true, floatTilt: -0.18 };
+      W.boat = { x: 239.8, y: 0.58, z: 1.05, s: 0.72, ry: -0.35, rz: 0.08, lid: 0, hasFloat: true, floatTilt: -0.18 };
       break;
     }
     case 'norway_shore': {
       W.stage = 'norway'; W.chop = 0.75;
-      W.boat = { x: 360.0, y: 1.18, z: 1.25, s: 0.72, ry: -0.30, rz: 0.06, lid: 0, hasFloat: true, floatTilt: -0.18 };
+      W.boat = { x: 359.3, y: 1.18, z: 1.10, s: 0.70, ry: -0.30, rz: 0.06, lid: 0, hasFloat: true, floatTilt: -0.18 };
       break;
     }
     case 'just_wait':
@@ -382,12 +382,12 @@ export const worldAt = (f) => {
       W.stage = 'kilda'; W.chop = 1.05;
       const k = ramp(f, 1332, 1409);
       W.boat = {
-        x: lerp(9.4, 11.4, k), y: 0.36 + Math.sin(t * 3.0) * 0.14, z: 0.0,
-        s: 0.94, rx: 0.14 * Math.sin(t * 2.6), ry: 0.25 + k * 0.35, rz: 0.14 * Math.cos(t * 2.2),
+        x: lerp(12.5, 14.5, k), y: 0.38 + Math.sin(t * 3.0) * 0.14, z: 0.5,
+        s: 0.96, rx: 0.14 * Math.sin(t * 2.6), ry: 0.25 + k * 0.35, rz: 0.14 * Math.cos(t * 2.2),
         lid: 0, hasFloat: true, floatTilt: -0.22,
       };
       // Hopeful rescue sailing schooner approaching on the golden horizon!
-      W.ship = { x: lerp(34, 26, k), z: -10.5, yaw: -1.45, roll: 0.7, s: 0.95 };
+      W.ship = { x: lerp(26, 20, k), z: -13.5, yaw: -1.6, roll: 0.7, s: 0.95 };
       break;
     }
   }
@@ -417,7 +417,7 @@ export const actorsAt = (f, T) => {
     case 'st_kilda_village': {
       out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'wave', R: 'hip', wv: q(f * 0.32, 1), expr: 'smile', facing: 1 }, [-5.2, 4.62, -0.3], { tint, ground: 4.62, s: 1.04 }));
       out.push(C(T, 'islanderB', { ...id(4), seed: 4, L: 'hip', R: 'wave', wv: q(f * 0.3 + 1.2, 1), expr: 'hopeful', facing: 1 }, [-5.8, 4.62, 1.05], { tint, ground: 4.62, s: 1.02 }));
-      out.push(C(T, 'elder', { ...id(5), seed: 5, L: 'hang', R: 'shade', expr: 'neutral', facing: 1 }, [-6.8, 4.62, -1.55], { tint, ground: 4.62, s: 1.04 }));
+      out.push(C(T, 'elder', { ...id(5), seed: 5, L: 'hang', R: 'shade', expr: 'neutral', facing: 1 }, [-4.6, 4.62, -1.35], { tint, ground: 4.62, s: 1.04 }));
       break;
     }
     case 'food_medicine': {
@@ -436,19 +436,19 @@ export const actorsAt = (f, T) => {
       break;
     }
     case 'carve_boat': {
-      // Raised cleanly to y = 1.62 behind oak workbench so sweater, carving arms & chisel show above the tiny boat!
-      out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'hold', R: 'carve', chisel: true, wv: q(f * 0.52, 1), expr: 'determined', facing: 0, look: 0 }, [-120.1, 1.62, -1.35], { tint, blob: false, s: 1.02 }));
+      // Standing naturally BEHIND oak workbench (back edge z = -0.75) at y = 1.32 so waist sits behind table & chest/chisel rise cleanly above!
+      out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'hold', R: 'carve', chisel: true, wv: q(f * 0.52, 1), expr: 'determined', facing: 0, look: 0 }, [-120.1, 1.32, -1.15], { tint, blob: false, s: 1.05 }));
       break;
     }
     case 'seal_message': {
       const sealed = f >= 738;
-      out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'hold', R: sealed ? 'up' : 'hold', expr: sealed ? 'grin' : 'determined', facing: 0 }, [-120.1, 1.56, -1.50], { tint, blob: false, s: 1.02 }));
+      out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'hold', R: sealed ? 'up' : 'hold', expr: sealed ? 'grin' : 'determined', facing: 0 }, [-120.1, 1.30, -1.20], { tint, blob: false, s: 1.05 }));
       break;
     }
     case 'sheep_bladder': {
-      // Cleanly flanking the carved wooden boat + inflated sheep's bladder float with generous side margins!
-      out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'hip', R: 'point', expr: 'grin', facing: 1 }, [-121.0, 1.56, -1.45], { tint, blob: false, s: 1.02 }));
-      out.push(C(T, 'elder', { ...id(5), seed: 5, L: 'up', R: 'hip', expr: 'hopeful', facing: -1 }, [-118.9, 1.56, -1.45], { tint, blob: false, s: 1.02 }));
+      // Standing naturally BEHIND the oak workbench flanking the wooden boat + inflated sheep's bladder float!
+      out.push(C(T, 'islanderA', { ...id(3), seed: 3, L: 'hip', R: 'point', expr: 'grin', facing: 1 }, [-121.0, 1.30, -1.18], { tint, blob: false, s: 1.05 }));
+      out.push(C(T, 'elder', { ...id(5), seed: 5, L: 'up', R: 'hip', expr: 'hopeful', facing: -1 }, [-118.9, 1.30, -1.18], { tint, blob: false, s: 1.05 }));
       break;
     }
     case 'throw_sea': {
@@ -576,15 +576,15 @@ export const fxAt = (f, T) => {
   // Golden sparkles on Scottish discovery, Norwegian discovery, and triumphant ocean finale!
   if (S.id === 'scotland_shore') {
     const ph = q((f * 0.06) % 6.28, 1);
-    out.push(FX('spks_' + ph, (p) => T.fxSparkle(p, ph), [240.3, 0.95, 1.15], 1.0));
+    out.push(FX('spks_' + ph, (p) => T.fxSparkle(p, ph), [239.8, 0.95, 1.05], 0.95));
   }
   if (S.id === 'norway_shore') {
     const ph = q((f * 0.06) % 6.28, 1);
-    out.push(FX('spkn_' + ph, (p) => T.fxSparkle(p, ph), [360.0, 1.45, 1.25], 0.95));
+    out.push(FX('spkn_' + ph, (p) => T.fxSparkle(p, ph), [359.3, 1.45, 1.10], 0.92));
   }
   if (S.id === 'ocean_post_office') {
     const ph = q((f * 0.06) % 6.28, 1);
-    out.push(FX('spkf_' + ph, (p) => T.fxSparkle(p, ph), [10.4, 0.95, 0.0], 1.35));
+    out.push(FX('spkf_' + ph, (p) => T.fxSparkle(p, ph), [13.5, 0.95, 0.5], 1.35));
   }
 
   return out;

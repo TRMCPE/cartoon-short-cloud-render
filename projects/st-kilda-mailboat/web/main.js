@@ -378,26 +378,27 @@ mailboatG.visible = false;
 // STAGE 2: COZY LANTERN CARVING WORKBENCH STUDIO — isolated at (-120, 0, 0)
 // =========================================================================
 const benchStageG = new THREE.Group(); benchStageG.position.set(-120, 0, 0); scene.add(benchStageG);
-// Rustic oak tabletop (top at y = 2.0)
-add(tbox(14.0, 0.55, 6.5, 2.2), M.bench, 0, 1.72, 0, benchStageG, { cast: false });
-// Heavy table legs
-for (const [lx, lz] of [[-5.6, -2.5], [5.6, -2.5], [-5.6, 2.5], [5.6, 2.5]]) {
+// Rustic oak tabletop centered forward (z in [-0.75, +2.65], top at y = 2.0) so actors stand naturally BEHIND the bench!
+add(tbox(14.0, 0.55, 3.4, 2.0), M.bench, 0, 1.72, 0.95, benchStageG, { cast: false });
+// Solid wooden front apron & legs
+add(tbox(13.6, 1.5, 0.25, 2.0), M.woodDark, 0, 0.75, -0.65, benchStageG, { cast: false });
+for (const [lx, lz] of [[-5.6, -0.5], [5.6, -0.5], [-5.6, 2.3], [5.6, 2.3]]) {
   add(box(0.45, 1.8, 0.45), M.woodDark, lx, 0.7, lz, benchStageG);
 }
 // Cozy St Kilda stone cottage back wall + small twilight arched window
-add(tbox(22.0, 14.0, 0.6, 3.0), M.cottageWall, 0, 7.0, -4.6, benchStageG, { cast: false });
-add(box(2.6, 2.8, 0.3), M.woodDark, 3.2, 5.2, -4.3, benchStageG, { cast: false });
-add(box(2.2, 2.4, 0.34), M.windowNight, 3.2, 5.2, -4.28, benchStageG, { cast: false });
-add(box(2.2, 0.12, 0.38), M.woodDark, 3.2, 5.2, -4.25, benchStageG, { cast: false });
-add(box(0.12, 2.4, 0.38), M.woodDark, 3.2, 5.2, -4.25, benchStageG, { cast: false });
+add(tbox(22.0, 14.0, 0.6, 3.0), M.cottageWall, 0, 7.0, -4.2, benchStageG, { cast: false });
+add(box(2.6, 2.8, 0.3), M.woodDark, 3.2, 5.2, -3.9, benchStageG, { cast: false });
+add(box(2.2, 2.4, 0.34), M.windowNight, 3.2, 5.2, -3.88, benchStageG, { cast: false });
+add(box(2.2, 0.12, 0.38), M.woodDark, 3.2, 5.2, -3.85, benchStageG, { cast: false });
+add(box(0.12, 2.4, 0.38), M.woodDark, 3.2, 5.2, -3.85, benchStageG, { cast: false });
 // Warm brass storm lantern sitting on left edge of workbench
-const tableLantern = new THREE.Group(); tableLantern.position.set(-2.35, 2.0, -0.35); benchStageG.add(tableLantern);
+const tableLantern = new THREE.Group(); tableLantern.position.set(-2.35, 2.0, 0.15); benchStageG.add(tableLantern);
 add(new THREE.CylinderGeometry(0.28, 0.32, 0.14, 12), M.iron, 0, 0.07, 0, tableLantern);
 add(new THREE.CylinderGeometry(0.22, 0.22, 0.48, 12), M.warmGlow, 0, 0.38, 0, tableLantern, { cast: false });
 add(new THREE.ConeGeometry(0.32, 0.24, 12), M.iron, 0, 0.72, 0, tableLantern);
 // Coiled hemp twine spool & red sealing wax stick on right edge of workbench
-add(new THREE.CylinderGeometry(0.24, 0.24, 0.38, 14), M.rope, 2.25, 2.19, 0.45, benchStageG);
-const waxStick = add(new THREE.CylinderGeometry(0.07, 0.07, 0.65, 10), M.waxRed, 1.85, 2.08, 0.95, benchStageG);
+add(new THREE.CylinderGeometry(0.24, 0.24, 0.38, 14), M.rope, 2.25, 2.19, 0.55, benchStageG);
+const waxStick = add(new THREE.CylinderGeometry(0.07, 0.07, 0.65, 10), M.waxRed, 1.85, 2.08, 1.05, benchStageG);
 waxStick.rotation.z = Math.PI / 2; waxStick.rotation.y = 0.5;
 // Scattered wooden shavings on tabletop
 for (const [sx, sz, sy] of [[-1.0, 0.9, 0.4], [-0.5, 1.15, 1.2], [0.6, 1.05, -0.6], [1.1, 0.85, 0.9], [-1.3, 0.5, -0.3]]) {
@@ -452,16 +453,16 @@ const scotHill1 = add(new THREE.SphereGeometry(14.0, 14, 10), M.grass, -20.0, 2.
 scotHill1.scale.set(1.05, 0.68, 1.35);
 const scotHill2 = add(new THREE.SphereGeometry(11.0, 12, 10), M.grass, -17.5, 1.8, 8.5, scotStageG);
 scotHill2.scale.set(1.0, 0.62, 1.2);
-// Rocky headland & iconic Scottish white-and-red lighthouse prominent in background!
-add(new THREE.CylinderGeometry(3.8, 5.0, 2.6, 12), M.cliff, -8.2, 1.3, -2.4, scotStageG);
-const lhG = new THREE.Group(); lhG.position.set(-8.2, 2.55, -2.4); scotStageG.add(lhG);
-add(new THREE.CylinderGeometry(1.1, 1.55, 7.6, 16), M.lighthouse, 0, 3.8, 0, lhG);
-add(new THREE.CylinderGeometry(1.36, 1.26, 0.35, 16), M.iron, 0, 7.65, 0, lhG);
-add(new THREE.CylinderGeometry(1.0, 1.0, 1.4, 14), M.warmGlow, 0, 8.52, 0, lhG, { cast: false });
-add(new THREE.ConeGeometry(1.24, 1.1, 14), M.waxRed, 0, 9.75, 0, lhG);
+// Rocky headland & picturesque Scottish white-and-red lighthouse sized cleanly to fit full tower + glowing lantern in 9:16!
+add(new THREE.CylinderGeometry(3.4, 4.4, 1.8, 12), M.cliff, -7.8, 0.9, -2.0, scotStageG);
+const lhG = new THREE.Group(); lhG.position.set(-7.8, 1.75, -2.0); scotStageG.add(lhG);
+add(new THREE.CylinderGeometry(0.82, 1.18, 4.6, 16), M.lighthouse, 0, 2.3, 0, lhG);
+add(new THREE.CylinderGeometry(1.06, 0.98, 0.26, 16), M.iron, 0, 4.65, 0, lhG);
+add(new THREE.CylinderGeometry(0.76, 0.76, 1.05, 14), M.warmGlow, 0, 5.28, 0, lhG, { cast: false });
+add(new THREE.ConeGeometry(0.96, 0.85, 14), M.waxRed, 0, 6.22, 0, lhG);
 // White keeper's cottage beside lighthouse
-add(box(3.2, 1.9, 2.4), M.white, -2.4, 0.95, 1.3, lhG);
-const lhRoof = add(new THREE.CylinderGeometry(1.75, 1.75, 3.5, 3), M.slate, -2.4, 2.45, 1.3, lhG);
+add(box(2.6, 1.5, 2.0), M.white, -2.0, 0.75, 1.1, lhG);
+const lhRoof = add(new THREE.CylinderGeometry(1.42, 1.42, 2.9, 3), M.slate, -2.0, 1.95, 1.1, lhG);
 lhRoof.rotation.z = Math.PI / 2; lhRoof.scale.set(1, 1, 0.72);
 // Beach pebbles / coastal rocks
 for (const [rx_, rz_, rs] of [[0.6, -3.2, 1.0], [1.2, 3.8, 1.1], [-2.8, 3.6, 1.3], [-3.4, -4.2, 1.3]]) {
