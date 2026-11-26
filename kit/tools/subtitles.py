@@ -34,7 +34,21 @@ def escape_ass(text: str) -> str:
     return text.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
 
 
+def is_khmer_text(words) -> bool:
+    return any(re.search(r"[\u1780-\u17FF]", w.get("w", "")) for w in words)
+
+
+def visual_len(s: str) -> int:
+    # Collapse Khmer subscript clusters (coeng + consonant) and strip zero-width / stacked vowel & sign marks
+    s = re.sub(r"\u17D2[\u1780-\u17A2]", "", s)
+    s = re.sub(r"[\u17B7-\u17BD\u17C6\u17C9-\u17D3\u17DD\u200B-\u200D]", "", s)
+    return len(s)
+
+
 def chunk_words(words, min_w=2, max_w=4, max_chars=18):
+    khmer = is_khmer_text(words)
+    if khmer:
+        max_chars = 19
     chunks = []
     cur = []
     for idx, w in enumerate(words):
@@ -43,18 +57,18 @@ def chunk_words(words, min_w=2, max_w=4, max_chars=18):
             continue
         if cur:
             gap = w["s"] - cur[-1]["e"]
-            cur_chars = sum(len(x["w"]) for x in cur) + len(cur) + len(word_text)
-            prev_punct = bool(re.search(r"[.!?,;:]$", cur[-1]["w"]))
+            cur_chars = sum(visual_len(x["w"]) for x in cur) + len(cur) + visual_len(word_text)
+            prev_punct = bool(re.search(r"[.!?,;:។៖»]$", cur[-1]["w"]))
             if len(cur) >= max_w or (cur_chars > max_chars and len(cur) >= min_w) or gap > 0.35 or (prev_punct and len(cur) >= min_w):
                 chunks.append(cur)
                 cur = []
         cur.append({"w": word_text, "s": float(w["s"]), "e": float(w["e"])})
-        if re.search(r"[.!?]$", word_text) and len(cur) >= min_w:
+        if re.search(r"[.!?។]$", word_text) and len(cur) >= min_w:
             chunks.append(cur)
             cur = []
     if cur:
         # Merge trailing orphan 1-word chunk into previous chunk if short enough
-        if len(cur) == 1 and chunks and len(chunks[-1]) < max_w:
+        if len(cur) == 1 and chunks and len(chunks[-1]) < max_w and (cur[0]["s"] - chunks[-1][-1]["e"]) < 0.45:
             chunks[-1].extend(cur)
         else:
             chunks.append(cur)
@@ -62,6 +76,16 @@ def chunk_words(words, min_w=2, max_w=4, max_chars=18):
 
 
 def build_ass(words, font_name="DejaVu Sans", font_size=62, pos_y=1460):
+    khmer = is_khmer_text(words)
+    if khmer:
+        font_name = os.environ.get("KHMER_SUB_FONT", "Noto Sans Khmer")
+        font_size = 58
+        spacing = 0
+        outline = 6.2
+    else:
+        spacing = 0.5
+        outline = 6.5
+
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -71,7 +95,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Viral,{font_name},{font_size},&H00FFFFFF,&H0044D6FF,&H001A1014,&H55000000,-1,0,0,0,100,100,0.5,0,1,6.5,3.5,5,70,70,460,1
+Style: Viral,{font_name},{font_size},&H00FFFFFF,&H0044D6FF,&H001A1014,&H55000000,-1,0,0,0,100,100,{spacing},0,1,{outline},3.5,5,70,70,460,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -91,7 +115,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
             parts = []
             for j, item in enumerate(chunk):
-                txt = escape_ass(item["w"].upper())
+                raw_txt = item["w"] if khmer else item["w"].upper()
+                txt = escape_ass(raw_txt)
                 if j == i:
                     # Gold highlight (#FFD644 -> ASS BGR &H0044D6FF&) + subtle active pop
                     parts.append(r"{\c&H0044D6FF&\fscx106\fscy106}" + txt + r"{\c&H00FFFFFF&\fscx100\fscy100}")
