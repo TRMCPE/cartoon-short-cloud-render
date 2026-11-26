@@ -236,60 +236,60 @@ const CAMS = {
     { f: 1344, pos: [-6.5, 2.05, 7.0], look: [-6.0, 1.08, 0.3], fov: 43 },
     { f: 1433, pos: [5.5,  1.95, 6.6], look: [6.2,  1.08, 0.3], fov: 42 },
   ],
-  // 23. Glorious orbiting showcase of the 3D Dream Feast Table (steaming rice pot, golden fried fish, soup) + Kid cheering! (D=6.4m)
+  // 23. Glorious orbiting showcase of the 3D Dream Feast Table (steaming rice pot, golden fried fish, soup) + Kid cheering! (D=7.3m)
   s23_dream_feast_table: [
-    { f: 1434, pos: [1.8, 2.05, 6.5], look: [2.3, 1.05, 0.4], fov: 42 },
-    { f: 1521, pos: [3.2, 1.92, 5.8], look: [2.3, 1.05, 0.4], fov: 40, ease: 'easeOut' },
+    { f: 1434, pos: [2.1, 2.05, 7.6], look: [2.50, 1.05, 0.25], fov: 44 },
+    { f: 1521, pos: [3.0, 1.92, 6.8], look: [2.50, 1.05, 0.25], fov: 42, ease: 'easeOut' },
   ],
-  // 24. Kid skids to a halt entering the Khmer kitchen doorway! (D=6.2m)
+  // 24. Kid skids to a halt entering the Khmer kitchen doorway! (D=6.0m)
   s24_arrive_kitchen: [
-    { f: 1522, pos: [11.2, 1.95, 6.8], look: [11.6, 1.08, 0.8], fov: 42 },
-    { f: 1565, pos: [11.8, 1.85, 6.0], look: [11.8, 1.08, 0.8], fov: 40 },
+    { f: 1522, pos: [11.2, 1.95, 6.6], look: [11.6, 1.08, 0.6], fov: 42 },
+    { f: 1565, pos: [11.8, 1.85, 5.8], look: [11.8, 1.08, 0.6], fov: 40 },
   ],
   // 25. COMEDIC CLIMAX: Whip-zoom onto Kid frozen stiff in shock («ឈរភាំង!») with jaw drop & giant sweat drop! (D=4.8m)
   s25_freeze_in_shock: [
-    { f: 1566, pos: [11.8, 1.78, 5.8], look: [11.8, 1.10, 1.0], fov: 40 },
-    { f: 1621, pos: [11.8, 1.66, 4.7], look: [11.8, 1.12, 1.0], fov: 36, ease: 'easeOut' },
+    { f: 1566, pos: [11.8, 1.78, 5.6], look: [11.8, 1.10, 0.8], fov: 40 },
+    { f: 1621, pos: [11.8, 1.66, 4.6], look: [11.8, 1.12, 0.8], fov: 36, ease: 'easeOut' },
   ],
-  // 26. Reveal #1: Camera glides onto Mother casually washing raw white rice in pot beside UNLIT cold clay stove! (D=5.6m)
+  // 26. Reveal #1: Camera glides onto Mother casually washing raw white rice in pot beside UNLIT cold clay stove! (D=5.8m)
   s26_washing_raw_rice: [
-    { f: 1622, pos: [12.3, 1.88, 5.9], look: [12.5, 0.98, 0.4], fov: 40 },
-    { f: 1691, pos: [12.6, 1.75, 5.1], look: [12.5, 0.98, 0.4], fov: 38 },
+    { f: 1622, pos: [12.3, 1.88, 5.6], look: [12.5, 1.02, -0.1], fov: 41 },
+    { f: 1691, pos: [12.6, 1.75, 4.9], look: [12.5, 1.02, -0.1], fov: 39 },
   ],
-  // 27. Reveal #2: Crisp push-in onto the stainless-steel basin with the raw unscaled silver fish flopping! (D=4.4m)
+  // 27. Reveal #2: Crisp push-in onto the stainless-steel basin with the raw unscaled silver fish flopping! (D=4.3m)
   s27_unscaled_fish: [
-    { f: 1692, pos: [13.9, 1.72, 4.6], look: [14.0, 0.88, 0.5], fov: 38 },
-    { f: 1744, pos: [14.0, 1.55, 3.8], look: [14.0, 0.88, 0.5], fov: 35, ease: 'easeOut' },
+    { f: 1692, pos: [13.9, 1.72, 4.0], look: [14.0, 0.88, -0.4], fov: 38 },
+    { f: 1744, pos: [14.0, 1.55, 3.2], look: [14.0, 0.88, -0.4], fov: 35, ease: 'easeOut' },
   ],
-  // 28. Reveal #3: Pan right to the woven bamboo basket overflowing with whole unpicked green Trakuon + shocked Kid! (D=5.6m)
+  // 28. Reveal #3: Pan right to the woven bamboo basket overflowing with whole unpicked green Trakuon + shocked Kid! (D=6.4m)
   s28_whole_veg_basket: [
-    { f: 1745, pos: [15.0, 1.85, 5.8], look: [15.2, 0.98, 0.5], fov: 41 },
-    { f: 1825, pos: [15.4, 1.75, 5.2], look: [15.2, 0.98, 0.5], fov: 39 },
+    { f: 1745, pos: [14.7, 1.90, 6.2], look: [14.85, 1.04, 0.1], fov: 42 },
+    { f: 1825, pos: [15.1, 1.80, 5.6], look: [14.85, 1.04, 0.1], fov: 40 },
   ],
   // 29. Warm two-shot: Mother turns with the sweetest, gentlest smile toward frozen Kid! (actors 1.25m apart, D=6.8m)
   s29_mom_turns_smiles: [
-    { f: 1826, pos: [13.4, 1.92, 7.4], look: [13.4, 1.10, 0.9], fov: 42 },
-    { f: 1938, pos: [13.4, 1.82, 6.6], look: [13.4, 1.10, 0.9], fov: 40 },
+    { f: 1826, pos: [13.4, 1.92, 7.2], look: [13.4, 1.10, 0.6], fov: 42 },
+    { f: 1938, pos: [13.4, 1.82, 6.4], look: [13.4, 1.10, 0.6], fov: 40 },
   ],
   // 30. Mother hands a fresh green bunch of Trakuon to Kid («ជួយបេះត្រកួនឱ្យម៉ែបន្តិចកូន!»)! (1.20m apart, D=6.6m)
   s30_help_pick_trakuon: [
-    { f: 1939, pos: [13.8, 1.88, 7.2], look: [13.6, 1.10, 0.9], fov: 41 },
-    { f: 2007, pos: [13.4, 1.82, 6.5], look: [13.6, 1.10, 0.9], fov: 40 },
+    { f: 1939, pos: [13.8, 1.88, 7.0], look: [13.6, 1.10, 0.6], fov: 41 },
+    { f: 2007, pos: [13.4, 1.82, 6.3], look: [13.6, 1.10, 0.6], fov: 40 },
   ],
   // 31. Punchy comedic reveal: "20m" timer badge pops up while Kid holds Trakuon with sheepish grin! (D=6.6m)
   s31_twenty_min_more: [
-    { f: 2008, pos: [13.6, 1.92, 7.2], look: [13.6, 1.16, 0.9], fov: 42 },
-    { f: 2100, pos: [13.6, 1.84, 6.5], look: [13.6, 1.16, 0.9], fov: 40, ease: 'easeOut' },
+    { f: 2008, pos: [13.6, 1.92, 7.0], look: [13.6, 1.16, 0.6], fov: 42 },
+    { f: 2100, pos: [13.6, 1.84, 6.3], look: [13.6, 1.16, 0.6], fov: 40, ease: 'easeOut' },
   ],
   // 32. Heartwarming shift: Sunny courtyard/kitchen angle on smiling Mother («នេះមិនមែនជាការកុហកទេ»)! (D=5.4m)
   s32_not_a_lie: [
-    { f: 2101, pos: [13.0, 1.82, 6.2], look: [13.2, 1.10, 0.9], fov: 39 },
-    { f: 2150, pos: [13.4, 1.76, 5.6], look: [13.2, 1.10, 0.9], fov: 38 },
+    { f: 2101, pos: [13.0, 1.82, 6.0], look: [13.2, 1.10, 0.6], fov: 39 },
+    { f: 2150, pos: [13.4, 1.76, 5.4], look: [13.2, 1.10, 0.6], fov: 38 },
   ],
   // 33. Mother beside glowing Smart Heart + Lightbulb emblem («វិធីដ៏ឆ្លាតវៃរបស់ម្តាយ»)! (D=6.4m)
   s33_clever_method: [
-    { f: 2151, pos: [13.8, 1.90, 7.0], look: [13.8, 1.15, 0.9], fov: 41 },
-    { f: 2206, pos: [13.8, 1.80, 6.3], look: [13.8, 1.15, 0.9], fov: 39 },
+    { f: 2151, pos: [13.8, 1.90, 6.8], look: [13.8, 1.15, 0.6], fov: 41 },
+    { f: 2206, pos: [13.8, 1.80, 6.1], look: [13.8, 1.15, 0.6], fov: 39 },
   ],
   // 34. Energetic shot of Kid happily stretching & moving in sunlight instead of slouching! (D=5.4m)
   s34_get_kid_moving: [
@@ -298,18 +298,18 @@ const CAMS = {
   ],
   // 35. Cozy golden-sunset kitchen two-shot: Clay stove now LIT & steaming while Mom & Kid laugh picking Trakuon together! (1.20m apart, D=6.8m)
   s35_chat_in_kitchen: [
-    { f: 2263, pos: [13.4, 1.92, 7.4], look: [13.8, 1.08, 0.9], fov: 42 },
-    { f: 2340, pos: [14.2, 1.86, 6.8], look: [13.8, 1.08, 0.9], fov: 41 },
+    { f: 2263, pos: [13.4, 1.92, 7.2], look: [13.8, 1.08, 0.6], fov: 42 },
+    { f: 2340, pos: [14.2, 1.86, 6.6], look: [13.8, 1.08, 0.6], fov: 41 },
   ],
   // 36. Viewer question two-shot in golden sunset courtyard: Mom & Kid smiling & waving at viewer! (1.25m apart, D=6.8m)
   s36_how_many_times: [
     { f: 2341, pos: [-0.6, 1.90, 7.2], look: [0.0, 1.12, 0.5], fov: 42 },
     { f: 2448, pos: [0.6,  1.86, 6.6], look: [0.0, 1.12, 0.5], fov: 40 },
   ],
-  // 37. Comment & Subscribe CTA: Kid & Mom flanking the bold Comment + Red Play Subscribe card! (D=7.4m, fov=44)
+  // 37. Comment & Subscribe CTA: Kid & Mom flanking the bold Comment + Red Play Subscribe card! (D=7.8m, fov=44)
   s37_comment_subscribe: [
-    { f: 2449, pos: [0.0, 1.98, 7.8], look: [0.0, 1.18, 0.5], fov: 44 },
-    { f: 2536, pos: [0.0, 1.88, 6.9], look: [0.0, 1.18, 0.5], fov: 42, ease: 'easeOut' },
+    { f: 2449, pos: [0.0, 1.98, 8.2], look: [0.0, 1.18, 0.5], fov: 44 },
+    { f: 2536, pos: [0.0, 1.88, 7.3], look: [0.0, 1.18, 0.5], fov: 42, ease: 'easeOut' },
   ],
   // 38. Grand sunset crane pullback over the warm Cambodian family courtyard, sugar palms & home!
   s38_khmer_finale: [
@@ -395,18 +395,18 @@ export const actorsAt = (f, T) => {
 
   switch (S.id) {
     case 's01_hook_sleep_trick':
-      out.push(H(T, 'kid', { mode: 'sleep', wv: q(f * 0.14, 1), expr: 'sleepy' }, [-15.55, 0.35, -0.45], { tint, s: 1.05, blob: false }));
+      out.push(H(T, 'kid', { mode: 'sleep', wv: q(f * 0.14, 1), expr: 'sleepy' }, [-15.55, 0.04, -0.45], { tint, s: 1.05, blob: false }));
       out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'point', ladle: true, expr: 'sneaky', facing: -1 }, [-14.15, 0, -0.25], { tint }));
       break;
 
     case 's02_hook_stop_game':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'game', game: true, expr: 'grin', facing: 1 }, [-12.2, 0, -0.15], { tint, s: 1.04 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'game', game: true, expr: 'grin', facing: 1 }, [-12.2, 0, 0.15], { tint, s: 1.04 }));
       break;
 
     case 's03_hook_rice_ready': {
       const pop = M.back(ramp(f, 101, 118));
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'up', ladle: true, expr: 'shout', facing: 1 }, [13.35, 0, 0.8], { tint, s: 1.04 }));
-      out.push(CARD('rice_call_' + q(pop, 2), (p) => T.drawComicCard(p, 'riceCallBubble', q(pop, 2)), [14.65, 0.25, 0.8], { s: 0.95, blob: false, shadow: false }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'up', ladle: true, expr: 'shout', facing: 1 }, [13.35, 0, 0.85], { tint, s: 1.04 }));
+      out.push(CARD('rice_call_' + q(pop, 2), (p) => T.drawComicCard(p, 'riceCallBubble', q(pop, 2)), [14.65, 0.25, 0.85], { s: 0.95, blob: false, shadow: false }));
       break;
     }
 
@@ -429,11 +429,11 @@ export const actorsAt = (f, T) => {
       break;
 
     case 's08_addicted_gaming':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'game', game: true, expr: 'laugh', facing: 1 }, [-12.2, 0, -0.15], { tint, s: 1.05 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'game', game: true, expr: 'laugh', facing: 1 }, [-12.2, 0, 0.15], { tint, s: 1.05 }));
       break;
 
     case 's09_noon_deep_nap':
-      out.push(H(T, 'kid', { mode: 'sleep', wv: q(f * 0.14, 1), expr: 'sleepy' }, [-15.6, 0.35, -0.5], { tint, s: 1.06, blob: false }));
+      out.push(H(T, 'kid', { mode: 'sleep', wv: q(f * 0.14, 1), expr: 'sleepy' }, [-15.6, 0.04, -0.5], { tint, s: 1.06, blob: false }));
       break;
 
     case 's10_mom_calls_chores':
@@ -441,12 +441,12 @@ export const actorsAt = (f, T) => {
       break;
 
     case 's11_usual_answer':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'hip', expr: 'stern', facing: 1 }, [-13.55, 0, 0.1], { tint }));
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'game', game: true, expr: 'grin', facing: -1 }, [-12.25, 0, 0.1], { tint }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'hip', expr: 'stern', facing: 1 }, [-13.55, 0, 0.2], { tint }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'game', game: true, expr: 'grin', facing: -1 }, [-12.25, 0, 0.2], { tint }));
       break;
 
     case 's12_wait_five_min':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'five', fiveHand: true, game: true, expr: 'grin', facing: -1 }, [-12.2, 0, 0.1], { tint, s: 1.05 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'game', R: 'five', fiveHand: true, game: true, expr: 'grin', facing: -1 }, [-12.2, 0, 0.2], { tint, s: 1.05 }));
       break;
 
     case 's13_five_min_badge':
@@ -461,35 +461,35 @@ export const actorsAt = (f, T) => {
     }
 
     case 's15_mom_knows_heart':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'point', expr: 'sneaky', facing: -1 }, [13.8, 0, 1.1], { tint, s: 1.04 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'point', expr: 'sneaky', facing: -1 }, [13.8, 0, 0.85], { tint, s: 1.04 }));
       break;
 
     case 's16_secret_technique':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'up', ladle: true, expr: 'proud', facing: -1 }, [13.8, 0, 1.1], { tint, s: 1.06 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'up', ladle: true, expr: 'proud', facing: -1 }, [13.8, 0, 0.85], { tint, s: 1.06 }));
       break;
 
     case 's17_shouts_kitchen':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'shout', expr: 'shout', facing: -1 }, [13.4, 0, 1.0], { tint, s: 1.05 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'shout', expr: 'shout', facing: -1 }, [13.4, 0, 0.85], { tint, s: 1.05 }));
       break;
 
     case 's18_come_eat_fast':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'wave', wv: q(f * 0.35, 1), ladle: true, expr: 'shout', facing: -1 }, [13.6, 0, 1.1], { tint, s: 1.05 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'wave', wv: q(f * 0.35, 1), ladle: true, expr: 'shout', facing: -1 }, [13.6, 0, 0.85], { tint, s: 1.05 }));
       break;
 
     case 's19_hot_delicious': {
       const k = q((f * 0.06) % 1, 2);
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'offer', ladle: true, expr: 'laugh', facing: 1 }, [13.15, 0, 0.95], { tint, s: 1.04 }));
-      out.push(CARD('rice_hot_' + k, (p) => T.drawComicCard(p, 'riceCallBubble', 1 + k * 0.05), [14.45, 0.25, 0.95], { s: 0.94, blob: false, shadow: false }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'shout', R: 'offer', ladle: true, expr: 'laugh', facing: 1 }, [13.15, 0, 0.85], { tint, s: 1.04 }));
+      out.push(CARD('rice_hot_' + k, (p) => T.drawComicCard(p, 'riceCallBubble', 1 + k * 0.05), [14.45, 0.25, 0.85], { s: 0.94, blob: false, shadow: false }));
       break;
     }
 
     case 's20_ears_perk_up':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'up', R: 'up', expr: 'shock', facing: 1 }, [-12.4, 0, 0.1], { tint, s: 1.05 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'up', R: 'up', expr: 'shock', facing: 1 }, [-12.4, 0, 0.2], { tint, s: 1.05 }));
       break;
 
     case 's21_stomach_rumbles':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'belly', R: 'belly', expr: 'lick', facing: 1 }, [-12.4, 0, 0.1], { tint, s: 1.04 }));
-      out.push(CARD('rumble_card', (p) => T.drawComicCard(p, 'bellyRumble', 1), [-12.4, 0.22, 0.35], { s: 1.05, blob: false, shadow: false, order: 4 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'belly', R: 'belly', expr: 'lick', facing: 1 }, [-12.4, 0, 0.2], { tint, s: 1.04 }));
+      out.push(CARD('rumble_card', (p) => T.drawComicCard(p, 'bellyRumble', 1), [-12.4, 0.22, 0.45], { s: 1.05, blob: false, shadow: false, order: 4 }));
       break;
 
     case 's22_sprint_courtyard': {
@@ -501,59 +501,58 @@ export const actorsAt = (f, T) => {
     }
 
     case 's23_dream_feast_table':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'up', R: 'up', expr: 'laugh', facing: -1 }, [3.55, 0, 0.55], { tint, s: 1.02 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'up', R: 'up', expr: 'laugh', facing: -1 }, [3.32, 0, 0.35], { tint, s: 1.0 }));
       break;
 
     case 's24_arrive_kitchen': {
       const k = M.easeOut(ramp(f, 1522, 1555));
       const kx = lerp(9.8, 11.8, k);
       const st = k < 0.85 ? q((f * 0.11) % 1, 2) : 0;
-      out.push(H(T, 'kid', { ...id(2), seed: 2, step: st, L: 'hang', R: 'offer', expr: 'grin', facing: 1 }, [kx, 0, 1.0], { tint, s: 1.04 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, step: st, L: 'hang', R: 'offer', expr: 'grin', facing: 1 }, [kx, 0, 0.85], { tint, s: 1.04 }));
       break;
     }
 
     case 's25_freeze_in_shock':
-      out.push(H(T, 'kid', { bob: 0, tilt: 0, headTilt: 0, blink: 0, seed: 2, L: 'shock', R: 'shock', sweat: true, expr: 'shock', facing: 1 }, [11.8, 0, 1.0], { tint, s: 1.06 }));
+      out.push(H(T, 'kid', { bob: 0, tilt: 0, headTilt: 0, blink: 0, seed: 2, L: 'shock', R: 'shock', sweat: true, expr: 'shock', facing: 1 }, [11.8, 0, 0.85], { tint, s: 1.06 }));
       break;
 
     case 's26_washing_raw_rice':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'wash', R: 'wash', wv: q(f * 0.35, 1), washBowl: true, expr: 'whistle', facing: -1 }, [13.15, 0, 1.05], { tint, s: 1.02 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'wash', R: 'wash', wv: q(f * 0.35, 1), washBowl: true, expr: 'whistle', facing: -1 }, [13.15, 0, 0.85], { tint, s: 1.02 }));
       break;
 
     case 's27_unscaled_fish':
-      // Hero close-up on the 3D stainless-steel basin & raw flopping fish (Kid peeking shocked at edge if wide, keep center 100% clear for fish!)
       break;
 
     case 's28_whole_veg_basket':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'shock', R: 'shrug', sweat: true, expr: 'dazed', facing: 1 }, [14.45, 0, 1.05], { tint }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'shock', R: 'shrug', sweat: true, expr: 'dazed', facing: 1 }, [14.32, 0, 0.85], { tint, s: 1.0 }));
       break;
 
     case 's29_mom_turns_smiles':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'hang', R: 'shrug', sweat: true, expr: 'nervous', facing: 1 }, [12.75, 0, 1.05], { tint, s: 1.02 }));
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'offer', expr: 'sweet', facing: -1 }, [14.05, 0, 1.05], { tint, s: 1.03 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'hang', R: 'shrug', sweat: true, expr: 'nervous', facing: 1 }, [12.75, 0, 0.85], { tint, s: 1.02 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'offer', expr: 'sweet', facing: -1 }, [14.05, 0, 0.85], { tint, s: 1.03 }));
       break;
 
     case 's30_help_pick_trakuon': {
       const handed = f >= 1972;
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'hold', R: handed ? 'pick' : 'hold', wv: q(f * 0.25, 1), trakuon: handed, expr: 'sheepish', facing: 1 }, [12.95, 0, 1.05], { tint, s: 1.02 }));
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'offer', trakuon: !handed, expr: 'sweet', facing: -1 }, [14.20, 0, 1.05], { tint, s: 1.03 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'hold', R: handed ? 'pick' : 'hold', wv: q(f * 0.25, 1), trakuon: handed, expr: 'sheepish', facing: 1 }, [12.95, 0, 0.85], { tint, s: 1.02 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'offer', trakuon: !handed, expr: 'sweet', facing: -1 }, [14.20, 0, 0.85], { tint, s: 1.03 }));
       break;
     }
 
     case 's31_twenty_min_more':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'pick', R: 'pick', wv: q(f * 0.28, 1), trakuon: true, expr: 'sheepish', facing: 1 }, [12.90, 0, 1.05], { tint, s: 1.02 }));
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'point', expr: 'laugh', facing: -1 }, [14.30, 0, 1.05], { tint, s: 1.02 }));
-      out.push(CARD('timer_20m', (p) => T.drawComicCard(p, 'twentyMinBadge', 1), [13.60, 0.95, 0.85], { s: 0.72, blob: false, shadow: false }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'pick', R: 'pick', wv: q(f * 0.28, 1), trakuon: true, expr: 'sheepish', facing: 1 }, [12.95, 0, 0.85], { tint, s: 1.02 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'point', expr: 'laugh', facing: -1 }, [14.25, 0, 0.85], { tint, s: 1.02 }));
+      out.push(CARD('timer_20m', (p) => T.drawComicCard(p, 'twentyMinBadge', 1), [13.60, 0.95, 0.70], { s: 0.72, blob: false, shadow: false }));
       break;
 
     case 's32_not_a_lie':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'sampheah', R: 'sampheah', expr: 'warm', facing: 1 }, [13.2, 0, 1.05], { tint, s: 1.05 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'sampheah', R: 'sampheah', expr: 'warm', facing: 1 }, [13.2, 0, 0.85], { tint, s: 1.05 }));
       break;
 
     case 's33_clever_method': {
       const k = q(f * 0.05, 1);
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'offer', expr: 'proud', facing: 1 }, [13.15, 0, 1.05], { tint, s: 1.04 }));
-      out.push(CARD('smart_heart_' + k, (p) => T.drawComicCard(p, 'smartHeart', k), [14.45, 0.25, 1.05], { s: 0.88, blob: false, shadow: false }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'hip', R: 'offer', expr: 'proud', facing: 1 }, [13.15, 0, 0.85], { tint, s: 1.04 }));
+      out.push(CARD('smart_heart_' + k, (p) => T.drawComicCard(p, 'smartHeart', k), [14.45, 0.25, 0.85], { s: 0.88, blob: false, shadow: false }));
       break;
     }
 
@@ -564,8 +563,8 @@ export const actorsAt = (f, T) => {
     }
 
     case 's35_chat_in_kitchen':
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'pick', R: 'pick', wv: q(f * 0.3, 1), trakuon: true, expr: 'laugh', facing: 1 }, [13.15, 0, 1.05], { tint, s: 1.03 }));
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'pick', R: 'pick', wv: q(f * 0.3 + 1, 1), trakuon: true, expr: 'proud', facing: -1 }, [14.40, 0, 1.05], { tint, s: 1.03 }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'pick', R: 'pick', wv: q(f * 0.3, 1), trakuon: true, expr: 'laugh', facing: 1 }, [13.15, 0, 0.85], { tint, s: 1.03 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'pick', R: 'pick', wv: q(f * 0.3 + 1, 1), trakuon: true, expr: 'proud', facing: -1 }, [14.40, 0, 0.85], { tint, s: 1.03 }));
       break;
 
     case 's36_how_many_times':
@@ -574,9 +573,9 @@ export const actorsAt = (f, T) => {
       break;
 
     case 's37_comment_subscribe':
-      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'sampheah', R: 'sampheah', expr: 'warm', facing: 1 }, [-0.95, 0, 0.5], { tint, s: 1.02 }));
-      out.push(CARD('sub_cta', (p) => T.drawComicCard(p, 'subscribeCta', 1), [0.0, 0.42, 0.6], { s: 0.80, blob: false, shadow: false }));
-      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'point', R: 'wave', wv: q(f * 0.3, 1), expr: 'laugh', facing: -1 }, [0.95, 0, 0.5], { tint, s: 1.02 }));
+      out.push(H(T, 'mother', { ...id(1), seed: 1, L: 'sampheah', R: 'sampheah', expr: 'warm', facing: 1 }, [-0.78, 0, 0.5], { tint, s: 1.02 }));
+      out.push(CARD('sub_cta', (p) => T.drawComicCard(p, 'subscribeCta', 1), [0.0, 0.62, 0.55], { s: 0.74, blob: false, shadow: false }));
+      out.push(H(T, 'kid', { ...id(2), seed: 2, L: 'point', R: 'wave', wv: q(f * 0.3, 1), expr: 'laugh', facing: -1 }, [0.78, 0, 0.5], { tint, s: 1.02 }));
       break;
 
     case 's38_khmer_finale':
@@ -596,7 +595,7 @@ export const fxAt = (f, T) => {
     out.push({
       key: 'zzz_' + ph,
       draw: (p) => T.drawZzz(p, ph),
-      x: -15.9, y: 0.45, z: -0.35, s: 0.85, blob: false, shadow: false, order: 4,
+      x: -15.9, y: 0.22, z: -0.35, s: 0.85, blob: false, shadow: false, order: 4,
     });
   }
 
@@ -605,7 +604,7 @@ export const fxAt = (f, T) => {
     out.push({
       key: 'shout_arc_' + ph,
       draw: (p) => T.drawShoutArcs(p, ph),
-      x: 12.6, y: 0.42, z: 1.15, s: 0.95, blob: false, shadow: false, order: 4,
+      x: 12.6, y: 0.42, z: 0.95, s: 0.95, blob: false, shadow: false, order: 4,
     });
   }
 
@@ -622,14 +621,14 @@ export const fxAt = (f, T) => {
   }
 
   if (S.id === 's23_dream_feast_table' || S.id === 's35_chat_in_kitchen') {
-    const bx = S.id === 's23_dream_feast_table' ? 2.5 : 11.45;
-    const bz = S.id === 's23_dream_feast_table' ? 0.35 : 0.35;
+    const bx = S.id === 's23_dream_feast_table' ? 2.15 : 11.45;
+    const bz = S.id === 's23_dream_feast_table' ? 0.22 : -0.42;
     for (let i = 0; i < 2; i++) {
       const ph = q(((f * 0.035) + i * 0.5) % 1, 2);
       out.push({
         key: 'steam_' + ph,
         draw: (p) => T.drawSteamPuff(p, ph),
-        x: bx + Math.sin(ph * 5) * 0.25, y: 0.85 + ph * 0.85, z: bz, s: 0.55 + ph * 0.35,
+        x: bx + Math.sin(ph * 5) * 0.25, y: 0.80 + ph * 0.85, z: bz, s: 0.55 + ph * 0.35,
         blob: false, shadow: false, order: 4,
       });
     }

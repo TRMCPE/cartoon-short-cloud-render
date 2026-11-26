@@ -258,34 +258,34 @@ const clouds = [];
   }
 }
 
-// Toggled 3D "Dream Feast Table" (តុបាយក្តៅៗហុយផ្សែង និងម្ហូបពេញតុរួចជាស្រេច!) at (2.5, 0, 0.4)
-const dreamFeastG = new THREE.Group(); dreamFeastG.position.set(2.5, DECK, 0.4); scene.add(dreamFeastG);
+// Toggled 3D "Dream Feast Table" (តុបាយក្តៅៗហុយផ្សែង និងម្ហូបពេញតុរួចជាស្រេច!) at (2.15, 0, 0.25)
+const dreamFeastG = new THREE.Group(); dreamFeastG.position.set(2.15, DECK, 0.25); scene.add(dreamFeastG);
 const feastHalo = new THREE.Mesh(
-  new THREE.CircleGeometry(1.75, 32),
+  new THREE.CircleGeometry(1.55, 32),
   new THREE.MeshBasicMaterial({ color: '#ffe36e', transparent: true, opacity: 0.42, depthWrite: false })
 );
 feastHalo.userData.ndSkip = true; scene.add(feastHalo);
 {
-  // Round teak table + festive crimson silk runner
-  add(new THREE.CylinderGeometry(1.18, 1.18, 0.10, 24), M.plankLight, 0, 0.78, 0, dreamFeastG);
-  add(tbox(2.38, 0.11, 0.52, 1.5), M.redRunner, 0, 0.785, 0, dreamFeastG);
-  for (const [lx, lz] of [[-0.65, -0.65], [0.65, -0.65], [-0.65, 0.65], [0.65, 0.65]]) {
-    add(new THREE.CylinderGeometry(0.065, 0.055, 0.78, 8), M.beam, lx, 0.39, lz, dreamFeastG);
+  // Round teak table + festive crimson silk runner (scaled cleanly for 9:16 two-shot with Kid!)
+  add(new THREE.CylinderGeometry(0.96, 0.96, 0.10, 24), M.plankLight, 0, 0.72, 0, dreamFeastG);
+  add(tbox(1.94, 0.11, 0.44, 1.5), M.redRunner, 0, 0.725, 0, dreamFeastG);
+  for (const [lx, lz] of [[-0.54, -0.54], [0.54, -0.54], [-0.54, 0.54], [0.54, 0.54]]) {
+    add(new THREE.CylinderGeometry(0.06, 0.05, 0.72, 8), M.beam, lx, 0.36, lz, dreamFeastG);
   }
   // Centerpiece: Giant Steaming Fluffy White Rice Pot (ឆ្នាំងបាយក្តៅៗហុយផ្សែង!)
-  add(new THREE.CylinderGeometry(0.36, 0.30, 0.28, 18), M.gold, 0, 0.97, -0.05, dreamFeastG);
-  add(new THREE.SphereGeometry(0.34, 16, 12), M.riceWhite, 0, 1.14, -0.05, dreamFeastG).scale.set(1, 0.68, 1);
+  add(new THREE.CylinderGeometry(0.32, 0.26, 0.26, 18), M.gold, 0, 0.90, -0.04, dreamFeastG);
+  add(new THREE.SphereGeometry(0.30, 16, 12), M.riceWhite, 0, 1.06, -0.04, dreamFeastG).scale.set(1, 0.68, 1);
   // Left Dish: Crispy Golden Whole Fried Fish (ត្រីចៀនមាសឆ្ងាញ់!)
-  add(new THREE.CylinderGeometry(0.34, 0.26, 0.06, 16), M.pillowWhite, -0.58, 0.86, 0.18, dreamFeastG);
-  const ff = add(new THREE.SphereGeometry(0.24, 12, 8), M.fishFried, -0.58, 0.93, 0.18, dreamFeastG);
+  add(new THREE.CylinderGeometry(0.28, 0.22, 0.06, 16), M.pillowWhite, -0.48, 0.80, 0.15, dreamFeastG);
+  const ff = add(new THREE.SphereGeometry(0.20, 12, 8), M.fishFried, -0.48, 0.87, 0.15, dreamFeastG);
   ff.scale.set(1.45, 0.42, 0.68);
   // Right Dish: Savory Golden Khmer Samlor Soup Bowl (សម្លក្តៅៗ!)
-  add(new THREE.CylinderGeometry(0.32, 0.20, 0.20, 16), M.clayPot, 0.58, 0.93, 0.18, dreamFeastG);
-  add(new THREE.CylinderGeometry(0.29, 0.29, 0.04, 16), M.soupGold, 0.58, 1.02, 0.18, dreamFeastG);
+  add(new THREE.CylinderGeometry(0.26, 0.17, 0.18, 16), M.clayPot, 0.48, 0.86, 0.15, dreamFeastG);
+  add(new THREE.CylinderGeometry(0.24, 0.24, 0.04, 16), M.soupGold, 0.48, 0.94, 0.15, dreamFeastG);
   // Front Bowls
-  for (const bx of [-0.28, 0.28]) {
-    add(new THREE.CylinderGeometry(0.16, 0.10, 0.11, 12), M.pillowWhite, bx, 0.88, 0.52, dreamFeastG);
-    add(new THREE.SphereGeometry(0.14, 10, 8), M.riceWhite, bx, 0.95, 0.52, dreamFeastG).scale.set(1, 0.55, 1);
+  for (const bx of [-0.24, 0.24]) {
+    add(new THREE.CylinderGeometry(0.14, 0.09, 0.10, 12), M.pillowWhite, bx, 0.82, 0.42, dreamFeastG);
+    add(new THREE.SphereGeometry(0.12, 10, 8), M.riceWhite, bx, 0.88, 0.42, dreamFeastG).scale.set(1, 0.55, 1);
   }
 }
 
@@ -317,14 +317,14 @@ let rawFishMesh, stoveFireG, pickedColanderG, riceWaterMesh;
     }
   }
 
-  // ---- Kitchen Prep Counter / Low Khmer Wooden Table spanning x = -1.9 .. +1.9, z = +0.45 ----
-  add(tbox(4.4, 0.12, 1.25, 1.5), M.plankLight, 0, 0.72, 0.45, kitchenG);
-  for (const lx of [-1.95, 0, 1.95]) for (const lz of [-0.05, 0.95]) {
+  // ---- Kitchen Prep Counter placed cleanly at z = -0.45 (front edge z = +0.10, 100% behind actors at z = +0.85!) ----
+  add(tbox(4.4, 0.12, 1.10, 1.5), M.plankLight, 0, 0.72, -0.45, kitchenG);
+  for (const lx of [-1.95, 0, 1.95]) for (const lz of [-0.90, 0.00]) {
     add(tbox(0.12, 0.72, 0.12, 1), M.beam, lx, 0.36, lz, kitchenG);
   }
 
-  // PROP 1 (Left of counter, world x = 12.65, z = 0.45): Brushed Aluminum Rice Pot being washed (លាងអង្ករដាក់ឆ្នាំង!)
-  const potG = new THREE.Group(); potG.position.set(-1.35, 0.78, 0.45); kitchenG.add(potG);
+  // PROP 1 (Left of counter, world x = 12.65, z = -0.45): Brushed Aluminum Rice Pot being washed (លាងអង្ករដាក់ឆ្នាំង!)
+  const potG = new THREE.Group(); potG.position.set(-1.35, 0.78, -0.45); kitchenG.add(potG);
   add(new THREE.CylinderGeometry(0.42, 0.36, 0.36, 20), M.steel, 0, 0.18, 0, potG);
   for (const s of [-1, 1]) {
     const hd = add(new THREE.TorusGeometry(0.08, 0.022, 6, 12), M.steel, s * 0.43, 0.26, 0, potG);
@@ -334,16 +334,16 @@ let rawFishMesh, stoveFireG, pickedColanderG, riceWaterMesh;
   add(new THREE.CylinderGeometry(0.37, 0.35, 0.06, 16), M.riceWhite, 0, 0.29, 0, potG);
   riceWaterMesh = add(new THREE.CylinderGeometry(0.39, 0.39, 0.03, 18), M.waterClear, 0, 0.33, 0, potG);
 
-  // Traditional Khmer Clay Stove (ចង្ក្រានដី) beside bench at world x = 11.45, z = 0.35
-  const stoveG = new THREE.Group(); stoveG.position.set(-2.55, 0, 0.35); kitchenG.add(stoveG);
+  // Traditional Khmer Clay Stove (ចង្ក្រានដី) beside bench at world x = 11.45, z = -0.45
+  const stoveG = new THREE.Group(); stoveG.position.set(-2.55, 0, -0.45); kitchenG.add(stoveG);
   add(new THREE.CylinderGeometry(0.42, 0.48, 0.56, 16), M.clayStove, 0, 0.28, 0, stoveG);
   add(new THREE.CylinderGeometry(0.32, 0.32, 0.06, 14), M.ashGrey, 0, 0.56, 0, stoveG);
   stoveFireG = new THREE.Group(); stoveFireG.position.set(0, 0.58, 0); stoveG.add(stoveFireG);
   add(new THREE.ConeGeometry(0.24, 0.42, 7), M.ember, 0, 0.16, 0, stoveFireG, { cast: false });
   add(new THREE.ConeGeometry(0.15, 0.32, 7), M.flame, 0, 0.22, 0, stoveFireG, { cast: false });
 
-  // PROP 2 (Center of counter, world x = 14.0, z = 0.50): Stainless-Steel Basin + Unscaled Raw Fish (ត្រីនៅក្នុងចានដែកមិនទាន់ស្រកាផង!)
-  const basinG = new THREE.Group(); basinG.position.set(0.0, 0.78, 0.50); kitchenG.add(basinG);
+  // PROP 2 (Center of counter, world x = 14.0, z = -0.40): Stainless-Steel Basin + Unscaled Raw Fish (ត្រីនៅក្នុងចានដែកមិនទាន់ស្រកាផង!)
+  const basinG = new THREE.Group(); basinG.position.set(0.0, 0.78, -0.40); kitchenG.add(basinG);
   add(new THREE.CylinderGeometry(0.50, 0.36, 0.20, 22), M.steel, 0, 0.10, 0, basinG);
   add(new THREE.TorusGeometry(0.50, 0.028, 8, 22), M.steel, 0, 0.20, 0, basinG).rotation.x = Math.PI / 2;
   add(new THREE.CylinderGeometry(0.43, 0.40, 0.04, 18), M.waterClear, 0, 0.14, 0, basinG);
@@ -353,8 +353,8 @@ let rawFishMesh, stoveFireG, pickedColanderG, riceWaterMesh;
   tail.rotation.z = Math.PI / 2; tail.scale.set(1, 1, 0.25);
   add(new THREE.SphereGeometry(0.035, 8, 8), M.darkInk, -0.26, 0.05, 0.11, rawFishMesh);
 
-  // PROP 3 (Right of counter, world x = 15.35, z = 0.45): Woven Bamboo Basket Full of Whole Water Spinach (ត្រកួននៅក្នុងកន្ត្រកទាំងមូល!)
-  const vegBasketG = new THREE.Group(); vegBasketG.position.set(1.35, 0.78, 0.45); kitchenG.add(vegBasketG);
+  // PROP 3 (Right of counter, world x = 15.35, z = -0.45): Woven Bamboo Basket Full of Whole Water Spinach (ត្រកួននៅក្នុងកន្ត្រកទាំងមូល!)
+  const vegBasketG = new THREE.Group(); vegBasketG.position.set(1.35, 0.78, -0.45); kitchenG.add(vegBasketG);
   add(new THREE.CylinderGeometry(0.52, 0.36, 0.30, 18), M.basket, 0, 0.15, 0, vegBasketG);
   add(new THREE.TorusGeometry(0.52, 0.032, 8, 20), M.beam, 0, 0.30, 0, vegBasketG).rotation.x = Math.PI / 2;
   const rv = P.rng(44);
@@ -366,8 +366,8 @@ let rawFishMesh, stoveFireG, pickedColanderG, riceWaterMesh;
     leaf.scale.set(1.35, 0.38, 0.75); leaf.rotation.y = a;
   }
 
-  // Toggled 2nd Woven Colander for Picked Trakuon when Kid helps Mom!
-  pickedColanderG = new THREE.Group(); pickedColanderG.position.set(0.68, 0.78, 0.85); kitchenG.add(pickedColanderG);
+  // Toggled 2nd Woven Colander for Picked Trakuon on counter (z = -0.10, cleanly behind actors!)
+  pickedColanderG = new THREE.Group(); pickedColanderG.position.set(0.68, 0.78, -0.10); kitchenG.add(pickedColanderG);
   add(new THREE.CylinderGeometry(0.32, 0.22, 0.16, 16), M.basket, 0, 0.08, 0, pickedColanderG);
   for (let i = 0; i < 7; i++) {
     const lf = add(new THREE.SphereGeometry(0.10, 8, 6), M.vegLeaf, (i - 3) * 0.06, 0.18, (i % 2 - 0.5) * 0.08, pickedColanderG);
@@ -499,7 +499,7 @@ function updateWorldState(S, f) {
   dreamFeastG.visible = !!S.showDreamFeast;
   if (S.showDreamFeast) {
     feastHalo.visible = true;
-    feastHalo.position.set(2.5, 1.15, 0.1);
+    feastHalo.position.set(2.15, 1.08, -0.05);
     feastHalo.scale.setScalar(1.0 + 0.08 * Math.sin(f * 0.24));
     feastHalo.quaternion.copy(camera.quaternion);
   } else {
