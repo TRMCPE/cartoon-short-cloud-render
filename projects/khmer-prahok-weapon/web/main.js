@@ -264,24 +264,24 @@ buildFishBasket(-25.2, DECK, 2.35, 0.95);
 
 // Mother's Courtyard Prahok Station (x = -13 .. -8, z = -1.6 .. +1.8)
 const workshopG = new THREE.Group(); world.add(workshopG);
-// 1. Heavy carved wooden mortar (ត្បាល់បុកប្រហុក) at (-12.5, 0, 1.1)
-const mortarG = new THREE.Group(); mortarG.position.set(-12.5, DECK, 1.1); workshopG.add(mortarG);
-add(new THREE.CylinderGeometry(0.46, 0.34, 0.44, 14), M.beam, 0, 0.66, 0, mortarG);
-add(new THREE.CylinderGeometry(0.30, 0.44, 0.44, 14), M.beam, 0, 0.22, 0, mortarG);
-add(new THREE.CylinderGeometry(0.36, 0.36, 0.08, 12), M.silverFish, 0, 0.87, 0, mortarG);
+// 1. Heavy carved wooden mortar (ត្បាល់បុកប្រហុក) at (-12.0, 0, 1.0)
+const mortarG = new THREE.Group(); mortarG.position.set(-12.0, DECK, 1.0); workshopG.add(mortarG);
+add(new THREE.CylinderGeometry(0.44, 0.32, 0.44, 14), M.beam, 0, 0.66, 0, mortarG);
+add(new THREE.CylinderGeometry(0.28, 0.42, 0.44, 14), M.beam, 0, 0.22, 0, mortarG);
+add(new THREE.CylinderGeometry(0.34, 0.34, 0.08, 12), M.silverFish, 0, 0.87, 0, mortarG);
 // Sea-salt bowl beside mortar
-const saltG = new THREE.Group(); saltG.position.set(-11.55, DECK, 1.35); workshopG.add(saltG);
-add(new THREE.CylinderGeometry(0.32, 0.22, 0.24, 12), M.clayPot, 0, 0.12, 0, saltG);
-add(new THREE.SphereGeometry(0.27, 10, 8), M.saltWhite, 0, 0.24, 0, saltG).scale.set(1, 0.55, 1);
+const saltG = new THREE.Group(); saltG.position.set(-11.2, DECK, 1.35); workshopG.add(saltG);
+add(new THREE.CylinderGeometry(0.30, 0.20, 0.24, 12), M.clayPot, 0, 0.12, 0, saltG);
+add(new THREE.SphereGeometry(0.25, 10, 8), M.saltWhite, 0, 0.24, 0, saltG).scale.set(1, 0.55, 1);
 
-// 2. Bamboo Sun-Drying Fish Rack (រានហាលត្រី) at (-9.5, 0, 0.9)
-const dryRackG = new THREE.Group(); dryRackG.position.set(-9.5, DECK, 0.9); workshopG.add(dryRackG);
-add(tbox(2.2, 0.10, 1.15, 1.5), M.bamboo, 0, 0.86, 0, dryRackG);
-for (const lx of [-0.95, 0.95]) for (const lz of [-0.48, 0.48]) {
+// 2. Bamboo Sun-Drying Fish Rack (រានហាលត្រី) at (-9.9, 0, 0.95)
+const dryRackG = new THREE.Group(); dryRackG.position.set(-9.9, DECK, 0.95); workshopG.add(dryRackG);
+add(tbox(1.9, 0.10, 1.1, 1.5), M.bamboo, 0, 0.86, 0, dryRackG);
+for (const lx of [-0.82, 0.82]) for (const lz of [-0.45, 0.45]) {
   add(new THREE.CylinderGeometry(0.06, 0.06, 0.86, 6), M.beam, lx, 0.43, lz, dryRackG);
 }
 for (let row = -1; row <= 1; row++) for (let col = -2; col <= 2; col++) {
-  const sf = add(new THREE.SphereGeometry(0.16, 8, 6), M.silverFish, col * 0.38, 0.94, row * 0.30, dryRackG);
+  const sf = add(new THREE.SphereGeometry(0.15, 8, 6), M.silverFish, col * 0.34, 0.94, row * 0.28, dryRackG);
   sf.scale.set(1.35, 0.32, 0.58); sf.rotation.y = 0.3;
 }
 
@@ -321,11 +321,11 @@ for (let i = 0; i < 4; i++) {
   jarBench.add(jm);
 }
 
-// 4. Hero Courtyard Pedestal Table (toggled cleanly for hero Prahok Jar showcase shots!)
+// 4. Hero Courtyard Pedestal Table (compact 0.95m width so Mother & Son flank it cleanly in 9:16!)
 const heroTable = new THREE.Group(); heroTable.position.set(-11.0, DECK, 1.4); world.add(heroTable);
-add(tbox(1.5, 0.12, 1.1, 1.5), M.plank, 0, 0.78, 0, heroTable);
-for (const lx of [-0.62, 0.62]) for (const lz of [-0.42, 0.42]) {
-  add(tbox(0.12, 0.78, 0.12, 1), M.beam, lx, 0.39, lz, heroTable);
+add(tbox(0.96, 0.11, 0.88, 1.5), M.plank, 0, 0.78, 0, heroTable);
+for (const lx of [-0.38, 0.38]) for (const lz of [-0.34, 0.34]) {
+  add(tbox(0.10, 0.78, 0.10, 1), M.beam, lx, 0.39, lz, heroTable);
 }
 
 // ---------- Zone B: Tropical Trees, Sugar Palms, Ox-Cart & Forest Campfire ----------
@@ -388,16 +388,16 @@ const jungleTree = (x, z, h = 8.0, seed = 1) => {
 jungleTree(30.6, -2.6, 8.8, 2);
 jungleTree(34.8, -2.6, 9.2, 3);
 
-// Distant rolling hills & Phnom Kulen mountains
+// Continuous ring of rolling green Angkor hills & Phnom Kulen mountains (eliminates flat horizon gaps!)
 {
   const rm = P.rng(109);
-  for (let i = 0; i < 16; i++) {
-    const a = rm() * Math.PI * 2, d = 175 + rm() * 140;
-    const h = add(new THREE.SphereGeometry(42 + rm() * 38, 18, 10), i % 2 ? M.hill : M.hillFar, Math.cos(a) * d, -12, Math.sin(a) * d, world, { cast: false });
-    h.scale.y = 0.45 + rm() * 0.25;
+  for (let i = 0; i < 32; i++) {
+    const a = (i / 32) * Math.PI * 2 + (rm() - 0.5) * 0.08, d = 115 + rm() * 45;
+    const h = add(new THREE.SphereGeometry(36 + rm() * 26, 18, 10), i % 2 ? M.hill : M.hillFar, Math.cos(a) * d, -9, Math.sin(a) * d, world, { cast: false });
+    h.scale.y = 0.42 + rm() * 0.22;
   }
-  for (let i = 0; i < 12; i++) {
-    const a = rm() * Math.PI * 2, d = 520 + rm() * 180, hh = 95 + rm() * 90, rr = 110 + rm() * 65;
+  for (let i = 0; i < 14; i++) {
+    const a = rm() * Math.PI * 2, d = 480 + rm() * 180, hh = 95 + rm() * 90, rr = 110 + rm() * 65;
     add(new THREE.ConeGeometry(rr, hh, 7), M.mount, Math.cos(a) * d, hh / 2 - 8, Math.sin(a) * d, world, { cast: false });
   }
 }
@@ -510,10 +510,11 @@ const heroJarLid = new THREE.Group(); heroJarLid.position.set(0, 0.86, 0); heroJ
 add(new THREE.CylinderGeometry(0.29, 0.31, 0.09, 16), M.bananaLeaf, 0, 0, 0, heroJarLid);
 add(new THREE.SphereGeometry(0.10, 10, 8), M.clayPot, 0, 0.07, 0, heroJarLid);
 
-// Radiant golden halo disc behind Hero Jar (ndSkip so no world ink lines!)
+// Soft radial golden halo behind Hero Jar (ndSkip, soft gradient with zero hard circle edge!)
+const haloTex = P.tex(P.radial('255,222,88', 0.65));
 const jarHalo = new THREE.Mesh(
-  new THREE.CircleGeometry(1.15, 28),
-  new THREE.MeshBasicMaterial({ color: '#ffe164', transparent: true, opacity: 0.45, depthWrite: false })
+  new THREE.PlaneGeometry(2.6, 2.6),
+  new THREE.MeshBasicMaterial({ map: haloTex, transparent: true, opacity: 0.55, depthWrite: false })
 );
 jarHalo.userData.ndSkip = true; scene.add(jarHalo);
 
@@ -610,7 +611,9 @@ const inkScene = fs(new THREE.ShaderMaterial({
       if (card && ds > 0.) continue;
       if (card) ds = 1e4;
       vec3 ns = s.rgb*2.-1.;
-      e = max(e, smoothstep(.006, .02, (ds - d)/d));
+      float flatGnd = step(.92, n.y) * step(.92, ns.y);
+      float dj = mix(.02, .22, flatGnd);
+      e = max(e, smoothstep(dj*.3, dj, (ds - d)/d));
       if (!card && abs(ds-d)/d < .06) e = max(e, smoothstep(.88, .72, dot(n, ns)) * .9);
     }
     return e * (1. - smoothstep(140., 520., d)*.8);
@@ -694,8 +697,14 @@ function updateWorldState(S, f) {
     const sc = S.jar.s || 1;
     heroJarG.scale.setScalar(sc);
     const lo = S.jar.lidOpen || 0;
-    heroJarLid.position.set(lo * 0.42, 0.86 + Math.sin(Math.min(1, lo) * Math.PI) * 0.35 + lo * 0.18, 0);
-    heroJarLid.rotation.z = -lo * 1.15;
+    if (lo >= 0.99) {
+      // Rest lid neatly propped at the base side of the jar once opened
+      heroJarLid.position.set(-0.42, 0.24, 0.14);
+      heroJarLid.rotation.z = 1.18;
+    } else {
+      heroJarLid.position.set(lo * 0.36, 0.86 + Math.sin(Math.min(1, lo) * Math.PI) * 0.32, 0);
+      heroJarLid.rotation.z = -lo * 0.95;
+    }
 
     if (S.jar.glow > 0) {
       jarHalo.visible = true;

@@ -124,9 +124,9 @@ const findChrome = () => {
 };
 
 const executablePath = findChrome();
+const useGpuWebgl = process.env.USE_GPU_WEBGL === '1';
 const launchArgs = [
-  '--use-angle=swiftshader',
-  '--enable-unsafe-swiftshader',
+  ...(useGpuWebgl ? [] : ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']),
   '--ignore-gpu-blocklist',
   '--disable-accelerated-2d-canvas',
   '--disable-dev-shm-usage',

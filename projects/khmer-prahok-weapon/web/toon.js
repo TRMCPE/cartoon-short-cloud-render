@@ -971,8 +971,8 @@ const drawKhmerHair = (p, O, H, cx, hc, light, thick, ow, u, facing) => {
       // Iconic red-white checked Khmer Krama headband!
       const ky = hc - 0.44 * H.b;
       p.band([[cx - H.a * 1.04, ky], [cx + H.a * 1.04, ky]], O.krama, 10 * u, 2.2 * u, "round");
-      for (let i = -4; i <= 4; i += 2) {
-        p.poly(rrect(cx + i * 18 * u - 5 * u, ky - 4 * u, cx + i * 18 * u + 5 * u, ky + 4 * u, 1.5 * u), "#fff7ee", 0);
+      for (let i = -3; i <= 3; i += 2) {
+        p.poly(rrect(cx + i * 19 * u - 5 * u, ky - 4 * u, cx + i * 19 * u + 5 * u, ky + 4 * u, 1.5 * u), "#fff7ee", 0);
       }
       // Krama knot tails fluttering on back/side
       const kx = cx - (facing || 1) * H.a * 0.96;
