@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="km">
+<head>
+  <meta charset="utf-8">
+  <title>អំណាចស្តេច «បង» — បងប្រុសកំពូលខ្ជិល និងតេឡេ ១០ សង់ទីម៉ែត្រ!</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+    canvas { display: block; width: 1080px; height: 1920px; }
+  </style>
+</head>
+<body>
+  <canvas id="c" width="1080" height="1920"></canvas>
+  <script type="module">
+    window.addEventListener('error', (e) => { window.err = e.message || String(e); console.error('ERR', window.err); });
+    window.addEventListener('unhandledrejection', (e) => { window.err = String(e.reason); console.error('ERR', window.err); });
+    import('./main.js').catch((e) => { window.err = e.stack || String(e); console.error('ERR', window.err); });
+  </script>
+</body>
+</html>
