@@ -113,10 +113,10 @@ const KICKS = [
 // - Red Laterite Sprint Path: x = +2.8 .. +11.5, z = +0.35.
 // - Backyard Play Stage: x = +13.5, z = +0.20 (Haystack & Banana trees behind at z = -3.4).
 const CAMS = {
-  // 1. Frame-0 Hook: Lateral tracking push centered directly on Younger Bro sprinting in open laterite yard (x = 11.8 -> 7.8, 100% clear of house posts!)
+  // 1. Frame-0 Hook: Lateral tracking push centered directly on Younger Bro sprinting in open laterite yard (x = 11.8 -> 7.8, locked smooth curve!)
   s01_hook_sweat_sprint: [
     { f: 0,  pos: [11.9, 1.88, 5.8], look: [11.8, 1.05, 0.35], fov: 40 },
-    { f: 58, pos: [7.9,  1.76, 5.2], look: [7.8,  1.05, 0.35], fov: 39, ease: 'easeOut' },
+    { f: 58, pos: [7.9,  1.76, 5.2], look: [7.8,  1.05, 0.35], fov: 39, ease: 'smooth' },
   ],
   // 2. Glide into Khmer veranda: Younger Bro skids in toward Lounging Older Bro & the low remote stool! (D=6.6m)
   s02_hook_hand_object: [
@@ -327,7 +327,7 @@ export const actorsAt = (f, T) => {
 
   switch (S.id) {
     case 's01_hook_sweat_sprint': {
-      const k = ramp(f, 0, 58);
+      const k = M.smooth(ramp(f, 0, 58));
       const kx = lerp(11.8, 7.8, k);
       const st = q((f * 0.14) % 1, 2);
       out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, sprint: true, step: st, sweat: true, sweatSpray: true, expr: 'pained', facing: -1 }, [kx, 0, 0.35], { tint, s: 1.05 }));
@@ -409,7 +409,7 @@ export const actorsAt = (f, T) => {
     }
 
     case 's15_breathless_sprint': {
-      const k = ramp(f, 687, 729);
+      const k = M.smooth(ramp(f, 687, 729));
       const kx = lerp(12.2, 7.8, k);
       const st = q((f * 0.15) % 1, 2);
       out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, sprint: true, step: st, sweat: true, sweatSpray: true, expr: 'panting', facing: -1 }, [kx, 0, 0.35], { tint, s: 1.05 }));
@@ -511,7 +511,7 @@ export const fxAt = (f, T) => {
 
   if (S.id === 's01_hook_sweat_sprint' || S.id === 's15_breathless_sprint') {
     const isHook = S.id === 's01_hook_sweat_sprint';
-    const kx = isHook ? lerp(11.8, 7.8, ramp(f, 0, 58)) : lerp(12.2, 7.8, ramp(f, 687, 729));
+    const kx = isHook ? lerp(11.8, 7.8, M.smooth(ramp(f, 0, 58))) : lerp(12.2, 7.8, M.smooth(ramp(f, 687, 729)));
     for (let i = 0; i < 2; i++) {
       const ph = q(((f * 0.10) + i * 0.5) % 1, 2);
       out.push({
