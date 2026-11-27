@@ -163,16 +163,16 @@ export function kramaTex(rgb = '176,34,44') {
   return c;
 }
 
-/** Calm emerald-teal Cambodian rural creek/canal water (ទឹកព្រែកក្រោមស្ពាន) */
+/** Calm tropical turquoise-teal Cambodian rural creek/canal water (ទឹកព្រែកក្រោមស្ពាន) */
 export function creekWater(seed = 52) {
   const [c, g] = cv(512, 512), r = rng(seed);
   const gr = g.createLinearGradient(0, 0, 512, 0);
-  gr.addColorStop(0, '#2c7369'); gr.addColorStop(0.5, '#3b9188'); gr.addColorStop(1, '#2a6e64');
+  gr.addColorStop(0, '#298ea8'); gr.addColorStop(0.5, '#3fb6cf'); gr.addColorStop(1, '#26849c');
   g.fillStyle = gr; g.fillRect(0, 0, 512, 512);
-  for (let i = 0; i < 85; i++) {
-    g.strokeStyle = r() > 0.4 ? 'rgba(190,238,242,0.34)' : 'rgba(26,74,68,0.38)';
-    g.lineWidth = 2 + r() * 3;
-    const x = r() * 512, y = r() * 512, w = 28 + r() * 68;
+  for (let i = 0; i < 95; i++) {
+    g.strokeStyle = r() > 0.35 ? 'rgba(215,248,255,0.45)' : 'rgba(20,92,112,0.36)';
+    g.lineWidth = 2.5 + r() * 3.5;
+    const x = r() * 512, y = r() * 512, w = 32 + r() * 74;
     g.beginPath(); g.moveTo(x - w / 2, y); g.quadraticCurveTo(x, y - 5 + r() * 10, x + w / 2, y); g.stroke();
   }
   return c;

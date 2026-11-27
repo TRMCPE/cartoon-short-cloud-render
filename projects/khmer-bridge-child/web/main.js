@@ -128,12 +128,12 @@ const yardPath = add(new THREE.PlaneGeometry(18.0, 2.8), M.laterite, 6.8, DECK +
 yardPath.rotation.x = -Math.PI / 2;
 const gatePath = add(new THREE.PlaneGeometry(3.2, 5.2), M.laterite, 12.5, DECK + 0.005, -1.1, world, { cast: false });
 gatePath.rotation.x = -Math.PI / 2;
-// Main Village Laterite Dirt Road running behind the yard gate (z = -3.6)
-const villageRoad = add(new THREE.PlaneGeometry(68.0, 3.4), M.laterite, -2.0, DECK + 0.004, -3.6, world, { cast: false });
+// Main Village Laterite Dirt Road running behind the yard gate (strictly x = -5..+21 so it never crosses the creek at x = -24!)
+const villageRoad = add(new THREE.PlaneGeometry(26.0, 3.4), M.laterite, 8.0, DECK + 0.004, -3.6, world, { cast: false });
 villageRoad.rotation.x = -Math.PI / 2;
 
 // Distant electric-green Cambodian rice paddy field + raised bund dike (ភ្លឺស្រែ) at z = -22..-48
-const paddy = add(new THREE.PlaneGeometry(190, 28), M.paddyGreen, -2, DECK - 0.015, -32, world, { cast: false });
+const paddy = add(new THREE.PlaneGeometry(190, 28), M.paddyGreen, -2, DECK + 0.002, -32, world, { cast: false });
 paddy.rotation.x = -Math.PI / 2;
 add(box(190, 0.28, 0.85), M.bundDirt, -2, 0.12, -18.2, world, { cast: false });
 
@@ -247,8 +247,8 @@ const gateStageG = new THREE.Group(); gateStageG.position.set(12.5, DECK, 0.0); 
   }
   add(box(3.80, 0.10, 0.14), M.whiteMortar, 0, 3.22, -1.55, gateStageG);
 
-  // Cute Khmer Village Snack Stall (តូបលក់នំ) right outside the fence at x = +3.1 (world x = 15.6), z = -2.35!
-  const stallG = new THREE.Group(); stallG.position.set(3.1, 0, -2.35); gateStageG.add(stallG);
+  // Cute Khmer Village Snack Stall (តូបលក់នំ) right outside the fence at x = +2.25 (world x = 14.75), z = -2.15!
+  const stallG = new THREE.Group(); stallG.position.set(2.25, 0, -2.15); gateStageG.add(stallG);
   add(tbox(1.55, 0.72, 0.82, 1.2), M.teakPlank, 0, 0.36, 0, stallG);
   add(new THREE.CylinderGeometry(0.04, 0.04, 2.35, 8), M.beam, 0, 1.18, -0.1, stallG);
   const umb = add(new THREE.ConeGeometry(1.38, 0.58, 12), M.umbrella, 0, 2.42, -0.1, stallG);
@@ -266,47 +266,45 @@ const gateStageG = new THREE.Group(); gateStageG.position.set(12.5, DECK, 0.0); 
 // ============================================================================
 const bridgeStageG = new THREE.Group(); bridgeStageG.position.set(-24.0, DECK, 0.0); world.add(bridgeStageG);
 {
-  // Depressed creek channel filled with calm emerald-teal water + floating lotus pads & pink lotus blossoms!
-  const water = add(new THREE.PlaneGeometry(5.2, 26.0), M.creekWater, -0.6, -0.06, -3.5, bridgeStageG, { cast: false });
+  // Creek channel filled with bright turquoise-teal water (y = +0.012 above lawn) + floating lotus pads & pink lotus blossoms!
+  const water = add(new THREE.PlaneGeometry(4.8, 22.0), M.creekWater, -1.1, 0.012, -2.5, bridgeStageG, { cast: false });
   water.rotation.x = -Math.PI / 2;
 
-  // Sloped grassy/sandy creek banks on left (x = -4.2) and right (x = +2.3, dry under-bridge bank alcove!)
-  add(tbox(3.4, 0.24, 18.0, 2), M.sweptEarth, -4.6, 0.06, -2.0, bridgeStageG, { cast: false });
-  add(tbox(4.2, 0.22, 18.0, 2), M.sweptEarth, 3.6, 0.05, -2.0, bridgeStageG, { cast: false });
-  // Dry sandy shelf tucked right UNDER the right span of the bridge (world x = -22.2, y = 0.04, z = -0.35) where the baby basket sits!
-  const alcovePad = add(new THREE.CircleGeometry(1.55, 20), M.sweptEarth, 1.85, 0.02, -0.35, bridgeStageG, { cast: false });
+  // Sloped grassy/sandy creek banks on left (x = -4.9) and right (x = +2.9, dry under-bridge bank alcove!)
+  add(tbox(3.2, 0.18, 18.0, 2), M.sweptEarth, -5.0, 0.03, -2.0, bridgeStageG, { cast: false });
+  add(tbox(3.8, 0.18, 18.0, 2), M.sweptEarth, 3.1, 0.03, -2.0, bridgeStageG, { cast: false });
+  // Dry sandy shelf tucked right UNDER the right span of the bridge (world x = -22.15, y = 0.04, z = -0.35) where the baby basket sits!
+  const alcovePad = add(new THREE.CircleGeometry(1.45, 20), M.sweptEarth, 1.85, 0.04, -0.35, bridgeStageG, { cast: false });
   alcovePad.rotation.x = -Math.PI / 2;
 
   // Floating emerald Lotus Pads (ស្លឹកឈូក) & Pink Lotus Flowers (ផ្កាឈូក) on creek water!
-  for (const [lx, lz, r] of [[-1.8, 1.3, 0.34], [-0.5, 1.9, 0.28], [0.4, 1.4, 0.32], [-1.4, -2.4, 0.36], [0.1, -2.8, 0.30]]) {
-    const pad = add(new THREE.CircleGeometry(r, 14), M.lotusPad, lx, -0.04, lz, bridgeStageG, { cast: false });
+  for (const [lx, lz, r] of [[-2.1, 1.2, 0.34], [-0.9, 1.8, 0.28], [-0.1, 1.3, 0.32], [-1.8, -2.2, 0.36], [-0.4, -2.6, 0.30]]) {
+    const pad = add(new THREE.CircleGeometry(r, 14), M.lotusPad, lx, 0.022, lz, bridgeStageG, { cast: false });
     pad.rotation.x = -Math.PI / 2;
     if (r > 0.31) {
-      add(new THREE.ConeGeometry(0.11, 0.18, 7), M.lotusPink, lx + 0.04, 0.05, lz, bridgeStageG, { cast: false });
+      add(new THREE.ConeGeometry(0.11, 0.18, 7), M.lotusPink, lx + 0.04, 0.11, lz, bridgeStageG, { cast: false });
     }
   }
 
-  // Authentic Rustic Khmer Wooden Creek Bridge (ស្ពានឈើ) — Deck at y = 1.82m, z = -0.65
-  // Timber pilings spaced cleanly at local x = -2.8, -0.2, +3.4 so local x = +1.85 (baby alcove!) is 100% open & unoccluded!
-  for (const px of [-2.8, -0.2, 3.4]) {
+  // Authentic Rustic Khmer Wooden Creek Bridge (ស្ពានឈើ) — Deck raised to y = 2.24m so Mom's conical Duon hat has full headroom underneath!
+  for (const px of [-2.8, -0.3, 3.4]) {
     for (const pz of [-1.22, -0.08]) {
-      add(new THREE.CylinderGeometry(0.11, 0.13, 2.05, 10), M.beam, px, 0.86, pz, bridgeStageG);
+      add(new THREE.CylinderGeometry(0.11, 0.13, 2.42, 10), M.beam, px, 1.08, pz, bridgeStageG);
     }
-    add(tbox(0.20, 0.18, 1.42, 1), M.beam, px, 1.68, -0.65, bridgeStageG);
+    add(tbox(0.20, 0.18, 1.42, 1), M.beam, px, 2.10, -0.65, bridgeStageG);
   }
-  // Horizontal bridge stringers + weathered wooden plank deck + gentle approach ramps!
-  add(tbox(7.8, 0.16, 1.48, 2), M.bridgePlank, 0.2, 1.82, -0.65, bridgeStageG);
-  const rampL = add(tbox(2.4, 0.14, 1.44, 1.5), M.bridgePlank, -4.6, 0.96, -0.65, bridgeStageG);
-  rampL.rotation.z = 0.72;
-  const rampR = add(tbox(2.4, 0.14, 1.44, 1.5), M.bridgePlank, 5.0, 0.96, -0.65, bridgeStageG);
-  rampR.rotation.z = -0.72;
+  add(tbox(7.8, 0.16, 1.48, 2), M.bridgePlank, 0.2, 2.24, -0.65, bridgeStageG);
+  const rampL = add(tbox(2.8, 0.14, 1.44, 1.5), M.bridgePlank, -4.75, 1.18, -0.65, bridgeStageG);
+  rampL.rotation.z = 0.78;
+  const rampR = add(tbox(2.8, 0.14, 1.44, 1.5), M.bridgePlank, 5.15, 1.18, -0.65, bridgeStageG);
+  rampR.rotation.z = -0.78;
 
-  // Rear wooden handrail ONLY (at z = -1.34) + low 0.09m front wheel-curb (at z = +0.04) -> Mom's Sampot is 100% unobstructed!
-  add(tbox(7.8, 0.09, 0.10, 1.5), M.beam, 0.2, 1.93, 0.04, bridgeStageG);
-  add(tbox(7.8, 0.09, 0.09, 1.5), M.beam, 0.2, 2.58, -1.34, bridgeStageG);
-  add(tbox(7.8, 0.07, 0.08, 1.5), M.beam, 0.2, 2.22, -1.34, bridgeStageG);
+  // Rear wooden handrail ONLY (at z = -1.34) + low 0.09m front wheel-curb -> Mom's Sampot is 100% unobstructed!
+  add(tbox(7.8, 0.09, 0.10, 1.5), M.beam, 0.2, 2.35, 0.04, bridgeStageG);
+  add(tbox(7.8, 0.09, 0.09, 1.5), M.beam, 0.2, 3.00, -1.34, bridgeStageG);
+  add(tbox(7.8, 0.07, 0.08, 1.5), M.beam, 0.2, 2.64, -1.34, bridgeStageG);
   for (let rx_ = -3.4; rx_ <= 3.8; rx_ += 1.44) {
-    add(tbox(0.10, 0.82, 0.10, 1), M.beam, rx_, 2.24, -1.34, bridgeStageG);
+    add(tbox(0.10, 0.82, 0.10, 1), M.beam, rx_, 2.66, -1.34, bridgeStageG);
   }
 }
 
@@ -447,10 +445,11 @@ const inkScene = fs(new THREE.ShaderMaterial({
       if (card && ds > 0.) continue;
       if (card) ds = 1e4;
       vec3 ns = s.rgb*2.-1.;
-      e = max(e, smoothstep(.006, .02, (ds - d)/d));
+      float graz = clamp(abs(n.z) / .34, .06, 1.);
+      e = max(e, smoothstep(.006, .022, ((ds - d)/d) * graz));
       if (!card && abs(ds-d)/d < .06) e = max(e, smoothstep(.88, .72, dot(n, ns)) * .9);
     }
-    return e * (1. - smoothstep(140., 520., d)*.8);
+    return e * (1. - smoothstep(65., 185., d)*.92);
   }
   void main(){
     vec3 c = texture2D(col, vUv).rgb;

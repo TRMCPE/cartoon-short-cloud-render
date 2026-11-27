@@ -129,8 +129,8 @@ const CAMS = {
   ],
   // 3. Stage C (Wooden Creek Bridge): Punchy crane-in under the rustic wooden bridge revealing the swaddled baby basket + "?" card!
   s03_hook_under_bridge: [
-    { f: 105, pos: [-22.4, 1.85, 6.4], look: [-22.3, 1.02, -0.45], fov: 42 },
-    { f: 146, pos: [-22.2, 1.56, 5.2], look: [-22.15, 0.88, -0.40], fov: 39, ease: 'easeOut' },
+    { f: 105, pos: [-22.6, 1.98, 6.6], look: [-22.4, 1.06, -0.45], fov: 43 },
+    { f: 146, pos: [-22.3, 1.66, 5.4], look: [-22.2, 0.92, -0.40], fov: 40, ease: 'easeOut' },
   ],
   // 4. Sunny Khmer family portrait in front of stilt house: Towering Older Bro vs polite Younger Bro in Sampeah!
   s04_khmer_family_bongs: [
@@ -169,13 +169,13 @@ const CAMS = {
   ],
   // 11. Stage C Flashback: Scenic tracking shot as Khmer Mom in Sampot Samloy & Duon palm hat walks across the wooden creek bridge!
   s11_mom_walks_bridge: [
-    { f: 560, pos: [-25.2, 2.95, 7.6], look: [-24.6, 2.25, -0.65], fov: 43 },
-    { f: 601, pos: [-23.4, 2.80, 6.8], look: [-23.2, 2.15, -0.65], fov: 41 },
+    { f: 560, pos: [-25.0, 3.25, 7.8], look: [-24.4, 2.55, -0.65], fov: 44 },
+    { f: 601, pos: [-23.4, 3.05, 7.0], look: [-23.1, 2.45, -0.65], fov: 42 },
   ],
   // 12. Stage C Under-Bridge Payoff: Camera cranes down to the creek bank as Mom lovingly cradles the abandoned baby under the bridge!
   s12_found_adopted_baby: [
-    { f: 602, pos: [-22.3, 1.92, 6.5], look: [-22.2, 1.08, -0.40], fov: 42 },
-    { f: 671, pos: [-22.0, 1.74, 5.5], look: [-22.0, 1.12, -0.35], fov: 39, ease: 'easeOut' },
+    { f: 602, pos: [-22.5, 2.02, 6.6], look: [-22.3, 1.16, -0.40], fov: 43 },
+    { f: 671, pos: [-22.1, 1.82, 5.6], look: [-22.05, 1.18, -0.35], fov: 40, ease: 'easeOut' },
   ],
   // 13. Back on Veranda: Naive Younger Bro gasps in total gullible shock while Older Bro slyly snatches the snacks!
   s13_naive_believes_all: [
@@ -204,8 +204,8 @@ const CAMS = {
   ],
   // 18. Whip-zoom onto Older Bro exploding in bug-eyed sweat-spraying PANIC (ភ័យស្លន់ស្លោ)!
   s18_bro_sudden_panic: [
-    { f: 963, pos: [0.0, 1.82, 5.2], look: [0.0, 1.16, 0.15], fov: 40 },
-    { f: 993, pos: [0.0, 1.70, 4.3], look: [0.0, 1.18, 0.15], fov: 37, ease: 'easeOut' },
+    { f: 963, pos: [-0.55, 1.82, 5.2], look: [-0.55, 1.16, 0.15], fov: 40 },
+    { f: 993, pos: [-0.55, 1.70, 4.3], look: [-0.55, 1.18, 0.15], fov: 37, ease: 'easeOut' },
   ],
   // 19. Hilarious Danger Vision: Fierce Khmer Mom brandishing her bamboo rattan cane + Spank Starburst Card!
   s19_fear_mom_spanking: [
@@ -389,13 +389,13 @@ export const actorsAt = (f, T) => {
 
     case 's11_mom_walks_bridge': {
       const k = ramp(f, 560, 601);
-      const mx = lerp(-25.4, -22.9, k);
+      const mx = lerp(-25.2, -22.9, k);
       const st = q((f * 0.08) % 1, 2);
       out.push(CH(T, 'mom', {
         ...id(9), seed: 9, step: st, L: 'hang', R: 'shrug', duonHat: true,
         expr: k > 0.65 ? 'shock' : 'smile_closed', facing: 1,
-      }, [mx, 1.90, -0.62], { tint, s: 1.02, ground: 1.90 }));
-      out.push(CARD('basket_b11', (p) => T.drawBabyBasketCard(p, q(f * 0.16, 1), true), [-22.15, 0.02, -0.35], { tint, s: 0.96 }));
+      }, [mx, 2.32, -0.62], { tint, s: 1.02, ground: 2.32 }));
+      out.push(CARD('basket_b11', (p) => T.drawBabyBasketCard(p, q(f * 0.16, 1), true), [-22.15, 0.04, -0.35], { tint, s: 0.96 }));
       break;
     }
 
@@ -466,7 +466,7 @@ export const actorsAt = (f, T) => {
       out.push(CH(T, 'olderBro', {
         bob: 0, tilt: -3, headTilt: 2, blink: 0, seed: 5,
         L: 'panic', R: 'panic', sweat: true, sweatSpray: true, expr: 'panic', facing: 1,
-      }, [0.0, q(jumpY, 2), 0.15], { tint, s: 1.07 }));
+      }, [-0.55, q(jumpY, 2), 0.15], { tint, s: 1.07 }));
       break;
     }
 
@@ -497,10 +497,10 @@ export const actorsAt = (f, T) => {
         // Older Bro drops to his knees clinging tightly around Younger Bro's leg!
         out.push(CH(T, 'olderBro', {
           mode: 'hugLeg', wv: q(f * 0.24, 1), expr: 'panic', blink: 0, facing: 1,
-        }, [12.02, 0, -0.50], { tint, s: 1.05 }));
+        }, [12.30, 0, -0.48], { tint, s: 1.05, order: 3 }));
         out.push(CH(T, 'youngerBro', {
           ...id(2), seed: 2, L: 'shrug', R: 'stickHold', bundleStick: true, sweat: true, expr: 'shock', facing: -1,
-        }, [12.68, 0, -0.55], { tint, s: 1.03 }));
+        }, [12.66, 0, -0.55], { tint, s: 1.03 }));
       }
       break;
     }
