@@ -134,81 +134,80 @@ const houseG = new THREE.Group(); houseG.position.set(0.0, DECK, 0.0); world.add
 let remoteMesh3D, remoteRingMesh, tvScreenBars, tvScreenAction, kingHaloMesh;
 {
   // Swept ochre earth & terracotta floor pad under the stilt house (100% open front sightlines!)
-  add(tbox(10.6, 0.06, 6.4, 2), M.tile, 0, -0.02, -0.5, houseG, { cast: false });
+  add(tbox(11.6, 0.06, 6.4, 2), M.tile, 0, -0.02, -0.5, houseG, { cast: false });
 
   // Stout square timber stilts on concrete footing pads:
-  // Front posts wide apart at x = -4.95 & +4.95 so x in [-4.5, +4.5] has ZERO foreground occlusion!
-  for (const px of [-4.95, 4.95]) {
+  // Front posts wide apart at x = -5.45 & +5.45 so x in [-5.1, +5.1] has ZERO foreground occlusion!
+  for (const px of [-5.45, 5.45]) {
     add(box(0.36, 0.16, 0.36), M.concrete, px, 0.08, 1.85, houseG);
     add(tbox(0.24, 3.95, 0.24, 1.5), M.beam, px, 2.05, 1.85, houseG);
   }
   // Rear stilts strictly behind actors at z = -2.85
-  for (const px of [-4.95, -1.65, 1.65, 4.95]) {
+  for (const px of [-5.45, -1.85, 1.85, 5.45]) {
     add(box(0.36, 0.16, 0.36), M.concrete, px, 0.08, -2.85, houseG);
     add(tbox(0.24, 3.95, 0.24, 1.5), M.beam, px, 2.05, -2.85, houseG);
   }
 
   // Elevated Upper Khmer Wooden House Story (starts cleanly at y = 3.85 above medium shots!)
-  add(tbox(11.0, 0.24, 5.4, 2), M.teakPlank, 0, 3.95, -0.5, houseG);
+  add(tbox(12.0, 0.24, 5.4, 2), M.teakPlank, 0, 3.95, -0.5, houseG);
   // Vibrant rural Cambodian aqua-turquoise painted wooden upper wall + louvered shutters!
-  add(tbox(10.4, 2.35, 4.8, 2), M.aquaPlank, 0, 5.22, -0.5, houseG);
-  for (const wx of [-2.8, 0, 2.8]) {
+  add(tbox(11.4, 2.35, 4.8, 2), M.aquaPlank, 0, 5.22, -0.5, houseG);
+  for (const wx of [-3.1, 0, 3.1]) {
     add(tbox(1.15, 1.05, 0.12, 1), M.beam, wx, 5.25, 1.94, houseG);
     const sh = add(tbox(1.10, 0.95, 0.08, 1), M.whiteMortar, wx, 5.42, 2.24, houseG);
     sh.rotation.x = -0.55; // Propped open outward at ~45 deg!
   }
   // Steep Khmer terracotta clay-tile roof with crisp white-mortared ridge!
   for (const s of [-1, 1]) {
-    const rf = add(tbox(11.8, 0.22, 3.6, 2), M.roof, 0, 7.25, -0.5 + s * 1.45, houseG);
+    const rf = add(tbox(12.6, 0.22, 3.6, 2), M.roof, 0, 7.25, -0.5 + s * 1.45, houseG);
     rf.rotation.x = s * 0.62;
   }
-  add(box(11.9, 0.16, 0.24), M.whiteMortar, 0, 8.15, -0.5, houseG);
+  add(box(12.7, 0.16, 0.24), M.whiteMortar, 0, 8.15, -0.5, houseG);
 
-  // Back wooden screen wall under rear of house (z = -2.92, strictly behind everything) + diagonal red hammock (អង្រឹង)
-  add(tbox(10.2, 2.35, 0.16, 2), M.teakPlank, 0, 1.22, -2.95, houseG);
-  const ham = add(new THREE.CylinderGeometry(0.18, 0.18, 2.4, 10, 1, true, 0, Math.PI), M.hammockRed, -3.1, 1.05, -2.35, houseG);
+  // Back wooden screen wall under rear of house (z = -2.95, strictly behind everything) + diagonal red hammock (អង្រឹង)
+  add(tbox(11.2, 2.35, 0.16, 2), M.teakPlank, 0, 1.22, -2.95, houseG);
+  const ham = add(new THREE.CylinderGeometry(0.18, 0.18, 2.4, 10, 1, true, 0, Math.PI), M.hammockRed, -3.5, 1.05, -2.35, houseG);
   ham.rotation.z = Math.PI / 2 + 0.08; ham.rotation.x = 0.35;
 
-  // Pair of bulbous ribbed Khmer rainwater jars (ពាងទឹក Peang) tucked under left eaves (x = -4.15, z = -1.95)
-  for (const [jx, jz, sc] of [[-4.25, -1.95, 1.0], [-3.42, -2.15, 0.88]]) {
+  // Pair of bulbous ribbed Khmer rainwater jars (ពាងទឹក Peang) tucked under left eaves (x = -4.55, z = -1.95)
+  for (const [jx, jz, sc] of [[-4.65, -1.95, 1.0], [-3.82, -2.15, 0.88]]) {
     const jar = add(new THREE.SphereGeometry(0.42 * sc, 16, 12), M.peangJar, jx, 0.48 * sc, jz, houseG);
     jar.scale.set(1, 1.22, 1);
     add(new THREE.CylinderGeometry(0.30 * sc, 0.32 * sc, 0.08, 14), M.concrete, jx, 0.98 * sc, jz, houseG);
   }
 
-  // Golden Miniature Khmer Spirit House (ខ្ទមអ្នកតា) on post in yard corner (x = -5.65, z = -1.55)
-  const spG = new THREE.Group(); spG.position.set(-5.65, 0, -1.55); houseG.add(spG);
+  // Golden Miniature Khmer Spirit House (ខ្ទមអ្នកតា) on post in yard corner (x = -6.05, z = -1.55)
+  const spG = new THREE.Group(); spG.position.set(-6.05, 0, -1.55); houseG.add(spG);
   add(new THREE.CylinderGeometry(0.08, 0.10, 1.45, 8), M.whiteMortar, 0, 0.72, 0, spG);
   add(box(0.68, 0.08, 0.56), M.gold, 0, 1.48, 0, spG);
   add(box(0.46, 0.42, 0.38), M.gold, 0, 1.72, 0, spG);
   const spRoof = add(new THREE.ConeGeometry(0.46, 0.52, 4), M.gold, 0, 2.18, 0, spG);
   spRoof.rotation.y = Math.PI / 4;
 
-  // ---- CENTERPIECE 1: Carved Khmer Wooden Salon Daybed (សាឡុងឈើខ្មែរ) at x = -1.08, z = -0.45 ----
-  // Width 1.95m -> spans x = -2.055 to -0.105 (right armrest at -0.13)
-  const salonG = new THREE.Group(); salonG.position.set(-1.08, 0, -0.45); houseG.add(salonG);
-  add(tbox(1.95, 0.14, 1.18, 1.5), M.teakPlank, 0, 0.46, 0, salonG);
-  for (const lx of [-0.86, 0.86]) for (const lz of [-0.48, 0.48]) {
+  // ---- CENTERPIECE 1: Carved Khmer Wooden Salon Daybed (សាឡុងឈើខ្មែរ) at x = -1.12, z = -0.45 ----
+  // Width 1.90m -> spans x = -2.07 to -0.17; right side is an open low bolster edge so Older Bro's arm dangles freely toward the remote!
+  const salonG = new THREE.Group(); salonG.position.set(-1.12, 0, -0.45); houseG.add(salonG);
+  add(tbox(1.90, 0.14, 1.18, 1.5), M.teakPlank, 0, 0.46, 0, salonG);
+  for (const lx of [-0.84, 0.84]) for (const lz of [-0.48, 0.48]) {
     add(tbox(0.14, 0.46, 0.14, 1), M.beam, lx, 0.23, lz, salonG);
   }
-  // Ornate carved wooden backrest & side armrests
-  add(tbox(1.98, 0.62, 0.10, 1.5), M.beam, 0, 0.84, -0.54, salonG);
-  add(box(1.76, 0.08, 0.12), M.gold, 0, 1.14, -0.54, salonG);
-  for (const ax of [-0.93, 0.93]) {
-    add(tbox(0.10, 0.34, 1.16, 1), M.beam, ax, 0.68, 0, salonG);
-  }
+  // Ornate carved wooden backrest & left footrest armrest (open right side for unobstructed 10cm elbow-to-remote sightline!)
+  add(tbox(1.94, 0.62, 0.10, 1.5), M.beam, 0, 0.84, -0.54, salonG);
+  add(box(1.74, 0.08, 0.12), M.gold, 0, 1.14, -0.54, salonG);
+  add(tbox(0.10, 0.34, 1.16, 1), M.beam, -0.90, 0.68, 0, salonG);
+  add(tbox(0.08, 0.08, 1.16, 1), M.gold, 0.91, 0.56, 0, salonG);
   // Woven red Khmer mat (កន្ទេលក្រហម) + folded Krama on seat (y = 0.54)
-  add(tbox(1.78, 0.05, 1.04, 1.5), M.matRed, 0, 0.55, 0.02, salonG);
+  add(tbox(1.76, 0.05, 1.04, 1.5), M.matRed, 0.02, 0.55, 0.02, salonG);
   add(tbox(0.42, 0.06, 0.52, 1), M.krama, -0.52, 0.59, 0.12, salonG);
 
-  // ---- CENTERPIECE 2: Low Teak Side Stool + THE 3D TV REMOTE (10cm from Brother's right hand!) at x = +0.16, z = -0.22 ----
-  const stoolG = new THREE.Group(); stoolG.position.set(0.16, 0, -0.22); houseG.add(stoolG);
-  add(new THREE.CylinderGeometry(0.23, 0.21, 0.07, 18), M.teakPlank, 0, 0.52, 0, stoolG);
-  for (const [lx, lz] of [[-0.12, -0.12], [0.12, -0.12], [-0.12, 0.12], [0.12, 0.12]]) {
+  // ---- CENTERPIECE 2: Low Teak Side Stool + THE 3D TV REMOTE (10cm from Brother's right hand!) at x = +0.08, z = -0.18 ----
+  const stoolG = new THREE.Group(); stoolG.position.set(0.08, 0, -0.18); houseG.add(stoolG);
+  add(new THREE.CylinderGeometry(0.22, 0.20, 0.07, 18), M.teakPlank, 0, 0.52, 0, stoolG);
+  for (const [lx, lz] of [[-0.11, -0.11], [0.11, -0.11], [-0.11, 0.11], [0.11, 0.11]]) {
     add(new THREE.CylinderGeometry(0.032, 0.026, 0.52, 8), M.beam, lx, 0.26, lz, stoolG);
   }
   // Crisp 3D TV Remote Control (តេឡេទូរទស្សន៍) sitting right on top at y = 0.58!
-  remoteMesh3D = new THREE.Group(); remoteMesh3D.position.set(-0.02, 0.575, 0.03);
+  remoteMesh3D = new THREE.Group(); remoteMesh3D.position.set(-0.02, 0.575, 0.02);
   remoteMesh3D.rotation.y = 0.32; stoolG.add(remoteMesh3D);
   add(box(0.11, 0.038, 0.24), M.darkInk, 0, 0, 0, remoteMesh3D);
   add(new THREE.CylinderGeometry(0.020, 0.020, 0.046, 10), M.remoteRed, 0, 0.005, -0.075, remoteMesh3D, { cast: false });
@@ -217,34 +216,34 @@ let remoteMesh3D, remoteRingMesh, tvScreenBars, tvScreenAction, kingHaloMesh;
   }
   // Pulsing golden highlight ring around the remote when pointed at!
   remoteRingMesh = new THREE.Mesh(
-    new THREE.RingGeometry(0.15, 0.20, 28),
+    new THREE.RingGeometry(0.14, 0.19, 28),
     new THREE.MeshBasicMaterial({ color: '#ffe14d', side: THREE.DoubleSide, transparent: true, opacity: 0.85, depthWrite: false })
   );
   remoteRingMesh.rotation.x = -Math.PI / 2;
-  remoteRingMesh.position.set(-0.02, 0.562, 0.03);
+  remoteRingMesh.position.set(-0.02, 0.562, 0.02);
   remoteRingMesh.userData.ndSkip = true; remoteRingMesh.visible = false;
   stoolG.add(remoteRingMesh);
 
-  // ---- CENTERPIECE 3: Family Television Set on Khmer Teak Cabinet (x = +2.28, z = -0.52, angled left toward salon) ----
-  const tvG = new THREE.Group(); tvG.position.set(2.28, 0, -0.52); tvG.rotation.y = -0.38; houseG.add(tvG);
-  add(tbox(1.18, 0.68, 0.56, 1.5), M.teakPlank, 0, 0.34, 0, tvG);
-  add(box(1.04, 0.48, 0.58), M.beam, 0, 0.34, 0, tvG);
+  // ---- CENTERPIECE 3: Family Television Set on Khmer Teak Cabinet (x = +1.76, z = -0.45, angled left toward salon) ----
+  const tvG = new THREE.Group(); tvG.position.set(1.76, 0, -0.45); tvG.rotation.y = -0.36; houseG.add(tvG);
+  add(tbox(1.12, 0.68, 0.54, 1.5), M.teakPlank, 0, 0.34, 0, tvG);
+  add(box(0.98, 0.48, 0.56), M.beam, 0, 0.34, 0, tvG);
   // Flatscreen / Classic Family TV with rabbit-ear antenna!
-  add(box(1.12, 0.72, 0.10), M.darkInk, 0, 1.12, 0, tvG);
-  add(box(0.32, 0.10, 0.22), M.darkInk, 0, 0.72, 0, tvG);
-  tvScreenBars = add(new THREE.PlaneGeometry(0.98, 0.58), M.tvBars, 0, 1.12, 0.056, tvG, { cast: false, receive: false });
-  tvScreenAction = add(new THREE.PlaneGeometry(0.98, 0.58), M.tvAction, 0, 1.12, 0.057, tvG, { cast: false, receive: false });
+  add(box(1.06, 0.68, 0.10), M.darkInk, 0, 1.10, 0, tvG);
+  add(box(0.30, 0.10, 0.22), M.darkInk, 0, 0.72, 0, tvG);
+  tvScreenBars = add(new THREE.PlaneGeometry(0.92, 0.54), M.tvBars, 0, 1.10, 0.056, tvG, { cast: false, receive: false });
+  tvScreenAction = add(new THREE.PlaneGeometry(0.92, 0.54), M.tvAction, 0, 1.10, 0.057, tvG, { cast: false, receive: false });
   tvScreenAction.visible = false;
   for (const s of [-1, 1]) {
-    const ant = add(new THREE.CylinderGeometry(0.01, 0.012, 0.48, 6), M.concrete, s * 0.18, 1.65, 0, tvG);
+    const ant = add(new THREE.CylinderGeometry(0.01, 0.012, 0.46, 6), M.concrete, s * 0.18, 1.61, 0, tvG);
     ant.rotation.z = -s * 0.45;
   }
 }
 
-// Golden Royal Aura Halo behind "King Bong" on Royal Beats!
+// Soft Painterly Golden Radial Glow behind "King Bong" on Royal Beats (no hard circle edge!)
 kingHaloMesh = new THREE.Mesh(
-  new THREE.CircleGeometry(1.45, 32),
-  new THREE.MeshBasicMaterial({ color: '#ffe066', transparent: true, opacity: 0.45, depthWrite: false })
+  new THREE.PlaneGeometry(2.6, 2.6),
+  new THREE.MeshBasicMaterial({ map: P.tex(P.radial('255,216,68', 0.58)), transparent: true, depthWrite: false })
 );
 kingHaloMesh.userData.ndSkip = true; kingHaloMesh.visible = false; scene.add(kingHaloMesh);
 
@@ -294,22 +293,22 @@ const yardG = new THREE.Group(); yardG.position.set(13.5, DECK, 0.0); world.add(
 // ============================================================================
 const sugarPalm = (x, z, h = 11.5) => {
   const g = new THREE.Group(); g.position.set(x, DECK, z); world.add(g);
-  // Flared dark root base + slender pale ash-grey shaft with slight natural lean
-  add(new THREE.CylinderGeometry(0.24, 0.42, 1.1, 10), M.trunk, 0, 0.55, 0, g);
-  for (let i = 0; i < 5; i++) {
-    const y0 = 0.9 + (i / 5) * (h - 0.9), sh = (h - 0.9) / 5 + 0.08;
-    add(new THREE.CylinderGeometry(0.19 * (1 - (i + 1) * 0.06), 0.21 * (1 - i * 0.06), sh, 9), M.palmBark, Math.sin(i * 0.28) * 0.16, y0 + sh / 2, 0, g);
-  }
+  // Flared dark root base + single smooth tapered pale ash-grey shaft (zero cylinder step seams!)
+  add(new THREE.CylinderGeometry(0.23, 0.42, 1.1, 12), M.trunk, 0, 0.55, 0, g);
+  const crownG = new THREE.Group();
+  crownG.rotation.z = ((Math.abs(Math.round(x)) % 3) - 1) * 0.025;
+  g.add(crownG);
+  add(new THREE.CylinderGeometry(0.15, 0.22, h - 0.85, 12), M.palmBark, 0, 0.85 + (h - 0.85) / 2, 0, crownG);
   // Short collar of drooping dried brown fronds right beneath green pom-pom crown
   for (let k = 0; k < 8; k++) {
     const a = (k / 8) * Math.PI * 2;
-    const dry = add(new THREE.ConeGeometry(0.36, 1.35, 4), M.palmFrondDry, Math.cos(a) * 0.45, h - 0.55, Math.sin(a) * 0.45, g);
+    const dry = add(new THREE.ConeGeometry(0.36, 1.35, 4), M.palmFrondDry, Math.cos(a) * 0.45, h - 0.55, Math.sin(a) * 0.45, crownG);
     dry.scale.set(1, 1, 0.22); dry.rotation.order = 'YXZ'; dry.rotation.y = -a + Math.PI / 2; dry.rotation.x = 2.25;
   }
   // Spherical starburst crown of stiff fan-shaped sugar-palm fronds!
   for (let k = 0; k < 14; k++) {
     const a = (k / 14) * Math.PI * 2, tier = k % 2;
-    const frond = add(new THREE.ConeGeometry(0.58, 2.35, 5), M.palmLeaf, Math.cos(a) * 0.95, h + 0.15 + tier * 0.28, Math.sin(a) * 0.95, g);
+    const frond = add(new THREE.ConeGeometry(0.58, 2.35, 5), M.palmLeaf, Math.cos(a) * 0.95, h + 0.15 + tier * 0.28, Math.sin(a) * 0.95, crownG);
     frond.scale.set(1, 1, 0.18); frond.rotation.order = 'YXZ';
     frond.rotation.y = -a + Math.PI / 2; frond.rotation.x = tier ? 0.72 : 1.28;
   }

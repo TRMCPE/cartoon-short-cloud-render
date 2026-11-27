@@ -113,20 +113,20 @@ const KICKS = [
 // - Red Laterite Sprint Path: x = +2.8 .. +11.5, z = +0.35.
 // - Backyard Play Stage: x = +13.5, z = +0.20 (Haystack & Banana trees behind at z = -3.4).
 const CAMS = {
-  // 1. Frame-0 Hook: Lateral tracking push on Younger Bro sprinting dripping in sweat along red laterite village path!
+  // 1. Frame-0 Hook: Lateral tracking push centered directly on Younger Bro sprinting dripping in sweat!
   s01_hook_sweat_sprint: [
-    { f: 0,  pos: [8.8, 1.92, 6.2], look: [8.4, 1.05, 0.35], fov: 41 },
-    { f: 58, pos: [5.0, 1.78, 5.4], look: [4.8, 1.05, 0.35], fov: 39, ease: 'easeOut' },
+    { f: 0,  pos: [9.2, 1.88, 5.8], look: [9.1, 1.05, 0.35], fov: 40 },
+    { f: 58, pos: [4.5, 1.76, 5.2], look: [4.4, 1.05, 0.35], fov: 39, ease: 'easeOut' },
   ],
-  // 2. Glide into Khmer veranda: Younger Bro skids in toward Lounging Older Bro & the low remote stool! (D=6.8m)
+  // 2. Glide into Khmer veranda: Younger Bro skids in toward Lounging Older Bro & the low remote stool! (D=6.6m)
   s02_hook_hand_object: [
-    { f: 59,  pos: [0.2, 1.95, 6.8], look: [-0.15, 0.98, -0.25], fov: 42 },
-    { f: 106, pos: [-0.1, 1.80, 6.0], look: [-0.15, 0.96, -0.25], fov: 40 },
+    { f: 59,  pos: [0.15, 1.92, 6.6], look: [-0.05, 0.98, -0.18], fov: 42 },
+    { f: 106, pos: [-0.05, 1.78, 5.9], look: [-0.05, 0.96, -0.18], fov: 40 },
   ],
-  // 3. Punchy close-up on Older Bro's dangling hand right beside the 3D TV Remote + popping "10 cm!" yellow ruler! (D=4.4m)
+  // 3. Punchy close-up on Older Bro's dangling hand right beside the 3D TV Remote + popping "10 cm!" yellow ruler! (D=4.3m)
   s03_hook_ten_cm_ruler: [
-    { f: 107, pos: [-0.18, 1.56, 4.5], look: [-0.18, 0.88, -0.22], fov: 39 },
-    { f: 163, pos: [-0.15, 1.44, 3.7], look: [-0.18, 0.88, -0.22], fov: 36, ease: 'easeOut' },
+    { f: 107, pos: [-0.14, 1.54, 4.4], look: [-0.14, 0.88, -0.16], fov: 39 },
+    { f: 163, pos: [-0.12, 1.42, 3.6], look: [-0.14, 0.88, -0.16], fov: 36, ease: 'easeOut' },
   ],
   // 4. Sunny village two-shot: Younger Bro in polite Sampeah beside smug Older Bro in front of stilt house! (D=6.6m)
   s04_khmer_family_bong: [
@@ -145,33 +145,33 @@ const CAMS = {
   ],
   // 7. Smooth lateral glide across the carved Khmer wooden salon as Older Bro lounges in supreme comfort! (D=5.6m)
   s07_lying_on_salon: [
-    { f: 333, pos: [-1.45, 1.78, 5.4], look: [-1.05, 0.90, -0.30], fov: 40 },
-    { f: 377, pos: [-0.75, 1.68, 4.9], look: [-1.00, 0.90, -0.30], fov: 39 },
+    { f: 333, pos: [-1.35, 1.78, 5.4], look: [-0.92, 0.90, -0.25], fov: 40 },
+    { f: 377, pos: [-0.65, 1.68, 4.9], look: [-0.88, 0.90, -0.25], fov: 39 },
   ],
-  // 8. Wide veranda angle connecting Lounging Bro on salon (left) to the flickering 3D Family TV Cabinet (right)! (D=7.6m)
+  // 8. Balanced veranda angle cleanly framing BOTH Lounging Bro on salon (left) AND the entire 3D Family TV Cabinet (right)! (D=8.0m)
   s08_change_tv_channel: [
-    { f: 378, pos: [0.65, 1.98, 7.4], look: [0.65, 0.98, -0.38], fov: 44 },
-    { f: 417, pos: [0.95, 1.86, 6.7], look: [0.75, 0.98, -0.38], fov: 42 },
+    { f: 378, pos: [0.32, 2.02, 8.1], look: [0.32, 0.98, -0.35], fov: 45 },
+    { f: 417, pos: [0.48, 1.92, 7.4], look: [0.38, 0.98, -0.35], fov: 43 },
   ],
   // 9. Tight push on Older Bro refusing to lift a finger while bold red Prohibited "NO GET UP" badge slams in! (D=5.2m)
   s09_never_gets_up: [
-    { f: 418, pos: [-0.95, 1.78, 5.2], look: [-0.95, 1.02, -0.25], fov: 40 },
-    { f: 467, pos: [-0.95, 1.68, 4.5], look: [-0.95, 1.04, -0.25], fov: 38, ease: 'easeOut' },
+    { f: 418, pos: [-0.82, 1.78, 5.2], look: [-0.82, 1.02, -0.22], fov: 40 },
+    { f: 467, pos: [-0.82, 1.68, 4.5], look: [-0.82, 1.04, -0.22], fov: 38, ease: 'easeOut' },
   ],
   // 10. Energetic push as Older Bro cups hands on the salon and launches his megaphone scream! (D=5.0m)
   s10_scream_launch: [
-    { f: 468, pos: [-0.75, 1.76, 5.1], look: [-0.75, 0.96, -0.22], fov: 40 },
-    { f: 512, pos: [-0.55, 1.66, 4.4], look: [-0.65, 0.96, -0.22], fov: 38, ease: 'easeOut' },
+    { f: 468, pos: [-0.68, 1.76, 5.1], look: [-0.68, 0.96, -0.20], fov: 40 },
+    { f: 512, pos: [-0.52, 1.66, 4.4], look: [-0.60, 0.96, -0.20], fov: 38, ease: 'easeOut' },
   ],
   // 11. Epic wide crane pullback showing 3D orange-gold sonic shout rings blasting from the Khmer house across the village & sugar palms!
   s11_echo_whole_village: [
-    { f: 513, pos: [3.2, 2.35, 9.2],  look: [3.8, 1.35, -0.5], fov: 45 },
-    { f: 559, pos: [6.2, 3.35, 12.2], look: [5.8, 1.65, -1.2], fov: 46 },
+    { f: 513, pos: [1.6, 2.30, 9.0],  look: [1.8, 1.35, -0.3], fov: 45 },
+    { f: 559, pos: [4.6, 3.35, 11.8], look: [4.6, 1.65, -0.8], fov: 46 },
   ],
   // 12. Flashing Red/Gold Emergency Siren spinning wildly beside screaming Older Bro! (D=5.6m)
   s12_huge_emergency: [
-    { f: 560, pos: [-0.65, 1.84, 5.6], look: [-0.65, 1.06, -0.22], fov: 41 },
-    { f: 615, pos: [-0.55, 1.74, 4.9], look: [-0.65, 1.06, -0.22], fov: 39, ease: 'easeOut' },
+    { f: 560, pos: [-0.55, 1.84, 5.6], look: [-0.55, 1.06, -0.20], fov: 41 },
+    { f: 615, pos: [-0.45, 1.74, 4.9], look: [-0.55, 1.06, -0.20], fov: 39, ease: 'easeOut' },
   ],
   // 13. Sunlit Khmer backyard (ក្រោយផ្ទះ) with golden straw haystack & banana palms: Younger Bro happily playing! (D=5.6m)
   s13_playing_backyard: [
@@ -183,65 +183,65 @@ const CAMS = {
     { f: 658, pos: [13.5, 1.78, 5.2], look: [13.5, 1.12, 0.2], fov: 40 },
     { f: 686, pos: [13.5, 1.66, 4.4], look: [13.5, 1.14, 0.2], fov: 37, ease: 'easeOut' },
   ],
-  // 15. Fast lateral tracking camera racing left alongside breathless Younger Bro from backyard -> house! (D=6.4m)
+  // 15. Fast lateral tracking camera racing left alongside breathless Younger Bro from backyard -> house! (D=6.0m)
   s15_breathless_sprint: [
-    { f: 687, pos: [10.4, 1.95, 6.4], look: [10.0, 1.05, 0.35], fov: 42 },
-    { f: 729, pos: [3.6,  1.85, 5.8], look: [3.2,  1.05, 0.35], fov: 40 },
+    { f: 687, pos: [10.6, 1.90, 5.9], look: [10.4, 1.05, 0.35], fov: 41 },
+    { f: 729, pos: [3.2,  1.80, 5.5], look: [3.0,  1.05, 0.35], fov: 40 },
   ],
   // 16. Younger Bro skids to a stop beside the salon, hands on knees panting & dripping sweat! (D=5.1m)
   s16_arrive_panting: [
-    { f: 730, pos: [1.15, 1.78, 5.1], look: [0.88, 1.00, -0.10], fov: 40 },
-    { f: 764, pos: [0.92, 1.70, 4.6], look: [0.88, 1.00, -0.10], fov: 38, ease: 'easeOut' },
+    { f: 730, pos: [1.05, 1.78, 5.1], look: [0.82, 1.00, -0.10], fov: 40 },
+    { f: 764, pos: [0.85, 1.70, 4.6], look: [0.82, 1.00, -0.10], fov: 38, ease: 'easeOut' },
   ],
-  // 17. Two-shot reveal: Lounging Bro lazily points straight at the TV Remote on the low stool right between them! (D=6.9m)
+  // 17. Two-shot reveal: Lounging Bro lazily points straight at the TV Remote on the low stool right between them! (D=6.8m)
   s17_points_at_remote: [
-    { f: 765, pos: [-0.05, 1.92, 6.9], look: [-0.10, 0.96, -0.22], fov: 43 },
-    { f: 817, pos: [-0.05, 1.82, 6.2], look: [-0.10, 0.96, -0.22], fov: 41 },
+    { f: 765, pos: [-0.05, 1.90, 6.8], look: [-0.08, 0.96, -0.18], fov: 43 },
+    { f: 817, pos: [-0.05, 1.80, 6.1], look: [-0.08, 0.96, -0.18], fov: 41 },
   ],
-  // 18. Extreme comedic zoom onto Older Bro's elbow & the glowing 3D TV Remote + "10 cm" Hand-Span Caliper! (D=4.1m)
+  // 18. Extreme comedic zoom onto Older Bro's unobstructed pointing finger & the glowing 3D TV Remote + "10 cm" Caliper! (D=4.0m)
   s18_one_handspan_elbow: [
-    { f: 818, pos: [-0.18, 1.54, 4.3], look: [-0.16, 0.86, -0.22], fov: 38 },
-    { f: 876, pos: [-0.16, 1.42, 3.5], look: [-0.16, 0.86, -0.22], fov: 35, ease: 'easeOut' },
+    { f: 818, pos: [-0.14, 1.52, 4.2], look: [-0.14, 0.88, -0.14], fov: 38 },
+    { f: 876, pos: [-0.12, 1.40, 3.4], look: [-0.14, 0.88, -0.14], fov: 35, ease: 'easeOut' },
   ],
   // 19. Orbit push on Older Bro's deadpan ultra-serious face propped on the salon pillow! (D=4.8m)
   s19_speaks_firmly: [
-    { f: 877, pos: [-0.95, 1.66, 4.8], look: [-0.82, 0.92, -0.25], fov: 39 },
-    { f: 921, pos: [-0.65, 1.60, 4.3], look: [-0.82, 0.92, -0.25], fov: 37 },
+    { f: 877, pos: [-0.82, 1.66, 4.8], look: [-0.72, 0.92, -0.20], fov: 39 },
+    { f: 921, pos: [-0.55, 1.60, 4.3], look: [-0.72, 0.92, -0.20], fov: 37 },
   ],
   // 20. Older Bro holds open palm 10cm from remote with floating Remote-Demand comic bubble while Younger Bro gapes! (D=6.6m)
   s20_hand_me_remote: [
-    { f: 922, pos: [-0.05, 1.90, 6.7], look: [-0.08, 1.02, -0.22], fov: 42 },
-    { f: 966, pos: [-0.05, 1.80, 6.0], look: [-0.08, 1.02, -0.22], fov: 40, ease: 'easeOut' },
+    { f: 922, pos: [-0.04, 1.90, 6.7], look: [-0.06, 1.02, -0.18], fov: 42 },
+    { f: 966, pos: [-0.04, 1.80, 6.0], look: [-0.06, 1.02, -0.18], fov: 40, ease: 'easeOut' },
   ],
   // 21. Tight push on Younger Bro gesturing wildly in disbelief («នៅជិតបងឯងសោះ...»)! (D=4.9m)
   s21_dare_argue_setup: [
-    { f: 967,  pos: [0.86, 1.78, 4.9], look: [0.82, 1.06, -0.12], fov: 39 },
-    { f: 1010, pos: [0.76, 1.70, 4.3], look: [0.82, 1.08, -0.12], fov: 37, ease: 'easeOut' },
+    { f: 967,  pos: [0.82, 1.78, 4.9], look: [0.78, 1.06, -0.10], fov: 39 },
+    { f: 1010, pos: [0.72, 1.70, 4.3], look: [0.78, 1.08, -0.10], fov: 37, ease: 'easeOut' },
   ],
   // 22. Two-shot argument: Younger Bro protesting vs unbothered smug Older Bro on salon («...ម៉េចមិនយកខ្លួនឯង?»)! (D=6.8m)
   s22_why_not_yourself: [
-    { f: 1011, pos: [0.15,  1.90, 6.8], look: [-0.08, 0.98, -0.20], fov: 43 },
-    { f: 1056, pos: [-0.20, 1.84, 6.3], look: [-0.08, 0.98, -0.20], fov: 41 },
+    { f: 1011, pos: [0.12,  1.90, 6.8], look: [-0.06, 0.98, -0.18], fov: 43 },
+    { f: 1056, pos: [-0.16, 1.84, 6.2], look: [-0.06, 0.98, -0.18], fov: 41 },
   ],
-  // 23. Royal Decree Slam: Lounging "King Bong" in Golden Khmer Crown + Scepter + Royal Medallion («អញជាបង អញប្រើហ្អែងបាន!»)! (D=5.6m)
+  // 23. Royal Decree Slam: Lounging "King Bong" in Golden Khmer Crown + Scepter + Royal Medallion («អញជាបង អញប្រើហ្អែងបាន!»)! (D=5.8m)
   s23_i_am_bong_decree: [
-    { f: 1057, pos: [-0.78, 1.78, 5.7], look: [-0.78, 1.06, -0.22], fov: 41 },
-    { f: 1121, pos: [-0.78, 1.64, 4.8], look: [-0.78, 1.08, -0.22], fov: 38, ease: 'easeOut' },
+    { f: 1057, pos: [-0.68, 1.84, 5.8], look: [-0.68, 1.12, -0.18], fov: 42 },
+    { f: 1121, pos: [-0.68, 1.70, 4.9], look: [-0.68, 1.14, -0.18], fov: 39, ease: 'easeOut' },
   ],
   // 24. Comedic Payoff: Defeated Younger Bro with sour puckered face (ទឹកមុខជូរហួញ) hands the remote 10cm to Older Bro! (D=6.4m)
   s24_sour_face_handover: [
-    { f: 1122, pos: [-0.02, 1.88, 6.5], look: [-0.05, 0.98, -0.20], fov: 42 },
-    { f: 1190, pos: [0.18,  1.76, 5.6], look: [0.05,  0.98, -0.20], fov: 39, ease: 'easeOut' },
+    { f: 1122, pos: [-0.02, 1.88, 6.5], look: [-0.04, 0.98, -0.18], fov: 42 },
+    { f: 1190, pos: [0.16,  1.76, 5.6], look: [0.04,  0.98, -0.18], fov: 39, ease: 'easeOut' },
   ],
   // 25. Warm Khmer Golden Sunset two-shot: King Older Bro clicking remote on salon while Younger Bro shrugs wryly at viewer! (D=6.8m)
   s25_ever_met_lazy_bro: [
-    { f: 1191, pos: [-0.35, 1.90, 6.9], look: [-0.05, 1.00, -0.20], fov: 43 },
-    { f: 1274, pos: [0.35,  1.84, 6.3], look: [-0.05, 1.00, -0.20], fov: 41 },
+    { f: 1191, pos: [-0.32, 1.90, 6.8], look: [-0.04, 1.00, -0.18], fov: 43 },
+    { f: 1274, pos: [0.32,  1.84, 6.2], look: [-0.04, 1.00, -0.18], fov: 41 },
   ],
   // 26. Cheerful Like & Comment CTA + Gentle Sunset Crane Pullback framing the Khmer Stilt House & Sugar Palms!
   s26_like_comment_cta: [
-    { f: 1275, pos: [0.0, 1.96, 7.5],  look: [0.0, 1.16, 0.25],  fov: 44 },
-    { f: 1346, pos: [0.0, 3.15, 10.2], look: [0.0, 1.65, -1.50], fov: 45, ease: 'smooth' },
+    { f: 1275, pos: [0.0, 1.98, 7.8],  look: [0.0, 1.18, 0.25],  fov: 44 },
+    { f: 1346, pos: [0.0, 3.15, 10.4], look: [0.0, 1.65, -1.50], fov: 45, ease: 'smooth' },
   ],
 };
 
@@ -278,16 +278,16 @@ export const worldAt = (f) => {
   }
 
   // Once Older Bro receives and clicks the remote (f >= 1162), the 3D TV switches to the exciting action channel!
-  if ((S.id === 's24_sour_face_handover' && f >= 1162) || S.id === 's25_ever_met_lazy_bro') {
+  if ((S.id === 's24_sour_face_handover' && f >= 1162) || S.id === 's25_ever_met_lazy_bro' || S.id === 's26_like_comment_cta') {
     W.tvExciting = true;
   }
 
   if (S.id === 's06_royal_king_power') {
     W.kingAura = true;
-    W.kingAuraPos = [-0.55, 1.15, 0.10];
+    W.kingAuraPos = [-0.56, 1.25, 0.05];
   } else if (S.id === 's23_i_am_bong_decree') {
     W.kingAura = true;
-    W.kingAuraPos = [-0.82, 0.92, -0.35];
+    W.kingAuraPos = [-0.62, 0.92, -0.36];
   }
 
   if (['s10_scream_launch', 's11_echo_whole_village', 's12_huge_emergency'].includes(S.id)) {
@@ -322,8 +322,8 @@ export const actorsAt = (f, T) => {
     return { bob: q(v.bob, 3), tilt: q(v.tilt, 1), headTilt: q(v.headTilt, 1), blink: blinkAt(f, seed) };
   };
 
-  // Standard lounging coordinates for Older Bro on the Khmer wooden salon (salon at x = -1.08, z = -0.45)
-  const LOUNGE_POS = [-1.05, 0.02, -0.22];
+  // Standard lounging coordinates for Older Bro on the Khmer wooden salon (head & arm right at open salon edge -> 10cm from remote!)
+  const LOUNGE_POS = [-0.78, 0.03, -0.18];
 
   switch (S.id) {
     case 's01_hook_sweat_sprint': {
@@ -336,17 +336,17 @@ export const actorsAt = (f, T) => {
 
     case 's02_hook_hand_object': {
       const k = M.easeOut(ramp(f, 59, 98));
-      const kx = lerp(1.55, 0.82, k);
+      const kx = lerp(1.48, 0.78, k);
       const st = k < 0.82 ? q((f * 0.11) % 1, 2) : 0;
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.12, 1), loungePose: 'dangle', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, step: st, L: 'offer', R: 'hang', sweat: true, expr: 'shock', facing: -1 }, [kx, 0, -0.10], { tint, s: 1.02 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, step: st, L: 'offer', R: 'hang', sweat: true, expr: 'shock', facing: -1 }, [kx, 0, -0.08], { tint, s: 1.02 }));
       break;
     }
 
     case 's03_hook_ten_cm_ruler': {
       const pop = M.back(ramp(f, 108, 124));
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.12, 1), loungePose: 'dangle', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CARD('ruler_10cm', (p) => T.drawComicCard(p, 'tenCmRuler', 1), [-0.08, 0.42, -0.05], { s: 0.72 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
+      out.push(CARD('ruler_10cm', (p) => T.drawComicCard(p, 'tenCmRuler', 1), [-0.06, 0.44, 0.16], { s: 0.70 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
       break;
     }
 
@@ -378,7 +378,7 @@ export const actorsAt = (f, T) => {
     case 's09_never_gets_up': {
       const pop = M.back(ramp(f, 424, 440));
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.10, 1), loungePose: 'dangle', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.05, blob: false }));
-      out.push(CARD('no_get_up', (p) => T.drawComicCard(p, 'noGetUpCross', 1), [-0.88, 0.56, -0.15], { s: 0.74 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
+      out.push(CARD('no_get_up', (p) => T.drawComicCard(p, 'noGetUpCross', 1), [-0.62, 0.64, 0.12], { s: 0.72 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
       break;
     }
 
@@ -394,7 +394,7 @@ export const actorsAt = (f, T) => {
     case 's12_huge_emergency': {
       const k = q(f * 0.08, 2);
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.28, 1), loungePose: 'scream', expr: 'megaShout', blink: 0 }, LOUNGE_POS, { tint, s: 1.05, blob: false }));
-      out.push(CARD('siren_' + k, (p) => T.drawComicCard(p, 'villageSiren', k), [0.12, 0.45, -0.10], { s: 0.84, blob: false, shadow: false, order: 4 }));
+      out.push(CARD('siren_' + k, (p) => T.drawComicCard(p, 'villageSiren', k), [0.22, 0.52, 0.14], { s: 0.80, blob: false, shadow: false, order: 4 }));
       break;
     }
 
@@ -422,13 +422,13 @@ export const actorsAt = (f, T) => {
 
     case 's17_points_at_remote':
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.14, 1), loungePose: 'point', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'shrug', R: 'hang', sweat: true, expr: 'shock', facing: -1 }, [0.86, 0, -0.10], { tint, s: 1.03 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'shrug', R: 'hang', sweat: true, expr: 'shock', facing: -1 }, [0.80, 0, -0.08], { tint, s: 1.03 }));
       break;
 
     case 's18_one_handspan_elbow': {
       const pop = M.back(ramp(f, 845, 862));
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.14, 1), loungePose: 'point', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CARD('span_caliper', (p) => T.drawComicCard(p, 'handSpanMeasure', 1), [-0.08, 0.44, -0.04], { s: 0.72 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
+      out.push(CARD('span_caliper', (p) => T.drawComicCard(p, 'handSpanMeasure', 1), [-0.05, 0.46, 0.18], { s: 0.68 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
       break;
     }
 
@@ -439,31 +439,31 @@ export const actorsAt = (f, T) => {
     case 's20_hand_me_remote': {
       const pop = M.back(ramp(f, 923, 938));
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.16, 1), loungePose: 'demand', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CARD('remote_demand', (p) => T.drawComicCard(p, 'remoteDemandBubble', 1), [-0.12, 0.62, -0.08], { s: 0.70 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'panic', R: 'panic', sweat: true, expr: 'shock', facing: -1 }, [0.86, 0, -0.10], { tint, s: 1.03 }));
+      out.push(CARD('remote_demand', (p) => T.drawComicCard(p, 'remoteDemandBubble', 1), [-0.08, 0.64, 0.14], { s: 0.68 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'panic', R: 'panic', sweat: true, expr: 'shock', facing: -1 }, [0.80, 0, -0.08], { tint, s: 1.03 }));
       break;
     }
 
     case 's21_dare_argue_setup':
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'argue', R: 'point', wv: q(f * 0.26, 1), sweat: true, expr: 'argue', facing: -1 }, [0.82, 0, -0.10], { tint, s: 1.05 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'argue', R: 'point', wv: q(f * 0.26, 1), sweat: true, expr: 'argue', facing: -1 }, [0.78, 0, -0.08], { tint, s: 1.05 }));
       break;
 
     case 's22_why_not_yourself':
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.12, 1), loungePose: 'demand', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'argue', R: 'argue', wv: q(f * 0.28, 1), sweat: true, expr: 'argue', facing: -1 }, [0.82, 0, -0.10], { tint, s: 1.03 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'argue', R: 'argue', wv: q(f * 0.28, 1), sweat: true, expr: 'argue', facing: -1 }, [0.78, 0, -0.08], { tint, s: 1.03 }));
       break;
 
     case 's23_i_am_bong_decree': {
       const k = q(f * 0.06, 2);
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.18, 1), loungePose: 'king', crown: true, expr: 'proud', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.06, blob: false }));
-      out.push(CARD('decree_crown_' + k, (p) => T.drawComicCard(p, 'kingBongCrown', k), [-0.75, 0.62, -0.12], { s: 0.72, blob: false, shadow: false, order: 4 }));
+      out.push(CARD('decree_crown_' + k, (p) => T.drawComicCard(p, 'kingBongCrown', k), [-0.58, 0.84, 0.10], { s: 0.68, blob: false, shadow: false, order: 4 }));
       break;
     }
 
     case 's24_sour_face_handover': {
       const picked = f >= 1130;
       const handed = f >= 1158;
-      const kx = handed ? 0.68 : lerp(0.80, 0.42, M.smooth(ramp(f, 1126, 1154)));
+      const kx = handed ? 0.64 : lerp(0.76, 0.42, M.smooth(ramp(f, 1126, 1154)));
       out.push(CH(T, 'olderBro', {
         mode: 'lounge', wv: q(f * 0.14, 1),
         loungePose: handed ? 'remote' : 'demand',
@@ -476,20 +476,20 @@ export const actorsAt = (f, T) => {
         L: handed ? 'slump' : 'offer', R: 'slump',
         remote: picked && !handed,
         sweat: true, expr: 'sour', facing: -1,
-      }, [q(kx, 2), 0, -0.10], { tint, s: 1.04 }));
+      }, [q(kx, 2), 0, -0.08], { tint, s: 1.04 }));
       break;
     }
 
     case 's25_ever_met_lazy_bro':
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.14, 1), loungePose: 'remote', remote: true, crown: true, expr: 'proud', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'point', R: 'shrug', expr: 'sheepish', facing: 1 }, [0.78, 0, -0.05], { tint, s: 1.04 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'point', R: 'shrug', expr: 'sheepish', facing: 1 }, [0.76, 0, -0.05], { tint, s: 1.04 }));
       break;
 
     case 's26_like_comment_cta': {
       const pop = M.back(ramp(f, 1280, 1298));
-      out.push(CH(T, 'olderBro', { ...id(5), seed: 5, L: 'hip', R: 'wave', wv: q(f * 0.28, 1), crown: true, remote: true, expr: 'proud', facing: 1 }, [-0.82, 0, 0.25], { tint, s: 1.04 }));
-      out.push(CARD('like_comment_cta', (p) => T.drawComicCard(p, 'likeCommentCta', 1), [0.0, 0.56, 0.32], { s: 0.78 * Math.max(0.25, q(pop, 2)), blob: false, shadow: false, order: 4 }));
-      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'sampheah', R: 'sampheah', expr: 'laugh', facing: -1 }, [0.82, 0, 0.25], { tint, s: 1.03 }));
+      out.push(CH(T, 'olderBro', { ...id(5), seed: 5, L: 'wave', R: 'hip', wv: q(f * 0.28, 1), crown: true, remote: true, expr: 'proud', facing: 1 }, [-0.96, 0, 0.25], { tint, s: 1.03 }));
+      out.push(CARD('like_comment_cta', (p) => T.drawComicCard(p, 'likeCommentCta', 1), [0.0, 0.62, 0.34], { s: 0.76 * Math.max(0.25, q(pop, 2)), blob: false, shadow: false, order: 4 }));
+      out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, L: 'sampheah', R: 'sampheah', expr: 'laugh', facing: -1 }, [0.96, 0, 0.25], { tint, s: 1.02 }));
       break;
     }
   }
