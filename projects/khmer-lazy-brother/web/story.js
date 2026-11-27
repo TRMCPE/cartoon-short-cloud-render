@@ -113,10 +113,10 @@ const KICKS = [
 // - Red Laterite Sprint Path: x = +2.8 .. +11.5, z = +0.35.
 // - Backyard Play Stage: x = +13.5, z = +0.20 (Haystack & Banana trees behind at z = -3.4).
 const CAMS = {
-  // 1. Frame-0 Hook: Lateral tracking push centered directly on Younger Bro sprinting dripping in sweat!
+  // 1. Frame-0 Hook: Lateral tracking push centered directly on Younger Bro sprinting in open laterite yard (x = 11.8 -> 7.8, 100% clear of house posts!)
   s01_hook_sweat_sprint: [
-    { f: 0,  pos: [9.2, 1.88, 5.8], look: [9.1, 1.05, 0.35], fov: 40 },
-    { f: 58, pos: [4.5, 1.76, 5.2], look: [4.4, 1.05, 0.35], fov: 39, ease: 'easeOut' },
+    { f: 0,  pos: [11.9, 1.88, 5.8], look: [11.8, 1.05, 0.35], fov: 40 },
+    { f: 58, pos: [7.9,  1.76, 5.2], look: [7.8,  1.05, 0.35], fov: 39, ease: 'easeOut' },
   ],
   // 2. Glide into Khmer veranda: Younger Bro skids in toward Lounging Older Bro & the low remote stool! (D=6.6m)
   s02_hook_hand_object: [
@@ -183,10 +183,10 @@ const CAMS = {
     { f: 658, pos: [13.5, 1.78, 5.2], look: [13.5, 1.12, 0.2], fov: 40 },
     { f: 686, pos: [13.5, 1.66, 4.4], look: [13.5, 1.14, 0.2], fov: 37, ease: 'easeOut' },
   ],
-  // 15. Fast lateral tracking camera racing left alongside breathless Younger Bro from backyard -> house! (D=6.0m)
+  // 15. Fast lateral tracking camera racing left alongside breathless Younger Bro in open yard (x = 12.2 -> 7.8, 100% clear of house posts!)
   s15_breathless_sprint: [
-    { f: 687, pos: [10.6, 1.90, 5.9], look: [10.4, 1.05, 0.35], fov: 41 },
-    { f: 729, pos: [3.2,  1.80, 5.5], look: [3.0,  1.05, 0.35], fov: 40 },
+    { f: 687, pos: [12.3, 1.90, 5.9], look: [12.2, 1.05, 0.35], fov: 41 },
+    { f: 729, pos: [7.9,  1.80, 5.4], look: [7.8,  1.05, 0.35], fov: 40 },
   ],
   // 16. Younger Bro skids to a stop beside the salon, hands on knees panting & dripping sweat! (D=5.1m)
   s16_arrive_panting: [
@@ -328,7 +328,7 @@ export const actorsAt = (f, T) => {
   switch (S.id) {
     case 's01_hook_sweat_sprint': {
       const k = ramp(f, 0, 58);
-      const kx = lerp(9.2, 4.4, k);
+      const kx = lerp(11.8, 7.8, k);
       const st = q((f * 0.14) % 1, 2);
       out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, sprint: true, step: st, sweat: true, sweatSpray: true, expr: 'pained', facing: -1 }, [kx, 0, 0.35], { tint, s: 1.05 }));
       break;
@@ -410,7 +410,7 @@ export const actorsAt = (f, T) => {
 
     case 's15_breathless_sprint': {
       const k = ramp(f, 687, 729);
-      const kx = lerp(10.8, 2.8, k);
+      const kx = lerp(12.2, 7.8, k);
       const st = q((f * 0.15) % 1, 2);
       out.push(CH(T, 'youngerBro', { ...id(2), seed: 2, sprint: true, step: st, sweat: true, sweatSpray: true, expr: 'panting', facing: -1 }, [kx, 0, 0.35], { tint, s: 1.05 }));
       break;
@@ -426,7 +426,7 @@ export const actorsAt = (f, T) => {
       break;
 
     case 's18_one_handspan_elbow': {
-      const pop = M.back(ramp(f, 845, 862));
+      const pop = M.back(ramp(f, 820, 836));
       out.push(CH(T, 'olderBro', { mode: 'lounge', wv: q(f * 0.14, 1), loungePose: 'point', expr: 'kingSmug', blink: blinkAt(f, 5) }, LOUNGE_POS, { tint, s: 1.04, blob: false }));
       out.push(CARD('span_caliper', (p) => T.drawComicCard(p, 'handSpanMeasure', 1), [-0.05, 0.46, 0.18], { s: 0.68 * Math.max(0.2, q(pop, 2)), blob: false, shadow: false, order: 4 }));
       break;
@@ -511,7 +511,7 @@ export const fxAt = (f, T) => {
 
   if (S.id === 's01_hook_sweat_sprint' || S.id === 's15_breathless_sprint') {
     const isHook = S.id === 's01_hook_sweat_sprint';
-    const kx = isHook ? lerp(9.2, 4.4, ramp(f, 0, 58)) : lerp(10.8, 2.8, ramp(f, 687, 729));
+    const kx = isHook ? lerp(11.8, 7.8, ramp(f, 0, 58)) : lerp(12.2, 7.8, ramp(f, 687, 729));
     for (let i = 0; i < 2; i++) {
       const ph = q(((f * 0.10) + i * 0.5) % 1, 2);
       out.push({

@@ -262,9 +262,9 @@ const yardG = new THREE.Group(); yardG.position.set(13.5, DECK, 0.0); world.add(
   add(new THREE.CylinderGeometry(0.95, 1.25, 1.15, 18), M.haystack, 0, 0.58, 0, hayG);
   add(new THREE.ConeGeometry(1.12, 2.15, 18), M.haystack, 0, 2.12, 0, hayG);
 
-  // Rustic Bamboo Slat Fence along back edge (z = -4.2)
-  add(tbox(9.6, 1.05, 0.08, 1.5), M.bamboo, -0.5, 0.55, -4.2, yardG);
-  for (let fx = -5.0; fx <= 4.0; fx += 1.8) {
+  // Rustic Bamboo Slat Fence along back edge (z = -4.2, spanning whole sprint path x = +6.1..+18.1)
+  add(tbox(12.0, 1.05, 0.08, 1.5), M.bamboo, -1.4, 0.55, -4.2, yardG);
+  for (let fx = -7.4; fx <= 4.6; fx += 2.0) {
     add(new THREE.CylinderGeometry(0.06, 0.07, 1.28, 7), M.beam, fx, 0.64, -4.18, yardG);
   }
 
