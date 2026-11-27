@@ -165,8 +165,8 @@ const CAMS = {
   ],
   // 11. Epic wide crane pullback showing 3D orange-gold sonic shout rings blasting from the Khmer house across the village & sugar palms!
   s11_echo_whole_village: [
-    { f: 513, pos: [1.6, 2.30, 9.0],  look: [1.8, 1.35, -0.3], fov: 45 },
-    { f: 559, pos: [4.6, 3.35, 11.8], look: [4.6, 1.65, -0.8], fov: 46 },
+    { f: 513, pos: [0.4, 2.20, 8.8],  look: [0.6, 1.25, -0.3], fov: 45 },
+    { f: 559, pos: [2.4, 2.95, 11.2], look: [2.2, 1.45, -0.6], fov: 46 },
   ],
   // 12. Flashing Red/Gold Emergency Siren spinning wildly beside screaming Older Bro! (D=5.6m)
   s12_huge_emergency: [
