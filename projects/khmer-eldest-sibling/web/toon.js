@@ -923,6 +923,8 @@ FACE.fierceMom = { eye: ["slit", "slit"], brow: [7, -4], mouth: "teeth" };
 FACE.heroMom = { eye: ["lid", "lid"], brow: [5, -3], mouth: "frown" };
 FACE.warmMom = { eye: ["happy", "happy"], brow: [-2, -1], mouth: "smileWide" };
 FACE.defeatedBong = { eye: ["lid", "lid"], brow: [-5, 4], mouth: "frown" };
+FACE.smirk = { eye: ["lid", "lid"], brow: [3, -3], mouth: "smirk" };
+FACE.sheepish = { eye: ["happy", "lid"], brow: [-3, 2], mouth: "wave" };
 
 const KH_GOLD = "#ffd23f", KH_RUBY = "#d62839", KH_KRAMA_RED = "#b52632", KH_KRAMA_BLUE = "#24529e";
 const KH_TEAL = "#1f8a70", KH_TANGERINE = "#f58f22", KH_PLUM = "#54235c";

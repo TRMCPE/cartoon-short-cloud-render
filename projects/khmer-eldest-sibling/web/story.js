@@ -629,7 +629,7 @@ export const actorsAt = (f, T) => {
         facing: 1, expr: 'warmMom', L: 'hang', R: 'hip',
       });
       act('bigSib', 2, 0.0, 0.0, 0.20, 1.02, {
-        facing: 1, expr: 'sheepish' in T ? 'smile_closed' : 'pleading', L: 'shrug', R: 'shrug', sweat: true,
+        facing: 1, expr: 'sheepish', L: 'shrug', R: 'shrug', sweat: true,
       });
       act('littleBro', 8, 0.66, 0.0, 0.14, 0.92, {
         facing: -1, expr: 'grin', L: 'hip', R: 'wave',
