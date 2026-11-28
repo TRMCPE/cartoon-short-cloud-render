@@ -1344,8 +1344,10 @@ export const khmerSchoolChar = (p, key, opts = {}) => {
     p.dot(hx_, hy_, 5.8 * u, muddy ? MUD_MID : skin);
     p.ell(hx_, hy_, 5.8 * u, 5.8 * u, null, 2.2 * u);
     if (poseName === "thumbsUp") {
-      // Clear upright cartoon thumb!
-      p.band([[hx_, hy_ - 2 * u], [hx_, hy_ - 15 * u]], skin, 5.2 * u, 2.0 * u, "round");
+      // Unmistakable plump cartoon fist + angled side-thumb!
+      const fistCol = muddy ? MUD_MID : skin;
+      p.poly(rrect(hx_ - 7.5 * u, hy_ - 5.5 * u, hx_ + 7.5 * u, hy_ + 6.5 * u, 3.2 * u), fistCol, 2.3 * u);
+      p.band([[hx_ - dir * 4.2 * u, hy_ - 3.5 * u], [hx_ - dir * 5.2 * u, hy_ - 12.5 * u]], fistCol, 5.4 * u, 2.1 * u, "round");
     } else if (poseName === "fingerGun") {
       p.band([[hx_, hy_], [hx_ + dir * 16 * u, hy_ - 2 * u]], skin, 4.8 * u, 1.8 * u, "round");
       p.band([[hx_, hy_], [hx_ + 2 * u, hy_ - 12 * u]], skin, 4.5 * u, 1.8 * u, "round");
@@ -1537,20 +1539,20 @@ export const drawSchoolFx = (p, kind = "shoujoHearts", k = 0) => {
     drawHeartShape(p, 300, 445, 124 * pulse, "#ff1f6b", 10.5);
     drawSparkleStar(p, 300, 395, 28, "#fff0f6", 4.5);
   } else if (kind === "mudSplashWave") {
-    // Massive Cartoon Chocolate-Brown Mud Wave Crown («លាន់ឮសូរ ផ្លូក!»)!
-    const rise = Math.min(1, k * 1.4);
+    // Massive Cartoon Chocolate-Brown Mud Wave Crown anchored cleanly at ground y = 975 («លាន់ឮសូរ ផ្លូក!»)!
+    const rise = Math.min(1, k * 1.35);
     const pts = [];
     for (let i = 0; i <= 14; i++) {
-      const x = 75 + (450 * i) / 14;
-      const spike = i % 2 === 0 ? 235 * rise : 115 * rise;
-      pts.push([x, 780 - spike]);
+      const x = 68 + (464 * i) / 14;
+      const spike = i % 2 === 0 ? 255 * rise : 120 * rise;
+      pts.push([x, 945 - spike]);
     }
-    pts.push([535, 835], [65, 835]);
-    p.shadedFill(pts, MUD_MID, MUD_DARK, light, 230, 0.4);
+    pts.push([542, 975], [58, 975]);
+    p.shadedFill(pts, MUD_MID, MUD_DARK, light, 240, 0.4);
     p.inkRing(pts, 10.5, thick);
     // Flying mud droplets!
-    for (const [dx, dy, r_] of [[-175, -265, 24], [-95, -325, 28], [15, -345, 26], [115, -315, 30], [185, -255, 22]]) {
-      p.ell(300 + dx * rise, 740 + dy * rise, r_, r_ * 1.25, MUD_DARK, 7);
+    for (const [dx, dy, r_] of [[-175, -285, 22], [-95, -345, 26], [15, -365, 25], [115, -335, 28], [185, -275, 20]]) {
+      p.ell(300 + dx * rise, 905 + dy * rise, r_, r_ * 1.25, MUD_DARK, 7);
     }
   } else if (kind === "laughShockwave") {
     // Explosive Comic Laughter Burst («ផ្ទុះសំណើចលាន់ឮពេញអគារ!»)!

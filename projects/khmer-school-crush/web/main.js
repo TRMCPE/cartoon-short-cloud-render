@@ -207,12 +207,12 @@ let schoolBellMesh;
     add(box(0.30, 3.12, 0.30), M.whitePlaster, px, 5.12, -2.35, schoolG);
   }
 
-  // 2nd-Floor Open Balcony Deck (y = 3.55) + Waist-High White Khmer Balustrade Railing (y = 3.55..4.38)!
+  // 2nd-Floor Open Balcony Deck (y = 3.55) + Waist-High White Khmer Balustrade Railing (y = 3.55..4.18)!
   add(tbox(19.8, 0.24, 3.6, 2.0), M.whitePlaster, 0, 3.55, -3.75, schoolG);
-  add(box(19.8, 0.12, 0.18), M.whitePlaster, 0, 4.38, -2.32, schoolG); // top rail (waist height!)
+  add(box(19.8, 0.11, 0.18), M.whitePlaster, 0, 4.18, -2.32, schoolG); // top rail (clear below balcony faces!)
   add(box(19.8, 0.14, 0.20), M.crimsonTrim, 0, 3.68, -2.32, schoolG);  // bottom trim band
   for (let rx_ = -9.2; rx_ <= 9.2; rx_ += 0.48) {
-    add(new THREE.CylinderGeometry(0.035, 0.045, 0.64, 6), M.whitePlaster, rx_, 4.02, -2.32, schoolG);
+    add(new THREE.CylinderGeometry(0.035, 0.045, 0.46, 6), M.whitePlaster, rx_, 3.94, -2.32, schoolG);
   }
 
   // Brass Cambodian School Recess Bell (ជួងសាលា) hanging under veranda arch at x = 0.0, y = 2.95, z = -2.35
@@ -277,10 +277,10 @@ const restroomG = new THREE.Group(); restroomG.position.set(12.8, DECK, -2.35); 
   add(box(4.6, 0.18, 3.4), M.whitePlaster, 0, 0.09, 0, restroomG);
   add(tbox(4.2, 2.85, 2.9, 2.0), M.stuccoYellow, 0, 1.58, -0.15, restroomG);
   // Open dark entrance doorway at front-left so Hero sprints straight inside!
-  add(box(1.38, 2.18, 0.35), M.darkDoor, -0.35, 1.24, 1.18, restroomG);
-  add(box(1.56, 0.14, 0.42), M.whitePlaster, -0.35, 2.36, 1.20, restroomG);
-  // Giant Crisp Blue/Pink Restroom Sign mounted right above the entrance!
-  add(new THREE.PlaneGeometry(1.75, 0.76), M.restroomSign, -0.35, 2.82, 1.34, restroomG, { cast: false });
+  add(box(1.38, 1.96, 0.35), M.darkDoor, -0.35, 1.13, 1.18, restroomG);
+  add(box(1.56, 0.12, 0.42), M.whitePlaster, -0.35, 2.14, 1.20, restroomG);
+  // Giant Crisp Blue/Pink Restroom Sign mounted cleanly BELOW roof eave!
+  add(new THREE.PlaneGeometry(1.62, 0.68), M.restroomSign, -0.35, 2.55, 1.36, restroomG, { cast: false });
 
   // Steep terracotta-red roof on Restroom Pavilion
   for (const s of [-1, 1]) {

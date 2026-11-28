@@ -179,27 +179,27 @@ const CAMS = {
     { f: 689, pos: [-2.25, 1.46, 1.85], look: [-0.85, 0.62, 0.30], fov: 40 },
   ],
 
-  // 13. Whip-tilt down to white sneaker landing squarely on the yellow 4-petal banana peel!
+  // 13. Whip-tilt down to white sneaker landing squarely on the yellow 4-petal banana peel (framing full Hero + peel)!
   s13_sneaker_hits_banana: [
-    { f: 690, pos: [-1.95, 0.92, 2.85], look: [-1.55, 0.48, 0.38], fov: 39 },
-    { f: 770, pos: [-1.45, 0.62, 2.25], look: [-1.50, 0.36, 0.40], fov: 37 },
+    { f: 690, pos: [-1.95, 1.22, 3.85], look: [-1.58, 0.78, 0.38], fov: 42 },
+    { f: 770, pos: [-1.50, 1.02, 3.25], look: [-1.52, 0.66, 0.40], fov: 40 },
   ],
   // 14. Dynamic upward tilt as BOTH legs shoot straight into the sky («រអិលបះជើងឡើងលើ»)!
   s14_legs_shoot_skyward: [
-    { f: 771, pos: [-1.25, 1.05, 3.75], look: [-1.05, 1.02, 0.42], fov: 41, roll: -5 },
-    { f: 828, pos: [-0.55, 1.32, 3.95], look: [-0.55, 1.18, 0.44], fov: 40, roll: 5 },
+    { f: 771, pos: [-1.25, 1.05, 3.85], look: [-1.05, 1.02, 0.42], fov: 41, roll: -5 },
+    { f: 828, pos: [-0.55, 1.32, 4.05], look: [-0.55, 1.18, 0.44], fov: 40, roll: 5 },
   ],
   // 15. High-impact dive & shake as Hero slams face-first into the mud puddle («ផ្លូក!»)!
   s15_mud_puddle_splat: [
-    { f: 829, pos: [0.35, 1.35, 3.85], look: [-0.15, 0.78, 0.42], fov: 41 },
-    { f: 848, pos: [0.45, 0.88, 3.15], look: [0.00, 0.48, 0.45], fov: 39, ease: 'easeIn' },
-    { f: 886, pos: [0.55, 0.96, 3.35], look: [0.00, 0.52, 0.45], fov: 40 },
+    { f: 829, pos: [0.35, 1.42, 4.15], look: [-0.10, 0.78, 0.42], fov: 42 },
+    { f: 848, pos: [0.42, 1.08, 3.65], look: [0.00, 0.62, 0.45], fov: 41, ease: 'easeIn' },
+    { f: 886, pos: [0.52, 1.14, 3.85], look: [0.00, 0.65, 0.45], fov: 41 },
   ],
 
   // 16. Mud drips off nose onto once-pristine white uniform shirt!
   s16_mud_splattered_shirt: [
-    { f: 887, pos: [0.35, 1.38, 2.85], look: [0.00, 0.92, 0.45], fov: 38 },
-    { f: 955, pos: [0.18, 1.34, 2.42], look: [0.00, 0.96, 0.45], fov: 36 },
+    { f: 887, pos: [0.35, 1.38, 2.95], look: [0.00, 0.92, 0.45], fov: 38 },
+    { f: 955, pos: [0.18, 1.34, 2.52], look: [0.00, 0.96, 0.45], fov: 36 },
   ],
   // 17. Crush covers her mouth with HUGE wide shocked eyes!
   s17_crush_big_eyes_gasp: [
@@ -208,8 +208,8 @@ const CAMS = {
   ],
   // 18. Epic Wide Crane Pull-Back: 20 classmates across ground corridor AND 2nd-floor balcony explode in laughter!
   s18_whole_school_laughs: [
-    { f: 1012, pos: [0.25, 2.15, 5.85], look: [-0.35, 1.85, -1.80], fov: 44 },
-    { f: 1084, pos: [0.45, 3.10, 8.75], look: [-0.45, 2.15, -2.10], fov: 46 },
+    { f: 1012, pos: [0.25, 2.35, 6.85], look: [-0.35, 1.95, -1.80], fov: 45 },
+    { f: 1084, pos: [0.45, 3.25, 9.45], look: [-0.45, 2.25, -2.10], fov: 47 },
   ],
 
   // 19. Stiffly standing up trying to salvage dignity
@@ -229,13 +229,13 @@ const CAMS = {
   ],
   // 22. Stiff Thumbs-Up («អត់អីទេ ខ្ញុំគ្រាន់តែចង់...»)
   s22_thumbs_up_fine: [
-    { f: 1235, pos: [-0.35, 1.48, 2.65], look: [0.05, 1.04, 0.40], fov: 38 },
-    { f: 1282, pos: [-0.18, 1.44, 2.38], look: [0.05, 1.06, 0.42], fov: 37 },
+    { f: 1235, pos: [-0.25, 1.48, 2.85], look: [0.08, 1.04, 0.40], fov: 39 },
+    { f: 1282, pos: [-0.12, 1.44, 2.58], look: [0.08, 1.06, 0.42], fov: 38 },
   ],
-  // 23. Soil-Inspector Magnifying Glass Excuse («ពិនិត្យមើលដីបន្តិច!»)
+  // 23. Soil-Inspector Magnifying Glass Excuse («ពិនិត្យមើលដីបន្តិច!») — framing BOTH Hero & Magnifier cleanly!
   s23_inspect_dirt_badge: [
-    { f: 1283, pos: [0.35, 1.46, 3.05], look: [0.25, 1.02, 0.42], fov: 39 },
-    { f: 1341, pos: [0.52, 1.42, 2.75], look: [0.30, 1.04, 0.42], fov: 38 },
+    { f: 1283, pos: [0.35, 1.46, 3.85], look: [0.32, 1.02, 0.42], fov: 41 },
+    { f: 1341, pos: [0.42, 1.42, 3.50], look: [0.34, 1.04, 0.42], fov: 40 },
   ],
 
   // 24. Roadrunner Dust-Cloud Sprint Takeoff hiding burning-red face in hands!
@@ -245,24 +245,24 @@ const CAMS = {
   ],
   // 25. Sprinting straight into the School Restroom Pavilion under the Blue/Pink Restroom Sign!
   s25_sprint_into_restroom: [
-    { f: 1401, pos: [10.45, 1.72, 4.35], look: [12.35, 1.25, -1.05], fov: 42 },
-    { f: 1462, pos: [11.65, 1.65, 3.45], look: [12.45, 1.28, -1.15], fov: 40 },
+    { f: 1401, pos: [9.85, 1.72, 5.15], look: [11.55, 1.25, -0.85], fov: 43 },
+    { f: 1462, pos: [10.85, 1.66, 4.35], look: [12.15, 1.25, -1.05], fov: 41 },
   ],
 
-  // 26. Warm Sunset Relatable Question: Sheepish Hero peeking behind pillar while Crush giggles
+  // 26. Warm Sunset Relatable Question: Sheepish Hero peeking out while Crush giggles
   s26_ever_acted_too_cool: [
     { f: 1463, pos: [-2.65, 1.62, 4.55], look: [-2.85, 1.02, -0.85], fov: 40 },
     { f: 1548, pos: [-2.35, 1.54, 3.85], look: [-2.75, 1.04, -0.85], fov: 39 },
   ],
-  // 27. Hit Like CTA with crisp Blue Thumbs-Up Card & Golden Burst Rays!
+  // 27. Hit Like CTA with crisp Blue Thumbs-Up Card & Golden Burst Rays (100% centered)!
   s27_hit_like_cta: [
-    { f: 1549, pos: [-2.45, 1.52, 3.35], look: [-2.75, 1.08, -0.25], fov: 38 },
-    { f: 1596, pos: [-2.35, 1.48, 2.95], look: [-2.70, 1.10, -0.25], fov: 37 },
+    { f: 1549, pos: [-2.65, 1.54, 4.25], look: [-2.65, 1.04, -0.15], fov: 41 },
+    { f: 1596, pos: [-2.65, 1.48, 3.82], look: [-2.65, 1.06, -0.15], fov: 40 },
   ],
   // 28. Instant Action Replay: Sneaker hitting the yellow banana peel & launching skyward!
   s28_loop_banana_replay: [
-    { f: 1597, pos: [-1.85, 0.82, 2.75], look: [-1.45, 0.56, 0.40], fov: 39 },
-    { f: 1652, pos: [-0.95, 1.12, 3.55], look: [-0.65, 0.92, 0.42], fov: 40, roll: -4 },
+    { f: 1597, pos: [-1.75, 1.08, 3.75], look: [-1.45, 0.72, 0.40], fov: 41 },
+    { f: 1652, pos: [-0.95, 1.18, 3.95], look: [-0.92, 0.92, 0.42], fov: 41, roll: -4 },
   ],
   // 29. SEAMLESS LOOP MATCH-CUT («អ្នកក៏...»): Drops into EXACT f0000 puddle-level camera & mid-air freeze!
   s29_loop_match_cut_freeze: [
@@ -630,9 +630,9 @@ export function actorsAt(f, T) {
   }
 
   if (S.id === 's25_sprint_into_restroom') {
-    const u = ramp(f, 1401, 1450);
-    if (f <= 1454) {
-      pushStudent('heroBoy', lerp(9.2, 12.45, u), 0.0, lerp(0.15, -1.10, u), {
+    const u = ramp(f, 1401, 1456);
+    if (f <= 1456) {
+      pushStudent('heroBoy', lerp(10.15, 12.45, u), 0.0, lerp(0.10, -1.05, u), {
         seed: 3, facing: 1, sprint: true, step: (f - 1401) * 0.14,
         muddy: true, hairMode: 'mudClump', blushRed: true,
         expr: 'shameCry', L: 'hideFace', R: 'hideFace',
@@ -643,7 +643,7 @@ export function actorsAt(f, T) {
 
   // ==================== SCENE 9: LIKE CTA & LOOP MATCH-CUT ====================
   if (S.id === 's26_ever_acted_too_cool' || S.id === 's27_hit_like_cta') {
-    pushStudent('heroBoy', -3.35, 0.0, 0.15, {
+    pushStudent('heroBoy', -3.08, 0.0, 0.15, {
       seed: 3, facing: 1, blushRed: true,
       expr: S.id === 's27_hit_like_cta' ? 'cheekyWink' : 'smile',
       L: 'coolPocket', R: S.id === 's27_hit_like_cta' ? 'thumbsUp' : 'wave',
@@ -706,16 +706,16 @@ export function fxAt(f, T) {
     const sp = f < 872 ? ramp(f, 848, 868) : ramp(f, 872, 886);
     pushFx('mudSplashWave', 0.0, 0.02, 0.62, 1.05, Math.max(0.35, sp));
   } else if (S.id === 's18_whole_school_laughs') {
-    pushFx('laughShockwave', -3.6, 2.35, -1.55, 0.78, k);
-    pushFx('laughShockwave',  2.9, 2.45, -1.55, 0.78, k + 0.5);
+    pushFx('laughShockwave', -1.85, 2.55, -1.45, 0.72, k);
+    pushFx('laughShockwave',  1.35, 2.55, -1.45, 0.72, k + 0.5);
   } else if (S.id === 's23_inspect_dirt_badge') {
-    pushFx('soilInspectorBadge', 0.82, 0.78, 0.55, 0.66, k);
+    pushFx('soilInspectorBadge', 0.68, 0.84, 0.52, 0.62, k);
   } else if (S.id === 's24_roadrunner_sprint_start' || S.id === 's25_sprint_into_restroom') {
     for (let i = 0; i < 4; i++) {
       const df = (f - 1342 - i * 8);
       if (df >= 0) {
         const cyc = (df % 24) / 24;
-        const dx = S.id === 's24_roadrunner_sprint_start' ? i * 1.45 : 9.2 + i * 0.75;
+        const dx = S.id === 's24_roadrunner_sprint_start' ? i * 1.45 : 9.8 + i * 0.65;
         out.push({
           key: `dust|${q(cyc, 2)}`,
           x: dx, y: 0.05, z: 0.35, s: 0.55, blob: false, shadow: false, order: 3,
@@ -724,7 +724,7 @@ export function fxAt(f, T) {
       }
     }
   } else if (S.id === 's27_hit_like_cta') {
-    pushFx('likeButtonCTA', -2.05, 0.78, 0.15, 0.72, k);
+    pushFx('likeButtonCTA', -2.18, 0.80, 0.20, 0.62, k);
   }
 
   return out;

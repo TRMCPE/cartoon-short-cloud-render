@@ -567,9 +567,9 @@ def sfx_like_pop_chime():
     n = int(0.55 * SR); t = np.arange(n, dtype=np.float32) / SR
     pop = np.sin(2 * np.pi * np.cumsum(320.0 + 540.0 * np.exp(-t * 45.0)) / SR) * np.exp(-t * 32.0) * 0.48
     chime = (
-        vibraphone_bell(midi(77), 0.48)[:n] * 0.55
-        + vibraphone_bell(midi(81), 0.48)[:n] * 0.45
-        + vibraphone_bell(midi(84), 0.48)[:n] * 0.55
+        vibraphone_bell(midi(77), 0.56)[:n] * 0.55
+        + vibraphone_bell(midi(81), 0.56)[:n] * 0.45
+        + vibraphone_bell(midi(84), 0.56)[:n] * 0.55
     )
     return (pop + chime).astype(np.float32)
 
