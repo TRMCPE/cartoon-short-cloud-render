@@ -170,15 +170,15 @@ const CAMS = {
     { f: 462, pos: [-0.35, 1.84, 6.0], look: [0.0, 1.06, 0.10], fov: 40 },
     { f: 519, pos: [0.30,  1.76, 5.4], look: [0.0, 1.06, 0.10], fov: 38, ease: 'easeOut' },
   ],
-  // 12. Fast lateral pan: Little Bro sprints off whistling innocently kicking up dust puffs!
+  // 12. Fast lateral pan: Steaming Big Sibling on left watching Little Bro sprint off whistling!
   s12_run_away_innocent: [
-    { f: 520, pos: [0.4, 1.84, 6.2], look: [0.5, 1.02, 0.15], fov: 41 },
-    { f: 549, pos: [1.9, 1.78, 5.8], look: [2.0, 1.02, 0.15], fov: 40 },
+    { f: 520, pos: [0.10, 1.86, 6.5], look: [0.15, 1.04, 0.15], fov: 41 },
+    { f: 549, pos: [0.65, 1.80, 6.2], look: [0.65, 1.04, 0.15], fov: 40 },
   ],
   // 13. Tight crimson-rage push onto Big Sibling's face as TWIN WHITE STEAM JETS blast out of both ears!
   s13_angry_ear_steam: [
-    { f: 550, pos: [-0.15, 1.78, 4.9], look: [-0.15, 1.18, 0.15], fov: 38 },
-    { f: 604, pos: [-0.15, 1.68, 4.1], look: [-0.15, 1.20, 0.15], fov: 35, ease: 'easeOut' },
+    { f: 550, pos: [-0.15, 1.78, 5.1], look: [-0.15, 1.18, 0.15], fov: 39 },
+    { f: 604, pos: [-0.15, 1.68, 4.3], look: [-0.15, 1.20, 0.15], fov: 36, ease: 'easeOut' },
   ],
   // 14. Crisp profile two-shot: Big Sibling lifts one gentle hand & taps Little Bro like a pink feather!
   s14_gentle_tiny_push: [
@@ -187,13 +187,13 @@ const CAMS = {
   ],
   // 15. High-angle smash down onto the patterned Khmer floor tiles as Little Bro flops BOOM onto his back!
   s15_dramatic_tile_flop: [
-    { f: 687, pos: [0.15, 2.25, 6.1], look: [0.20, 0.72, 0.15], fov: 41 },
-    { f: 735, pos: [0.35, 1.88, 5.3], look: [0.35, 0.65, 0.15], fov: 39, ease: 'easeOut' },
+    { f: 687, pos: [0.05, 2.22, 6.3], look: [0.05, 0.88, 0.15], fov: 41 },
+    { f: 735, pos: [0.10, 1.92, 5.6], look: [0.10, 0.82, 0.15], fov: 39, ease: 'easeOut' },
   ],
-  // 16. Tight comedy push on sprawled Little Bro shooting twin fountain tear geysers + Red Siren Card!
+  // 16. Comedy two-shot push on sprawled Little Bro shooting twin fountain tear geysers + Red Siren Card!
   s16_scream_cry_oscar: [
-    { f: 736, pos: [0.50, 1.65, 5.0], look: [0.48, 0.68, 0.20], fov: 39 },
-    { f: 796, pos: [0.55, 1.48, 4.3], look: [0.52, 0.66, 0.20], fov: 36, ease: 'easeOut' },
+    { f: 736, pos: [0.12, 1.82, 5.6], look: [0.12, 0.88, 0.18], fov: 40 },
+    { f: 796, pos: [0.20, 1.68, 5.0], look: [0.18, 0.84, 0.18], fov: 38, ease: 'easeOut' },
   ],
   // 17. Stage C (x = +13.5, Khmer Outdoor Kitchen): Mom at clay charcoal stove perks up under "<3s" Stopwatch!
   s17_under_three_seconds: [
@@ -230,10 +230,10 @@ const CAMS = {
     { f: 1125, pos: [0.20, 1.86, 6.5], look: [0.05, 1.06, 0.10], fov: 41 },
     { f: 1154, pos: [0.45, 1.78, 5.8], look: [0.20, 1.04, 0.10], fov: 39 },
   ],
-  // 24. Ultimate Payoff Close-Up: Tight push past Mom's back onto Little Bro's EVIL EYEBROW-WIGGLE SMIRK!
+  // 24. Ultimate Payoff Close-Up: Clean framing of Mom & Little Bro's EVIL EYEBROW-WIGGLE SMIRK!
   s24_evil_eyebrow_smirk: [
-    { f: 1155, pos: [0.58, 1.66, 4.9], look: [0.55, 1.02, 0.05], fov: 38 },
-    { f: 1217, pos: [0.62, 1.56, 4.0], look: [0.58, 1.02, 0.05], fov: 35, ease: 'easeOut' },
+    { f: 1155, pos: [0.24, 1.74, 5.4], look: [0.22, 1.04, 0.05], fov: 39 },
+    { f: 1217, pos: [0.36, 1.62, 4.5], look: [0.34, 1.04, 0.05], fov: 36, ease: 'easeOut' },
   ],
   // 25. Warm Khmer Golden Sunset Lineup: Relatable Big Sibling shrugs at viewer ("Are you a victim eldest too?")!
   s25_are_you_victim_bong: [
@@ -457,9 +457,9 @@ export const actorsAt = (f, T) => {
     // 12. Sprinting Away Whistling Innocently («រួចរត់គេចធ្វើព្រងើយ»)!
     case 's12_run_away_innocent': {
       const u = ramp(f, 520, 549);
-      const rx = lerp(0.15, 2.55, u);
+      const rx = lerp(0.05, 1.45, u);
       const st = q(((f - 520) * 0.12) % 1, 2);
-      act('bigSib', 2, -0.45, 0.0, 0.10, 1.0, {
+      act('bigSib', 2, -0.38, 0.0, 0.10, 1.0, {
         facing: 1, expr: 'furiousSteam', L: 'fists', R: 'fists',
       });
       act('littleBro', 8, rx, 0.0, 0.18, 0.92, {
@@ -495,16 +495,15 @@ export const actorsAt = (f, T) => {
     // 15. Melodramatic Oscar Launch & BOOM Flop Onto Khmer Floor Tiles («ស្រាប់តែវាដួលតូងទៅលើឥដ្ឋ»)!
     case 's15_dramatic_tile_flop': {
       const airU = clamp((f - 687) / 6);
-      act('bigSib', 2, -0.52, 0.0, 0.08, 1.0, {
+      act('bigSib', 2, -0.44, 0.0, 0.08, 1.0, {
         facing: 1, expr: 'innocentShock', L: 'plead', R: 'plead', sweatSpray: true,
       });
       if (f < 693) {
-        // 6-frame airborne backward dive before tile impact!
-        act('littleBro', 8, lerp(0.32, 0.52, airU), Math.sin(airU * Math.PI) * 0.38, 0.18, 0.94, {
+        act('littleBro', 8, lerp(0.28, 0.42, airU), Math.sin(airU * Math.PI) * 0.38, 0.18, 0.94, {
           facing: -1, expr: 'innocentShock', tilt: -38 * airU, L: 'plead', R: 'plead', noIdle: true,
         });
       } else {
-        act('littleBro', 8, 0.52, 0.0, 0.22, 0.98, {
+        act('littleBro', 8, 0.42, 0.0, 0.22, 0.98, {
           mode: 'floorFlopCry', crying: true, blobW: 1.45, noIdle: true, order: 3,
         });
       }
@@ -513,10 +512,10 @@ export const actorsAt = (f, T) => {
 
     // 16. Wailing Like Murder with Twin Fountain Tear Geysers («ហើយស្រែកយំដូចគេចាក់កអ៊ីចឹង»)!
     case 's16_scream_cry_oscar': {
-      act('bigSib', 2, -0.42, 0.0, 0.04, 0.98, {
+      act('bigSib', 2, -0.38, 0.0, 0.06, 0.98, {
         facing: 1, expr: 'pleading', L: 'headGrab', R: 'headGrab', sweatSpray: true,
       });
-      act('littleBro', 8, 0.54, 0.0, 0.24, 1.02, {
+      act('littleBro', 8, 0.44, 0.0, 0.22, 1.02, {
         mode: 'floorFlopCry', crying: true, blobW: 1.48, noIdle: true, order: 3,
       });
       break;
@@ -674,7 +673,7 @@ export const fxAt = (f, T) => {
 
   // 1. Innocent Halo + Green Check Shield ("មិនបានធ្វើអ្វីខុសសោះ")
   if (S.id === 's02_hook_did_nothing_wrong') {
-    cardFx('innocentHaloCheck', -0.45, 1.48, 0.24, 0.64, 49, 94);
+    cardFx('innocentHaloCheck', -0.45, 1.32, 0.24, 0.62, 49, 94);
   }
   // 2. Born First Crown Comparison Card ("គ្រាន់តែព្រោះអ្នកកើតមុនប្អូនទេ?")
   if (S.id === 's03_hook_born_first') {
@@ -706,7 +705,7 @@ export const fxAt = (f, T) => {
       if (k >= 0 && k < 1) {
         const u = ramp(df, 520, 549);
         out.push({
-          x: lerp(0.05, 2.35, u), y: 0.02, z: 0.12, s: 0.44,
+          x: lerp(0.0, 1.30, u), y: 0.02, z: 0.12, s: 0.44,
           shadow: false, blob: false, key: `dust:${q(k, 2)}`,
           draw: (p) => T.fxDust(p, k),
         });
@@ -730,17 +729,17 @@ export const fxAt = (f, T) => {
   if (S.id === 's15_dramatic_tile_flop' && f >= 693 && f <= 712) {
     const k = (f - 693) / 18;
     out.push({
-      x: 0.52, y: 0.04, z: 0.18, s: 0.78, shadow: false, blob: false, order: 2,
+      x: 0.42, y: 0.04, z: 0.18, s: 0.78, shadow: false, blob: false, order: 2,
       key: `flopDust:${q(k, 2)}`,
       draw: (p) => T.fxDust(p, k, '#fff0d4'),
     });
   }
   if (S.id === 's16_scream_cry_oscar') {
-    cardFx('sirenMegaphone', 0.52, 1.18, 0.30, 0.66, 738, 796);
+    cardFx('sirenMegaphone', 0.36, 0.88, 0.30, 0.58, 738, 796);
   }
   // 11. Turbo "<3s" Stopwatch in Outdoor Kitchen!
   if (S.id === 's17_under_three_seconds') {
-    cardFx('threeSecTimer', 13.78, 1.44, -0.10, 0.68, 799, 839);
+    cardFx('threeSecTimer', 13.78, 1.36, -0.10, 0.66, 799, 839);
   }
   // 12. Superhero Landing Dust & Golden Rays on Mom!
   if (S.id === 's18_superhero_mom_arrives' && f >= 855) {

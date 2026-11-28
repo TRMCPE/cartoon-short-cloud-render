@@ -1035,19 +1035,19 @@ const drawEarSteamJets = (p, cx, hc, H, u, wv = 0) => {
   p.stroke([[vx + 8 * u, vy + 3 * u], [vx + 2 * u, vy + 3 * u], [vx + 2 * u, vy + 9 * u]], 2.8 * u, "#ff2a2a");
 
   for (const side of [-1, 1]) {
-    const ex = cx + side * (H.a * 1.02), ey = hc - 2 * u;
-    // Jet cone + 3 expanding billowy white steam puffs!
+    const ex = cx + side * (H.a * 0.98), ey = hc - 2 * u;
+    // Jet cone + 3 expanding billowy white steam puffs kept strictly inside 600-wide card bounds!
     p.poly([
-      [ex, ey - 5 * u],
-      [ex + side * 42 * u * pulse, ey - 18 * u],
-      [ex + side * 42 * u * pulse, ey + 8 * u],
-      [ex, ey + 5 * u],
-    ], "#f2f6fa", 2.8 * u);
+      [ex, ey - 4.5 * u],
+      [ex + side * 28 * u * pulse, ey - 14 * u],
+      [ex + side * 28 * u * pulse, ey + 7 * u],
+      [ex, ey + 4.5 * u],
+    ], "#f2f6fa", 2.6 * u);
     for (let k = 0; k < 3; k++) {
-      const dist = (38 + k * 24) * u * pulse;
-      const lift = -k * 8 * u + Math.sin(wv * 6 + k + side) * 4 * u;
-      const radP = (13 + k * 6.5) * u;
-      p.ell(ex + side * dist, ey - 5 * u + lift, radP * 1.15, radP, "#ffffff", 3.0 * u);
+      const dist = (24 + k * 19) * u * pulse;
+      const lift = -k * 7 * u + Math.sin(wv * 6 + k + side) * 3.5 * u;
+      const radP = (10.5 + k * 5.0) * u;
+      p.ell(ex + side * dist, ey - 4 * u + lift, radP * 1.12, radP, "#ffffff", 2.8 * u);
     }
   }
 };
@@ -1076,54 +1076,53 @@ const drawFloorFlopBro = (p, O, opts = {}) => {
   const thrash = Math.sin(wv * 5.5) * 10;
   p.rot = null;
 
-  // Impact dust halo underneath sprawled body on the tiles (near y = 925)
-  p.ell(300, 942, 195, 32, "rgba(255,244,214,0.55)", 0);
+  // Impact dust halo underneath sprawled body on the tiles (centered inside 0..600 card!)
+  p.ell(290, 942, 188, 30, "rgba(255,244,214,0.55)", 0);
 
   const legCol = mix(skin, INK, 0.20), armCol = mix(skin, INK, 0.16);
   // Kicking legs splayed up in melodramatic agony!
-  p.stroke(curve([255, 895], [195, 855 - thrash], [152, 875 - thrash]), 18, legCol);
-  p.ell(144, 872 - thrash, 18, 10, "#2c82c9", 5.5, 0, 360, -25);
-  p.stroke(curve([278, 902], [218, 918 + thrash], [168, 938 + thrash * 0.6]), 18, legCol);
-  p.ell(160, 940 + thrash * 0.6, 18, 10, "#2c82c9", 5.5, 0, 360, 15);
+  p.stroke(curve([222, 895], [164, 855 - thrash], [122, 875 - thrash]), 18, legCol);
+  p.ell(114, 872 - thrash, 18, 10, "#2c82c9", 5.5, 0, 360, -25);
+  p.stroke(curve([244, 902], [186, 918 + thrash], [138, 938 + thrash * 0.6]), 18, legCol);
+  p.ell(130, 940 + thrash * 0.6, 18, 10, "#2c82c9", 5.5, 0, 360, 15);
 
   // Cobalt shorts sideways on floor
-  const sh = [[235, 862], [305, 862], [305, 928], [235, 928]];
+  const sh = [[202, 862], [272, 862], [272, 928], [202, 928]];
   p.shadedFill(sh, O.shorts, mul(O.shorts, SH_CLOTH), light, 46, 0.4);
   p.inkRing(sh, 8.5, thick);
 
   // Sprawled tangerine torso + checkered indigo Krama belt
-  const body = ellPts(338, 894, 68, 46, 0, 360, -6, 40);
+  const body = ellPts(304, 894, 68, 46, 0, 360, -6, 40);
   p.shadedFill(body, O.top, mul(O.top, SH_CLOTH), light, 68, 0.4);
   p.clip(body, () => {
-    p.band([[296, 845], [296, 945]], O.krama, 18, 2.2);
+    p.band([[262, 845], [262, 945]], O.krama, 18, 2.2);
   });
   p.inkRing(body, 9.0, thick);
 
   // Flailing dramatic arms thrown upward!
-  p.stroke(curve([355, 868], [335, 808 + thrash], [308, 775 + thrash]), 15, armCol);
-  p.dot(308, 775 + thrash, 14, skin);
-  p.stroke(curve([378, 908], [435, 875 - thrash], [478, 842 - thrash]), 15, armCol);
-  p.dot(478, 842 - thrash, 14, skin);
+  p.stroke(curve([320, 868], [300, 808 + thrash], [274, 775 + thrash]), 15, armCol);
+  p.dot(274, 775 + thrash, 14, skin);
+  p.stroke(curve([344, 908], [402, 875 - thrash], [442, 842 - thrash]), 15, armCol);
+  p.dot(442, 842 - thrash, 14, skin);
 
-  // Big Bean Head resting tilted back on right side (x = 438, y = 852), mouth wide open to the sky!
-  const H = headBlob(9, 104, -1), W = 2 * H.a, u = W / 100;
-  const hx = 438, hy = 846;
+  // Big Bean Head resting tilted back at x = 394 (plenty of right margin for tear fountains!)
+  const H = headBlob(9, 102, -1), W = 2 * H.a, u = W / 100;
+  const hx = 394, hy = 846;
   const hp = blobPts(hx, hy, H);
   p.shadedFill(hp, skin, mul(skin, SH_SKIN), light, H.a);
   p.inkRing(hp, 9.5, thick);
   drawSiblingHair(p, O, H, hx, hy, light, thick, 9.5, u, -1, false, wv);
   faceFront(p, hx, hy, W, "megaWail", -1, 0, 0, false, skin, undefined, false);
-  // Extra giant dramatic open screaming mouth!
   dmouth(p, hx - 8 * u, hy + 16 * u, 22 * u, 18 * u, u, true);
 
   if (crying) {
-    // Twin high-arcing fountain geysers of tears shooting straight UP into the air!
+    // Twin high-arcing fountain geysers of tears kept 100% inside 0..600 card!
     for (const side of [-1, 1]) {
-      const ex = hx - 6 * u + side * 14 * u, ey = hy - 2 * u;
-      const arcPts = curve([ex, ey], [ex + side * 42 * u, ey - 95 * u], [ex + side * 88 * u, ey - 24 * u + Math.sin(wv * 5 + side) * 10 * u]);
-      p.band(arcPts, "#63d2ff", 11 * u, 2.2 * u, "round");
+      const ex = hx - 6 * u + side * 13 * u, ey = hy - 2 * u;
+      const arcPts = curve([ex, ey], [ex + side * 34 * u, ey - 90 * u], [ex + side * 68 * u, ey - 22 * u + Math.sin(wv * 5 + side) * 8 * u]);
+      p.band(arcPts, "#63d2ff", 10.5 * u, 2.2 * u, "round");
       for (let k = 1; k <= 3; k++) {
-        p.ell(ex + side * (30 + k * 24) * u, ey - (85 - k * 18) * u, 6.5 * u, 4.5 * u, "#9be8ff", 2.0 * u);
+        p.ell(ex + side * (24 + k * 18) * u, ey - (80 - k * 17) * u, 6.0 * u, 4.2 * u, "#9be8ff", 2.0 * u);
       }
     }
   }
@@ -1367,14 +1366,16 @@ export const khmerSiblingChar = (p, key, opts = {}) => {
   }
 
   if (browWiggle) {
-    // Over-the-top animated eyebrow-wiggle taunt («លួចញាក់ចិញ្ចើមឌឺដាក់អ្នកយ៉ាងសប្បាយចិត្ត!»)!
+    // Over-the-top animated eyebrow-wiggle taunt clearly visible on forehead skin below hair fringe!
     const fx = cx + 7 * u * facing;
-    const wL = Math.sin(wv * 7.5) * 8.5 * u;
-    const wR = -Math.sin(wv * 7.5) * 8.5 * u;
-    p.band([[fx - 24 * u, hc - 25 * u + wL], [fx - 4 * u, hc - 29 * u + wL]], INK, 6.2 * u, 0, "round");
-    p.band([[fx + 4 * u, hc - 29 * u + wR], [fx + 24 * u, hc - 25 * u + wR]], INK, 6.2 * u, 0, "round");
-    // Sparkle wink star beside eye!
-    const sx = fx + dir * 28 * u, sy = hc - 14 * u;
+    // Cover default static brows cleanly with skin patch so ONLY the big dancing eyebrows read!
+    p.poly(rrect(fx - 26 * u, hc - 23 * u, fx + 26 * u, hc - 8 * u, 4 * u), skin, 0);
+    const wL = Math.sin(wv * 7.5) * 5.5 * u;
+    const wR = -Math.sin(wv * 7.5) * 5.5 * u;
+    p.band([[fx - 23 * u, hc - 13 * u + wL], [fx - 5 * u, hc - 19 * u + wL]], INK, 6.8 * u, 1.4 * u, "round");
+    p.band([[fx + 5 * u, hc - 19 * u + wR], [fx + 23 * u, hc - 13 * u + wR]], INK, 6.8 * u, 1.4 * u, "round");
+    // Sparkle wink star beside cheek!
+    const sx = fx + dir * 30 * u, sy = hc + 2 * u;
     p.poly([[sx, sy - 9 * u], [sx + 3 * u, sy - 3 * u], [sx + 9 * u, sy], [sx + 3 * u, sy + 3 * u], [sx, sy + 9 * u], [sx - 3 * u, sy + 3 * u], [sx - 9 * u, sy], [sx - 3 * u, sy - 3 * u]], "#ffd23f", 2.0 * u);
   }
 
