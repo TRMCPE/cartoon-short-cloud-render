@@ -1,0 +1,89 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Viral,Noto Sans Khmer,58,&H00FFFFFF,&H0044D6FF,&H001A1014,&H55000000,-1,0,0,0,100,100,0,0,1,6.2,3.5,5,70,70,460,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:00.84,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ហោះផ្កាប់មុខ{\c&H00FFFFFF&\fscx100\fscy100} ចូលថ្លុកភក់
+Dialogue: 0,0:00:00.84,0:00:01.25,Viral,,0,0,0,,{\an5\pos(540,1460)}ហោះផ្កាប់មុខ {\c&H0044D6FF&\fscx106\fscy106}ចូលថ្លុកភក់{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:01.25,0:00:02.26,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}នៅចំមុខក្រាស់{\c&H00FFFFFF&\fscx100\fscy100} កណ្តាលសាលារៀន
+Dialogue: 0,0:00:02.26,0:00:02.96,Viral,,0,0,0,,{\an5\pos(540,1460)}នៅចំមុខក្រាស់ {\c&H0044D6FF&\fscx106\fscy106}កណ្តាលសាលារៀន{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:02.96,0:00:03.49,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}បែបនេះ{\c&H00FFFFFF&\fscx100\fscy100} ដោយសារតែអ្នក
+Dialogue: 0,0:00:03.49,0:00:04.50,Viral,,0,0,0,,{\an5\pos(540,1460)}បែបនេះ {\c&H0044D6FF&\fscx106\fscy106}ដោយសារតែអ្នក{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:04.53,0:00:05.16,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ខំធ្វើឬកឡូយ{\c&H00FFFFFF&\fscx100\fscy100} ជ្រុលពេក!
+Dialogue: 0,0:00:05.16,0:00:05.80,Viral,,0,0,0,,{\an5\pos(540,1460)}ខំធ្វើឬកឡូយ {\c&H0044D6FF&\fscx106\fscy106}ជ្រុលពេក!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:05.85,0:00:06.38,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ត្រឡប់មក{\c&H00FFFFFF&\fscx100\fscy100} មួយនាទីមុន...
+Dialogue: 0,0:00:06.38,0:00:07.08,Viral,,0,0,0,,{\an5\pos(540,1460)}ត្រឡប់មក {\c&H0044D6FF&\fscx106\fscy106}មួយនាទីមុន...{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:07.08,0:00:07.80,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ដល់ម៉ោងចេញលេង{\c&H00FFFFFF&\fscx100\fscy100} នៅវិទ្យាល័យ
+Dialogue: 0,0:00:07.80,0:00:08.50,Viral,,0,0,0,,{\an5\pos(540,1460)}ដល់ម៉ោងចេញលេង {\c&H0044D6FF&\fscx106\fscy106}នៅវិទ្យាល័យ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:08.61,0:00:09.48,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}អ្នកស្រាប់តែឃើញ{\c&H00FFFFFF&\fscx100\fscy100} មនុស្សដែលអ្នក
+Dialogue: 0,0:00:09.48,0:00:10.04,Viral,,0,0,0,,{\an5\pos(540,1460)}អ្នកស្រាប់តែឃើញ {\c&H0044D6FF&\fscx106\fscy106}មនុស្សដែលអ្នក{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:10.04,0:00:10.58,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}លួចស្រឡាញ់{\c&H00FFFFFF&\fscx100\fscy100} កំពុងឈរនិយាយលេង
+Dialogue: 0,0:00:10.58,0:00:11.37,Viral,,0,0,0,,{\an5\pos(540,1460)}លួចស្រឡាញ់ {\c&H0044D6FF&\fscx106\fscy106}កំពុងឈរនិយាយលេង{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:11.37,0:00:12.06,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ជាមួយមិត្តភក្តិ{\c&H00FFFFFF&\fscx100\fscy100} នៅមុខថ្នាក់!
+Dialogue: 0,0:00:12.06,0:00:12.75,Viral,,0,0,0,,{\an5\pos(540,1460)}ជាមួយមិត្តភក្តិ {\c&H0044D6FF&\fscx106\fscy106}នៅមុខថ្នាក់!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:12.95,0:00:13.50,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ដើម្បីឲ្យនាង{\c&H00FFFFFF&\fscx100\fscy100} ចាប់អារម្មណ៍
+Dialogue: 0,0:00:13.50,0:00:14.12,Viral,,0,0,0,,{\an5\pos(540,1460)}ដើម្បីឲ្យនាង {\c&H0044D6FF&\fscx106\fscy106}ចាប់អារម្មណ៍{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:14.12,0:00:14.60,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}អ្នកប្រញាប់{\c&H00FFFFFF&\fscx100\fscy100} សិតសក់
+Dialogue: 0,0:00:14.60,0:00:15.08,Viral,,0,0,0,,{\an5\pos(540,1460)}អ្នកប្រញាប់ {\c&H0044D6FF&\fscx106\fscy106}សិតសក់{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:15.08,0:00:16.02,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}សារ៉េកអាវស{\c&H00FFFFFF&\fscx100\fscy100} ហើយដើរកាត់មុខនាង
+Dialogue: 0,0:00:16.02,0:00:16.66,Viral,,0,0,0,,{\an5\pos(540,1460)}សារ៉េកអាវស {\c&H0044D6FF&\fscx106\fscy106}ហើយដើរកាត់មុខនាង{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:16.67,0:00:17.48,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ធ្វើឬកឡូយ{\c&H00FFFFFF&\fscx100\fscy100} ដូចតួកុន!
+Dialogue: 0,0:00:17.48,0:00:18.04,Viral,,0,0,0,,{\an5\pos(540,1460)}ធ្វើឬកឡូយ {\c&H0044D6FF&\fscx106\fscy106}ដូចតួកុន!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:18.30,0:00:18.94,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ប៉ុន្តែដោយសារអ្នក{\c&H00FFFFFF&\fscx100\fscy100} រវល់តែសម្លឹងមុខនាង
+Dialogue: 0,0:00:18.94,0:00:19.75,Viral,,0,0,0,,{\an5\pos(540,1460)}ប៉ុន្តែដោយសារអ្នក {\c&H0044D6FF&\fscx106\fscy106}រវល់តែសម្លឹងមុខនាង{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:19.75,0:00:20.17,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ហើយញញឹម{\c&H00FFFFFF&\fscx100\fscy100} ធ្វើឡូយជ្រុល...
+Dialogue: 0,0:00:20.17,0:00:20.76,Viral,,0,0,0,,{\an5\pos(540,1460)}ហើយញញឹម {\c&H0044D6FF&\fscx106\fscy106}ធ្វើឡូយជ្រុល...{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:20.76,0:00:21.20,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ភ្នែកអ្នក{\c&H00FFFFFF&\fscx100\fscy100} ភ្លេចមើល
+Dialogue: 0,0:00:21.20,0:00:21.75,Viral,,0,0,0,,{\an5\pos(540,1460)}ភ្នែកអ្នក {\c&H0044D6FF&\fscx106\fscy106}ភ្លេចមើល{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:21.75,0:00:22.61,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ផ្លូវខាងមុខ{\c&H00FFFFFF&\fscx100\fscy100} ឈឹង!
+Dialogue: 0,0:00:22.61,0:00:22.85,Viral,,0,0,0,,{\an5\pos(540,1460)}ផ្លូវខាងមុខ {\c&H0044D6FF&\fscx106\fscy106}ឈឹង!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:23.19,0:00:24.05,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ជើងអ្នកក៏ជាន់ចំ{\c&H00FFFFFF&\fscx100\fscy100} សំបកចេកមួយ
+Dialogue: 0,0:00:24.05,0:00:24.78,Viral,,0,0,0,,{\an5\pos(540,1460)}ជើងអ្នកក៏ជាន់ចំ {\c&H0044D6FF&\fscx106\fscy106}សំបកចេកមួយ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:24.78,0:00:25.72,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}នៅកណ្តាលផ្លូវដើរ{\c&H00FFFFFF&\fscx100\fscy100} រអិលបះជើង
+Dialogue: 0,0:00:25.72,0:00:26.25,Viral,,0,0,0,,{\an5\pos(540,1460)}នៅកណ្តាលផ្លូវដើរ {\c&H0044D6FF&\fscx106\fscy106}រអិលបះជើង{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:26.25,0:00:26.78,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ឡើងលើ{\c&H00FFFFFF&\fscx100\fscy100} ហើយធ្លាក់ផ្កាប់មុខ
+Dialogue: 0,0:00:26.78,0:00:27.69,Viral,,0,0,0,,{\an5\pos(540,1460)}ឡើងលើ {\c&H0044D6FF&\fscx106\fscy106}ហើយធ្លាក់ផ្កាប់មុខ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:27.73,0:00:28.22,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ចូលថ្លុកភក់{\c&H00FFFFFF&\fscx100\fscy100} លាន់ឮសូរ ផ្លូក!
+Dialogue: 0,0:00:28.22,0:00:29.16,Viral,,0,0,0,,{\an5\pos(540,1460)}ចូលថ្លុកភក់ {\c&H0044D6FF&\fscx106\fscy106}លាន់ឮសូរ{\c&H00FFFFFF&\fscx100\fscy100} ផ្លូក!
+Dialogue: 0,0:00:29.16,0:00:29.42,Viral,,0,0,0,,{\an5\pos(540,1460)}ចូលថ្លុកភក់ លាន់ឮសូរ {\c&H0044D6FF&\fscx106\fscy106}ផ្លូក!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:29.76,0:00:30.76,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ទឹកភក់ខ្ទាតប្រឡាក់{\c&H00FFFFFF&\fscx100\fscy100} ពេញអាវស
+Dialogue: 0,0:00:30.76,0:00:31.35,Viral,,0,0,0,,{\an5\pos(540,1460)}ទឹកភក់ខ្ទាតប្រឡាក់ {\c&H0044D6FF&\fscx106\fscy106}ពេញអាវស{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:31.35,0:00:31.63,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}និងពេញមុខ!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:31.92,0:00:32.80,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ក្រាស់របស់អ្នក{\c&H00FFFFFF&\fscx100\fscy100} បើកភ្នែកធំៗ
+Dialogue: 0,0:00:32.80,0:00:33.71,Viral,,0,0,0,,{\an5\pos(540,1460)}ក្រាស់របស់អ្នក {\c&H0044D6FF&\fscx106\fscy106}បើកភ្នែកធំៗ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:33.78,0:00:34.75,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ឯមិត្តភក្តិមួយសាលា{\c&H00FFFFFF&\fscx100\fscy100} ផ្ទុះសំណើចលាន់ឮ
+Dialogue: 0,0:00:34.75,0:00:35.37,Viral,,0,0,0,,{\an5\pos(540,1460)}ឯមិត្តភក្តិមួយសាលា {\c&H0044D6FF&\fscx106\fscy106}ផ្ទុះសំណើចលាន់ឮ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:35.37,0:00:36.01,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ពេញអគារ!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:36.34,0:00:37.08,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ដើម្បីកុំឲ្យ{\c&H00FFFFFF&\fscx100\fscy100} ខ្មាសគេពេក
+Dialogue: 0,0:00:37.08,0:00:37.84,Viral,,0,0,0,,{\an5\pos(540,1460)}ដើម្បីកុំឲ្យ {\c&H0044D6FF&\fscx106\fscy106}ខ្មាសគេពេក{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:37.85,0:00:38.68,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}អ្នកប្រឹងងើបឈរ{\c&H00FFFFFF&\fscx100\fscy100} ធ្វើមុខស្មើ
+Dialogue: 0,0:00:38.68,0:00:39.23,Viral,,0,0,0,,{\an5\pos(540,1460)}អ្នកប្រឹងងើបឈរ {\c&H0044D6FF&\fscx106\fscy106}ធ្វើមុខស្មើ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:39.23,0:00:40.04,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ហើយញញឹមទាំងភក់{\c&H00FFFFFF&\fscx100\fscy100} ពេញធ្មេញថា...
+Dialogue: 0,0:00:40.04,0:00:41.02,Viral,,0,0,0,,{\an5\pos(540,1460)}ហើយញញឹមទាំងភក់ {\c&H0044D6FF&\fscx106\fscy106}ពេញធ្មេញថា...{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:41.26,0:00:41.92,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}«អត់អីទេ{\c&H00FFFFFF&\fscx100\fscy100} ខ្ញុំគ្រាន់តែចង់
+Dialogue: 0,0:00:41.92,0:00:42.88,Viral,,0,0,0,,{\an5\pos(540,1460)}«អត់អីទេ {\c&H0044D6FF&\fscx106\fscy106}ខ្ញុំគ្រាន់តែចង់{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:42.88,0:00:43.71,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ពិនិត្យមើលដី{\c&H00FFFFFF&\fscx100\fscy100} បន្តិច!»
+Dialogue: 0,0:00:43.71,0:00:44.64,Viral,,0,0,0,,{\an5\pos(540,1460)}ពិនិត្យមើលដី {\c&H0044D6FF&\fscx106\fscy106}បន្តិច!»{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:44.85,0:00:45.55,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}និយាយចប់ភ្លាម{\c&H00FFFFFF&\fscx100\fscy100} អ្នករត់បាតជើងសព្រាត
+Dialogue: 0,0:00:45.55,0:00:46.66,Viral,,0,0,0,,{\an5\pos(540,1460)}និយាយចប់ភ្លាម {\c&H0044D6FF&\fscx106\fscy106}អ្នករត់បាតជើងសព្រាត{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:46.73,0:00:47.38,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ចូលបន្ទប់ទឹក{\c&H00FFFFFF&\fscx100\fscy100} លែងហ៊ានងាកមើល
+Dialogue: 0,0:00:47.38,0:00:47.84,Viral,,0,0,0,,{\an5\pos(540,1460)}ចូលបន្ទប់ទឹក {\c&H0044D6FF&\fscx106\fscy106}លែងហ៊ានងាកមើល{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:47.84,0:00:48.12,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}មុខនាង{\c&H00FFFFFF&\fscx100\fscy100} ពេញមួយឆមាស!
+Dialogue: 0,0:00:48.12,0:00:48.60,Viral,,0,0,0,,{\an5\pos(540,1460)}មុខនាង {\c&H0044D6FF&\fscx106\fscy106}ពេញមួយឆមាស!{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:48.91,0:00:49.48,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}បើអ្នកធ្លាប់{\c&H00FFFFFF&\fscx100\fscy100} ធ្វើឬកឡូយជ្រុល
+Dialogue: 0,0:00:49.48,0:00:50.48,Viral,,0,0,0,,{\an5\pos(540,1460)}បើអ្នកធ្លាប់ {\c&H0044D6FF&\fscx106\fscy106}ធ្វើឬកឡូយជ្រុល{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:50.48,0:00:51.18,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}រហូតខ្មាសគេ{\c&H00FFFFFF&\fscx100\fscy100} មុខក្រាស់បែបនេះ
+Dialogue: 0,0:00:51.18,0:00:51.85,Viral,,0,0,0,,{\an5\pos(540,1460)}រហូតខ្មាសគេ {\c&H0044D6FF&\fscx106\fscy106}មុខក្រាស់បែបនេះ{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:51.85,0:00:52.96,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ចុចឡៃមួយមក...{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:53.29,0:00:53.82,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}ព្រោះគ្រាន់តែ{\c&H00FFFFFF&\fscx100\fscy100} ជើងអ្នករអិល
+Dialogue: 0,0:00:53.82,0:00:54.46,Viral,,0,0,0,,{\an5\pos(540,1460)}ព្រោះគ្រាន់តែ {\c&H0044D6FF&\fscx106\fscy106}ជើងអ្នករអិល{\c&H00FFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:54.46,0:00:55.36,Viral,,0,0,0,,{\an5\pos(540,1460)}{\c&H0044D6FF&\fscx106\fscy106}សំបកចេកភ្លាម{\c&H00FFFFFF&\fscx100\fscy100} អ្នកក៏...
+Dialogue: 0,0:00:55.36,0:00:55.75,Viral,,0,0,0,,{\an5\pos(540,1460)}សំបកចេកភ្លាម {\c&H0044D6FF&\fscx106\fscy106}អ្នកក៏...{\c&H00FFFFFF&\fscx100\fscy100}
